@@ -21,7 +21,7 @@ void FileWithUsers::addUserToFile(User user) {
 string FileWithUsers::convertUserDataToLineWithDashes(User user) {
     string lineWithUserData = "";
 
-    // lineWithUserData += MetodyPomocnicze::konwersjaIntNaString(uzytkownik.pobierzId())+ '|';
+    lineWithUserData += AuxiliaryMethods::convertIntToString(user.getId())+ '|';
     lineWithUserData += user.getLogin() + '|';
     lineWithUserData += user.getPassword() + '|';
 
