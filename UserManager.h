@@ -15,13 +15,18 @@ using namespace std;
 
 class UserManager {
 
-  // FileWithUsers fileWithUsers;
+    int loggedInUserId;
+    FileWithUsers fileWithUsers;
     vector <User> users;
     User getNewUserData();
     int getNewUserId();
     bool loginExists(string login);
 
 public:
+    UserManager(string fileNameWithUsers) : fileWithUsers(fileNameWithUsers) {
+        loggedInUserId = 0;
+        users = fileWithUsers.loadUsersFromFile();
+    };
     void registerUser();
 };
 #endif

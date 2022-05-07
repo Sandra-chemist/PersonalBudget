@@ -14,7 +14,14 @@ using namespace std;
 
 class FileWithUsers : public TextFile {
 
-    void addUserToFile(User user);
     string convertUserDataToLineWithDashes(User user);
+    User getUserData(string singleUserDataSeparatedByVerticalLines);
+
+public:
+    FileWithUsers(string fileName) : TextFile(fileName) {};
+    void addUserToFile(User user);
+    vector <User> loadUsersFromFile();
+
+
 };
 #endif
