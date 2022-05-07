@@ -14,5 +14,6 @@ using namespace std;
 
 class FileWithUsers{
 
+void addUserToFile(User user);
 };
 #endif

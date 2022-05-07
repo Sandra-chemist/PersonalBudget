@@ -16,7 +16,6 @@ class UserManager {
     bool loginExists(string login);
 
 public:
-    UserManager();
     void registerUser();
 };
 #endif
