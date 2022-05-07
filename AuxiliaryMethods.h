@@ -11,6 +11,7 @@ class AuxiliaryMethods {
 public:
 
     static string convertIntToString(int number);
+    static char loadChar();
 
 };
 #endif
