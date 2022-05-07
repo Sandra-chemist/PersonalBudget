@@ -5,9 +5,8 @@
 
 using namespace std;
 
-int main()
-{
-  PersonalBudget personalBudget;
+int main() {
+    PersonalBudget personalBudget;
 
     personalBudget.registerUser();
     return 0;

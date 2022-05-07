@@ -8,12 +8,13 @@
 
 #include "User.h"
 //#include "MetodyPomocnicze.h"
-//#include "PlikTekstowy.h"
+#include "TextFile.h"
 
 using namespace std;
 
-class FileWithUsers{
+class FileWithUsers : public TextFile {
 
-void addUserToFile(User user);
+    void addUserToFile(User user);
+    string convertUserDataToLineWithDashes(User user);
 };
 #endif

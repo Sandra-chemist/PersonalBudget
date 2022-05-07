@@ -1,20 +1,29 @@
 #include "FileWithUsers.h"
 
-/*void FileWithUsers::addUserToFile(User user) {
-    string liniaZDanymiUzytkownika = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(pobierzNazwePliku().c_str(), ios::app);
+void FileWithUsers::addUserToFile(User user) {
+    string lineWithUserData = "";
+    fstream textFile;
+    textFile.open(getFileName().c_str(), ios::app);
 
-    if (plikTekstowy.good()) {
-        liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
+    if (textFile.good()) {
+        lineWithUserData = convertUserDataToLineWithDashes(user);
 
-        if (czyPlikJestPusty() == true) {
-            plikTekstowy << liniaZDanymiUzytkownika;
+        if (isFileEmpty() == true) {
+            textFile << lineWithUserData;
         } else {
-            plikTekstowy << endl << liniaZDanymiUzytkownika;
+            textFile << endl << lineWithUserData;
         }
-        plikTekstowy.close();
+        textFile.close();
     } else
-        cout << "Nie udalo sie otworzyc pliku " << pobierzNazwePliku() << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << getFileName() << " i zapisac w nim danych." << endl;
 
-}*/
+}
+string FileWithUsers::convertUserDataToLineWithDashes(User user) {
+    string lineWithUserData = "";
+
+    // lineWithUserData += MetodyPomocnicze::konwersjaIntNaString(uzytkownik.pobierzId())+ '|';
+    lineWithUserData += user.getLogin() + '|';
+    lineWithUserData += user.getPassword() + '|';
+
+    return lineWithUserData;
+}
