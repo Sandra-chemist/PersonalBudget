@@ -1,9 +1,9 @@
 #include "UserManager.h"
 
 void UserManager::registerUser() {
-   User user = getNewUserData();
-   users.push_back(user);
-   fileWithUsers.addUserToFile(user);
+    User user = getNewUserData();
+    users.push_back(user);
+    fileWithUsers.addUserToFile(user);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -12,6 +12,13 @@ User UserManager::getNewUserData() {
     User user;
 
     user.setId(getNewUserId());
+    string name, surname;
+    cout << "Podaj imie: ";
+    cin>> name;
+    user.setName(name);
+    cout << "Podaj nazwisko: ";
+    cin>> surname;
+    user.setSurname(surname);
     string login;
     do {
         cout << "Podaj login: ";

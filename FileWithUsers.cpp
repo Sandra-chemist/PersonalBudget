@@ -22,6 +22,8 @@ string FileWithUsers::convertUserDataToLineWithDashes(User user) {
     string lineWithUserData = "";
 
     lineWithUserData += AuxiliaryMethods::convertIntToString(user.getId())+ '|';
+    lineWithUserData += user.getName() + '|';
+    lineWithUserData += user.getSurname() + '|';
     lineWithUserData += user.getLogin() + '|';
     lineWithUserData += user.getPassword() + '|';
 
@@ -58,9 +60,15 @@ User FileWithUsers::getUserData(string singleUserDataSeparatedByVerticalLines) {
                 user.setId(atoi(singleUserData.c_str()));
                 break;
             case 2:
-                user.setLogin(singleUserData);
+                user.setName(singleUserData);
                 break;
             case 3:
+                user.setSurname(singleUserData);
+                break;
+            case 4:
+                user.setLogin(singleUserData);
+                break;
+            case 5:
                 user.setPassword(singleUserData);
                 break;
             }
