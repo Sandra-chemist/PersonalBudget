@@ -35,6 +35,29 @@ int main() {
 
                 choice = personalBudget.selectOptionFromUserMenu();
        }
+       switch (choice) {
+            /*case '1':
+                personalBudget.dodajAdresata();
+                break;
+            case '2':
+                personalBudget.wyszukajAdresatowPoImieniu();
+                break;
+            case '3':
+                personalBudget.wyszukajAdresatowPoNazwisku();
+                break;
+            case '4':
+                personalBudget.wyswietlWszystkichAdresatow();
+                break;
+            case '5':
+               personalBudget.usunAdresata();
+                break;*/
+            case '6':
+                personalBudget.changePasswordLoggedInUser();
+                break;
+            case '7':
+                personalBudget.logOutUser();
+                break;
+            }
        }
 
     return 0;
