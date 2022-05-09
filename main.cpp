@@ -30,9 +30,12 @@ int main() {
                 system("pause");
                 break;
             }
-        }
-       }
+        }else {
+            if (personalBudget.isUserLoggedIn())
 
+                choice = personalBudget.selectOptionFromUserMenu();
+       }
+       }
 
     return 0;
 }
