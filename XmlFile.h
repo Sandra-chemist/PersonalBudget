@@ -1,12 +1,12 @@
-#ifndef XMLTFILE_H
-#define XMLTFILE_H
+#ifndef XMLFILE_H
+#define XMLFILE_H
 
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
-class XMLFile {
+class XmlFile {
 
     const string FILE_NAME;
 

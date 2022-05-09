@@ -14,9 +14,9 @@ using namespace std;
 
 class FileWithUsers : public XmlFile {
 
-   string fileName;
+   string fileNameWithUsers;
 public:
-    FileWithUsers(string fileName) : XmlFile(fileName) {};
+    FileWithUsers(string fileNameWithUsers) : XmlFile(fileNameWithUsers) {};
     void addUserToFile(User user);
     vector <User> loadUsersFromFile();
 
