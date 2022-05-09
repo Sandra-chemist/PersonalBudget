@@ -8,6 +8,7 @@
 
 #include "User.h"
 #include "FileWithUsers.h"
+#include "AuxiliaryMethods.h"
 
 
 using namespace std;
@@ -27,5 +28,6 @@ public:
         users = fileWithUsers.loadUsersFromFile();
     };
     void registerUser();
+    void loginUser();
 };
 #endif

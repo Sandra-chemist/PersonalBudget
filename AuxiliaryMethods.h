@@ -13,6 +13,7 @@ public:
 
     static string convertIntToString(int number);
     static char loadChar();
+    static string loadLine();
 
 };
 #endif

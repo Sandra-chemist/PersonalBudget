@@ -15,9 +15,9 @@ int main() {
             case '1':
                 personalBudget.registerUser();
                 break;
-         /*   case '2':
-                 personalBudget.logInUser();
-                break;*/
+           case '2':
+                 personalBudget.loginUser();
+                break;
             case '9':
                 exit(0);
                 break;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users>
+<User>
+<UserID>1</UserID>
+<Name>sandra</Name>
+<Surname>skibiszewska</Surname>
+<Login>s</Login>
+<Password>a</Password>
+</User>
+</Users>
