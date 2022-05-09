@@ -50,12 +50,12 @@ int main() {
                 break;
             case '5':
                personalBudget.usunAdresata();
-                break;
-            case '6':
-                personalBudget.edytujAdresata();
                 break;*/
-            case '7':
+            case '6':
                 personalBudget.changePasswordLoggedInUser();
+                break;
+            case '7':
+                personalBudget.logOutUser();
                 break;
             }
        }

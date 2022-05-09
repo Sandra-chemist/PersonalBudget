@@ -97,4 +97,9 @@ void UserManager::changePasswordLoggedInUser() {
     }
    // plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(users);
 }
+void UserManager::logOutUser() {
+    loggedInUserId = 0;
+    cout << "Zostales wylogowany." << endl;
+    system("pause");
+}
 
