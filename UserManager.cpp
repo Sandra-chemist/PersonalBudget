@@ -77,3 +77,10 @@ void UserManager::loginUser() {
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
 }
+bool UserManager::isUserLoggedIn() {
+    if (loggedInUserId > 0)
+        return true;
+    else
+        return false;
+}
+

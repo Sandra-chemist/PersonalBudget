@@ -29,5 +29,7 @@ public:
     };
     void registerUser();
     void loginUser();
+    bool isUserLoggedIn();
+
 };
 #endif

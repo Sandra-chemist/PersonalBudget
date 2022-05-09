@@ -7,10 +7,14 @@ using namespace std;
 
 int main() {
     char choice;
-    PersonalBudget personalBudget("Uzytkownicy.txt");
-
+    PersonalBudget personalBudget("Uzytkownicy.xml");
 
     choice = personalBudget.selectOptionFromMainMenu();
+
+       while (true) {
+        if (!personalBudget.isUserLoggedIn()) {
+            choice = personalBudget.selectOptionFromMainMenu();
+
     switch (choice) {
             case '1':
                 personalBudget.registerUser();
@@ -26,6 +30,8 @@ int main() {
                 system("pause");
                 break;
             }
+        }
+       }
 
 
     return 0;
