@@ -7,18 +7,16 @@
 #include <cstdlib>
 
 #include "User.h"
-#include "AuxiliaryMethods.h"
-#include "TextFile.h"
+#include "Markup.h"
+#include "XmlFile.h"
 
 using namespace std;
 
-class FileWithUsers : public TextFile {
+class FileWithUsers : public XmlFile {
 
-    string convertUserDataToLineWithDashes(User user);
-    User getUserData(string singleUserDataSeparatedByVerticalLines);
-
+   string fileName;
 public:
-    FileWithUsers(string fileName) : TextFile(fileName) {};
+    FileWithUsers(string fileName) : XmlFile(fileName) {};
     void addUserToFile(User user);
     vector <User> loadUsersFromFile();
 
