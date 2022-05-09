@@ -83,4 +83,18 @@ bool UserManager::isUserLoggedIn() {
     else
         return false;
 }
+void UserManager::changePasswordLoggedInUser() {
+    string newPassword = "";
+    cout << "Podaj nowe haslo: ";
+    newPassword = AuxiliaryMethods::loadLine();
+
+    for (int i = 0; i < users.size(); i++) {
+        if (users[i].getId() == loggedInUserId) {
+            users[i].setPassword(newPassword);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+   // plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(users);
+}
 
