@@ -21,3 +21,8 @@ char AuxiliaryMethods::loadChar() {
     }
     return mark;
 }
+string AuxiliaryMethods::loadLine() {
+    string entry = "";
+    getline(cin, entry);
+    return entry;
+}
