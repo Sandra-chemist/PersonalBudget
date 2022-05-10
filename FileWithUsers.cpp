@@ -5,8 +5,7 @@ void FileWithUsers::addUserToFile(User user) {
     CMarkup xml;
     string fileNameWithUsers = XmlFile :: getFileName();
     bool fileExists = xml.Load(fileNameWithUsers);
-     if (!fileExists)
-    {
+    if (!fileExists) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
     }
@@ -32,8 +31,7 @@ vector <User> FileWithUsers::loadUsersFromFile() {
     string fileNameWithUsers = XmlFile :: getFileName();
     bool fileExists = xml.Load(fileNameWithUsers);
 
-    if (fileExists == true)
-    {
+    if (fileExists == true) {
         xml.FindElem();
         xml.IntoElem();
         while ( xml.FindElem("User") == true) {
@@ -62,3 +60,29 @@ vector <User> FileWithUsers::loadUsersFromFile() {
 
     return users;
 }
+void FileWithUsers::saveAllUsersToFile(vector <User> &users) {
+
+    CMarkup xml;
+    remove("Users.xml");
+
+    for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++) {
+        xml.Load(getFileName());
+
+        if(!xml.FindElem("Users")) {
+            xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+            xml.AddElem("Users");
+        }
+
+        xml.IntoElem();
+        xml.AddElem("User");
+        xml.IntoElem();
+        xml.AddElem("UserId", to_string(itr -> getId()));
+        xml.AddElem("Name", itr -> getName());
+        xml.AddElem("Surname", itr -> getSurname());
+        xml.AddElem("Login", itr -> getLogin());
+        xml.AddElem("Password", itr -> getPassword());
+        xml.OutOfElem();
+        xml.Save(getFileName());
+    }
+}
+

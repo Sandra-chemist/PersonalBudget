@@ -95,7 +95,7 @@ void UserManager::changePasswordLoggedInUser() {
             system("pause");
         }
     }
-   // plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(users);
+    fileWithUsers.saveAllUsersToFile(users);
 }
 void UserManager::logOutUser() {
     loggedInUserId = 0;
