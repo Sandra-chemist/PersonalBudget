@@ -30,7 +30,9 @@ int main() {
         } else {
             if (personalBudget.isUserLoggedIn())
 
+                personalBudget.getCurrentDate();
                 choice = personalBudget.selectOptionFromUserMenu();
+
         }
         switch (choice) {
         /*case '1':
