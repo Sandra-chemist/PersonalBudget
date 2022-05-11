@@ -26,3 +26,7 @@ string AuxiliaryMethods::loadLine() {
     getline(cin, entry);
     return entry;
 }
+int AuxiliaryMethods::converStringToInt (string date)
+{
+
+}

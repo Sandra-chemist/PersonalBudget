@@ -10,7 +10,6 @@
 #include "FileWithUsers.h"
 #include "AuxiliaryMethods.h"
 
-
 using namespace std;
 
 class UserManager {
