@@ -34,3 +34,15 @@ int AuxiliaryMethods::converStringToInt (string number)
 
     return numberInt;
 }
+
+string AuxiliaryMethods::removeDashFromDate(string date) {
+
+    string stringDateWithoutDash;
+
+    for (int i = 0 ; i <= date.length(); i++) {
+        if (date[i] != '-') {
+            stringDateWithoutDash += date[i];
+        }
+    }
+    return stringDateWithoutDash;
+}

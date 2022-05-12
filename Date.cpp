@@ -32,4 +32,6 @@ string Date::writeOtherDateThanCurrent()
      otherDate = AuxiliaryMethods::loadLine();
      cout << otherDate << endl;
      Sleep (5000);
+     return otherDate;
 }
+

@@ -14,7 +14,8 @@ public:
     static string convertIntToString(int number);
     static char loadChar();
     static string loadLine();
-    int converStringToInt (string number);
+    static int converStringToInt (string number);
+    string removeDashFromDate(string date);
 
 };
 #endif
