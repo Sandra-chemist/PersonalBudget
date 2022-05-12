@@ -31,7 +31,13 @@ string Date::writeOtherDateThanCurrent()
      cout << "Provide date in format YYYY-MM-DD: ";
      otherDate = AuxiliaryMethods::loadLine();
      cout << otherDate << endl;
-     Sleep (5000);
+     Sleep (2000);
+
+     string otherDateWithoutDash;
+     otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
+     cout << otherDateWithoutDash << endl;
+     Sleep (2000);
+
      return otherDate;
 }
 
