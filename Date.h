@@ -21,5 +21,6 @@ class Date {
 public:
     int getCurrentDate();
     string writeOtherDateThanCurrent();
+    string convertCurrentDateFromIntToString(int currentDate);
 };
 #endif

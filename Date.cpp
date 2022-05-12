@@ -13,10 +13,17 @@ int Date::getCurrentDate() {
     day = nowLocal.tm_mday;
     currentDate += day;
 
-    cout << currentDate << endl;
-    cout << nowLocal.tm_mday << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_year+1900 << endl;
-    Sleep (5000);
+   // cout << currentDate << endl;
+   // cout << nowLocal.tm_mday << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_year+1900 << endl;
+   // Sleep (5000);
     return currentDate;
+}
+string Date::convertCurrentDateFromIntToString(int currentDate)
+{
+    string dateAsString;
+    dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
+    Sleep (5000);
+    return dateAsString;
 }
 string Date::writeOtherDateThanCurrent()
 {

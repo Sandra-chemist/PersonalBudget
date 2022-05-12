@@ -30,6 +30,5 @@ public:
     void getCurrentDate();
     void writeOtherDateThanCurrent();
 
-
 };
 #endif

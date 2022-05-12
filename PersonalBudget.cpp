@@ -57,3 +57,4 @@ void PersonalBudget::writeOtherDateThanCurrent() {
     date.writeOtherDateThanCurrent();
 }
 
+
