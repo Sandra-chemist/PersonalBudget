@@ -30,8 +30,9 @@ int main() {
         } else {
             if (personalBudget.isUserLoggedIn())
 
-                personalBudget.getCurrentDate();
-                choice = personalBudget.selectOptionFromUserMenu();
+               // personalBudget.getCurrentDate();
+                personalBudget.writeOtherDateThanCurrent();
+             //   choice = personalBudget.selectOptionFromUserMenu();
 
         }
         switch (choice) {

@@ -5,6 +5,8 @@
 #include <ctime>
 #include <windows.h>
 
+#include "AuxiliaryMethods.h"
+
 using namespace std;
 
 class Date {
@@ -18,5 +20,6 @@ class Date {
 
 public:
     int getCurrentDate();
+    string writeOtherDateThanCurrent();
 };
 #endif
