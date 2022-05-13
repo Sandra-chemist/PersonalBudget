@@ -25,8 +25,8 @@ public:
     string writeOtherDateThanCurrent();
     string convertCurrentDateFromIntToString(int currentDate);
     //  bool isDateCorrect(string otherDate);
-    bool getYear();
-    bool getMonth();
-    bool getDay();
+    int getYear();
+    int getMonth();
+    int getDay();
 };
 #endif

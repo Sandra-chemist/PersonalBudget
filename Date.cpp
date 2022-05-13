@@ -33,12 +33,26 @@ string Date::writeOtherDateThanCurrent() {
         cout << otherDate << endl;
         Sleep(3000);
         getYear();
-        Sleep(2000);
+        cout << endl;
+        Sleep(1000);
         getMonth();
-        Sleep(2000);
+        cout << endl;
+        Sleep(1000);
         getDay();
-        Sleep(2000);
+        cout << endl;
+        Sleep(1000);
 
+        int yearInt;
+        //yearInt = AuxiliaryMethods::convertStringToInt(getYear());
+        if (getYear() > 2000)
+        {
+            cout << "Rok jest wiêkszy ni¿ liczba 2000" << endl;
+        }
+        else
+        {
+            cout << "Rok jest mniejszy niz 2000" << endl;
+        }
+        Sleep(2000);
    // }
 
     /* string otherDateWithoutDash;
@@ -47,29 +61,32 @@ string Date::writeOtherDateThanCurrent() {
      Sleep (2000);*/
     return otherDate;
 }
-bool Date::getYear() {
+int Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
     for (int i = 0; i < lengthOfOtherDate - 6; i ++) {
         string year;
         year = otherDate[i];
         cout << year;
     }
+    return year;
 }
-bool Date::getMonth() {
+int Date::getMonth() {
     int lengthOfOtherDate = otherDate.length();
     for (int i = 5; i < lengthOfOtherDate - 3; i ++) {
         string month;
         month = otherDate[i];
         cout << month;
     }
+    return month;
 }
-bool Date::getDay() {
+int Date::getDay() {
     int lengthOfOtherDate = otherDate.length();
     for (int i = 8; i < lengthOfOtherDate; i ++) {
         string day;
         day = otherDate[i];
         cout << day;
     }
+    return day;
 }
 
 
