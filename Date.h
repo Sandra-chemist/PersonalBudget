@@ -18,11 +18,15 @@ class Date {
     int month;
     int year;
     int currentDate;
+    string otherDate;
 
 public:
     int getCurrentDate();
     string writeOtherDateThanCurrent();
     string convertCurrentDateFromIntToString(int currentDate);
-    bool isDateCorrect(string otherDate);
+    //  bool isDateCorrect(string otherDate);
+    bool getYear();
+    bool getMonth();
+    bool getDay();
 };
 #endif

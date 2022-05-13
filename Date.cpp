@@ -25,15 +25,21 @@ string Date::convertCurrentDateFromIntToString(int currentDate) {
     return dateAsString;
 }
 string Date::writeOtherDateThanCurrent() {
-    string otherDate;
+
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
 
-    if (isDateCorrect(otherDate) == true)
-        {
-         cout << otherDate << endl;
-         Sleep(5000);
-        }
+    //if (isYearCorrect(otherDate) == true) {
+        cout << otherDate << endl;
+        Sleep(3000);
+        getYear();
+        Sleep(2000);
+        getMonth();
+        Sleep(2000);
+        getDay();
+        Sleep(2000);
+
+   // }
 
     /* string otherDateWithoutDash;
      otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
@@ -41,38 +47,28 @@ string Date::writeOtherDateThanCurrent() {
      Sleep (2000);*/
     return otherDate;
 }
-bool Date::isDateCorrect(string otherDate) {
-
+bool Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
     for (int i = 0; i < lengthOfOtherDate - 6; i ++) {
         string year;
         year = otherDate[i];
         cout << year;
     }
-    if (year >= 2000)
-    {
-        cout << year;
-        return true;
-    }
-    cout << endl;
+}
+bool Date::getMonth() {
+    int lengthOfOtherDate = otherDate.length();
     for (int i = 5; i < lengthOfOtherDate - 3; i ++) {
         string month;
         month = otherDate[i];
         cout << month;
     }
-    if (month > 0 && month < 13)
-    {
-        return true;
-    }
-    cout << endl;
+}
+bool Date::getDay() {
+    int lengthOfOtherDate = otherDate.length();
     for (int i = 8; i < lengthOfOtherDate; i ++) {
         string day;
         day = otherDate[i];
         cout << day;
-    }
-    if (day > 0 && day < 32)
-    {
-        return true;
     }
 }
 
