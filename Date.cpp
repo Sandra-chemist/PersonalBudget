@@ -16,6 +16,11 @@ int Date::getCurrentDate() {
     // cout << currentDate << endl;
     getCurrentYear();
     cout << endl;
+     if (getCurrentYear() <= 2000) {
+        cout << "Rok jest wiekszy niz liczba 2000" << endl;
+    } else {
+        cout << "Rok jest mniejszy niz 2000" << endl;
+    }
     getCurrentMonth();
     cout << endl;
     getCurrentDay();
