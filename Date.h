@@ -9,6 +9,7 @@ using namespace std;
 
 class Date {
 
+    struct tm nowLocal;
     int currentDate;
     int year;
     int month;
@@ -16,5 +17,9 @@ class Date {
 
 public:
     int getCurrentDate();
+    int getCurrentYear();
+    int getCurrentMonth();
+    int getCurrentDay();
+
 };
 #endif
