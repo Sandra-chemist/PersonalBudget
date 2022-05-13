@@ -25,6 +25,9 @@ public:
     string writeOtherDateThanCurrent();
     string convertCurrentDateFromIntToString(int currentDate);
     //  bool isDateCorrect(string otherDate);
+    int getCurrentYear();
+    int getCurrentMonth();
+    int getCurrentDay();
     int getYear();
     int getMonth();
     int getDay();

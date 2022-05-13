@@ -14,14 +14,36 @@ int Date::getCurrentDate() {
     currentDate += day;
 
     // cout << currentDate << endl;
+    getCurrentYear();
+    cout << endl;
+    getCurrentMonth();
+    cout << endl;
+    getCurrentDay();
+
     // cout << nowLocal.tm_mday << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_year+1900 << endl;
-    // Sleep (5000);
+    Sleep(3000);
     return currentDate;
+
+}
+int Date::getCurrentYear() {
+    year = nowLocal.tm_year+1900;
+    cout << year;
+    return year;
+}
+int Date::getCurrentMonth() {
+    month = nowLocal.tm_mon+1;
+    cout << month;
+    return month;
+}
+int Date::getCurrentDay() {
+    day = nowLocal.tm_mday;
+    cout << day;
+
+    return day;
 }
 string Date::convertCurrentDateFromIntToString(int currentDate) {
     string dateAsString;
     dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
-    Sleep (5000);
     return dateAsString;
 }
 string Date::writeOtherDateThanCurrent() {
@@ -29,31 +51,23 @@ string Date::writeOtherDateThanCurrent() {
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
 
-    //if (isYearCorrect(otherDate) == true) {
-        cout << otherDate << endl;
-        Sleep(3000);
-        getYear();
-        cout << endl;
-        Sleep(1000);
-        getMonth();
-        cout << endl;
-        Sleep(1000);
-        getDay();
-        cout << endl;
-        Sleep(1000);
-
-        int yearInt;
-        //yearInt = AuxiliaryMethods::convertStringToInt(getYear());
-        if (getYear() > 2000)
-        {
-            cout << "Rok jest wiêkszy ni¿ liczba 2000" << endl;
-        }
-        else
-        {
-            cout << "Rok jest mniejszy niz 2000" << endl;
-        }
-        Sleep(2000);
-   // }
+    cout << otherDate << endl;
+    Sleep(3000);
+    getYear();
+    cout << endl;
+    if (getYear() >= 2000) {
+        cout << "Rok jest wiekszy niz liczba 2000" << endl;
+    } else {
+        cout << "Rok jest mniejszy niz 2000" << endl;
+    }
+    Sleep(1000);
+    getMonth();
+    cout << endl;
+    Sleep(1000);
+    getDay();
+    cout << endl;
+    Sleep(1000);
+    // }
 
     /* string otherDateWithoutDash;
      otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
