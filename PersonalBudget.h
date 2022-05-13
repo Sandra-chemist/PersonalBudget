@@ -28,7 +28,7 @@ public:
     char selectOptionFromMainMenu();
     char selectOptionFromUserMenu();
     void getCurrentDate();
-
+    void writeOtherDateThanCurrent();
 
 };
 #endif

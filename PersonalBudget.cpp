@@ -53,4 +53,8 @@ void PersonalBudget::logOutUser() {
 void PersonalBudget::getCurrentDate() {
     date.getCurrentDate();
 }
+void PersonalBudget::writeOtherDateThanCurrent() {
+    date.writeOtherDateThanCurrent();
+}
+
 

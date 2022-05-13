@@ -2,24 +2,35 @@
 #define DATE_H
 
 #include <iostream>
+#include <string>
 #include <ctime>
 #include <windows.h>
+
+#include "AuxiliaryMethods.h"
 
 using namespace std;
 
 class Date {
 
+    time_t now;
     struct tm nowLocal;
-    int currentDate;
-    int year;
-    int month;
     int day;
+    int month;
+    int year;
+    int currentDate;
+    string otherDate;
 
 public:
     int getCurrentDate();
+    string writeOtherDateThanCurrent();
+    string convertCurrentDateFromIntToString(int currentDate);
+    //  bool isDateCorrect(string otherDate);
     int getCurrentYear();
     int getCurrentMonth();
     int getCurrentDay();
+    int getYear();
+    int getMonth();
+    int getDay();
 
 };
 #endif

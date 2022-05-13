@@ -26,7 +26,23 @@ string AuxiliaryMethods::loadLine() {
     getline(cin, entry);
     return entry;
 }
-int AuxiliaryMethods::converStringToInt (string date)
+int AuxiliaryMethods::convertStringToInt (string number)
 {
+    int numberInt;
+    istringstream iss(number);
+    iss >> numberInt;
 
+    return numberInt;
+}
+
+string AuxiliaryMethods::removeDashFromDate(string date) {
+
+    string stringDateWithoutDash;
+
+    for (int i = 0 ; i <= date.length(); i++) {
+        if (date[i] != '-') {
+            stringDateWithoutDash += date[i];
+        }
+    }
+    return stringDateWithoutDash;
 }
