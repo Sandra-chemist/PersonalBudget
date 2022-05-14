@@ -26,15 +26,13 @@ string AuxiliaryMethods::loadLine() {
     getline(cin, entry);
     return entry;
 }
-int AuxiliaryMethods::convertStringToInt (string number)
-{
+int AuxiliaryMethods::convertStringToInt (string number) {
     int numberInt;
     istringstream iss(number);
     iss >> numberInt;
 
     return numberInt;
 }
-
 string AuxiliaryMethods::removeDashFromDate(string date) {
 
     string stringDateWithoutDash;
@@ -45,4 +43,19 @@ string AuxiliaryMethods::removeDashFromDate(string date) {
         }
     }
     return stringDateWithoutDash;
+}
+float AuxiliaryMethods::loadFloat() {
+    string amountAsString = "";
+    float amount;
+
+    while (true) {
+        cin.clear();
+        getline(cin, amountAsString);
+
+        stringstream myStream(amountAsString);
+        if (myStream >> amount) {
+            cout << "This is not the amount" << endl;
+        }
+    }
+    return amount;
 }

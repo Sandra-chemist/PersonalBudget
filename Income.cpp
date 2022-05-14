@@ -51,13 +51,11 @@ Income Income::addIncome()
 
         cout << "Enter item of income: ";
         item = AuxiliaryMethods::loadLine();
-        income.setItem(item);
+        setItem(item);
 
         cout << "Enter amount of income in xxxx,xx format: ";
-       // amount = AuxiliaryMethods::loadFloat();
-        income.setAmount(amount);
+        amount = AuxiliaryMethods::loadFloat();
+        setAmount(amount);
 
-
-
-
+        return income;
 }
