@@ -7,7 +7,7 @@ using namespace std;
 
 class Income {
 
-int incomeId;
+    int incomeId;
 	int userId;
 	int date;
 	string item;

@@ -13,8 +13,9 @@ using namespace std;
 class FileWithIncomes : public XmlFile {
 
     string fileNameWithIncomes;
+    vector <Income> incomes;
 public:
     FileWithIncomes(string fileNameWithIncomes) : XmlFile(fileNameWithIncomes) {};
-
+    void addIncomeToFile(Income income);
 };
 #endif
