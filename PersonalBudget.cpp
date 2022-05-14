@@ -20,6 +20,10 @@ char PersonalBudget::selectOptionFromMainMenu() {
 }
 void PersonalBudget::loginUser() {
     userManager.loginUser();
+     if (userManager.isUserLoggedIn())
+    {
+        incomeManager = new IncomeManager (FILE_NAME_WITH_INCOMES);
+    }
 }
 bool PersonalBudget::isUserLoggedIn() {
     userManager.isUserLoggedIn();
@@ -57,7 +61,10 @@ void PersonalBudget::writeOtherDateThanCurrent() {
     date.writeOtherDateThanCurrent();
 }
 void PersonalBudget::addIncome() {
-    incomeManager->addIncome();
+     if (userManager.isUserLoggedIn())
+         {
+            incomeManager->addIncome();
+         }
 }
 
 
