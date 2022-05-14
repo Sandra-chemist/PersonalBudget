@@ -14,10 +14,11 @@ using namespace std;
 
 class IncomeManager {
 
+    FileWithIncomes fileWithIncomes;
     vector <Income> incomes;
 public:
-
-    Income provideDataOfNewIncome();
+    IncomeManager(string fileNameWithIncomes) : fileWithIncomes(fileNameWithIncomes){}
+        Income provideDataOfNewIncome();
     void addIncome();
 };
 #endif

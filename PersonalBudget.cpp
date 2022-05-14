@@ -57,7 +57,7 @@ void PersonalBudget::writeOtherDateThanCurrent() {
     date.writeOtherDateThanCurrent();
 }
 void PersonalBudget::addIncome() {
-    incomeManager.addIncome();
+    incomeManager->addIncome();
 }
 
 
