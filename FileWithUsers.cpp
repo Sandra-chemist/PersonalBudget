@@ -8,7 +8,6 @@ void FileWithUsers::addUserToFile(User user) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
     }
-
     xml.FindElem();
     xml.IntoElem();
     xml.AddElem("User");
@@ -31,7 +30,7 @@ vector <User> FileWithUsers::loadUsersFromFile() {
     if (fileExists == true) {
         xml.FindElem();
         xml.IntoElem();
-        while ( xml.FindElem("User") == true) {
+        while (xml.FindElem("User") == true) {
 
             xml.IntoElem();
             xml.FindElem( "UserID");

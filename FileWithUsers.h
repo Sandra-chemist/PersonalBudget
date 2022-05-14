@@ -14,7 +14,7 @@ using namespace std;
 
 class FileWithUsers : public XmlFile {
 
-    string fileNameWithUsers;
+    const string FILE_NAME_WITH_USERS;
 public:
     FileWithUsers(string fileNameWithUsers) : XmlFile(fileNameWithUsers) {};
     void addUserToFile(User user);
