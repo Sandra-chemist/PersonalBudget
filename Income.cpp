@@ -42,7 +42,6 @@ float Income::getAmount()
 {
 	return amount;
 }
-
 Income Income::addIncome()
 {
         Income income;
