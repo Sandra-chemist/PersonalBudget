@@ -2,6 +2,7 @@
 #define INCOME_H
 
 #include <iostream>
+#include "AuxiliaryMethods.h"
 
 using namespace std;
 
@@ -25,6 +26,8 @@ public:
 	int getDate();
 	string getItem();
 	float getAmount();
+
+	Income addIncome();
 
 };
 #endif
