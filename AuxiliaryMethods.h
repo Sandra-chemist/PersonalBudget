@@ -16,6 +16,8 @@ public:
     static string loadLine();
     static int convertStringToInt (string number);
     static string removeDashFromDate(string date);
+    static float loadFloat();
+    static string convertFloatToString(float number);
 
 };
 #endif
