@@ -16,5 +16,6 @@ class IncomeManager {
 
 public:
 
+    	Income addIncome();
 };
 #endif

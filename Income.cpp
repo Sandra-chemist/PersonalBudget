@@ -42,17 +42,3 @@ float Income::getAmount()
 {
 	return amount;
 }
-Income Income::addIncome()
-{
-        Income income;
-
-        cout << "Enter item of income: ";
-        item = AuxiliaryMethods::loadLine();
-        setItem(item);
-
-        cout << "Enter amount of income in xxx.xx format: ";
-        amount = AuxiliaryMethods::loadFloat();
-        setAmount(amount);
-
-        return income;
-}

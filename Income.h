@@ -27,7 +27,5 @@ public:
 	string getItem();
 	float getAmount();
 
-	Income addIncome();
-
 };
 #endif

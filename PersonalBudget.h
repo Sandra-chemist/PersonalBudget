@@ -7,14 +7,14 @@
 #include "UserManager.h"
 #include "AuxiliaryMethods.h"
 #include "Date.h"
-#include "Income.h"
+#include "IncomeManager.h"
 
 using namespace std;
 
 class PersonalBudget {
     UserManager userManager;
     Date date;
-    Income income;
+    IncomeManager incomeManager;
 
 
 public:
