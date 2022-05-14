@@ -14,8 +14,10 @@ using namespace std;
 
 class IncomeManager {
 
+    vector <Income> incomes;
 public:
 
-    	Income addIncome();
+    Income provideDataOfNewIncome();
+    void addIncome();
 };
 #endif

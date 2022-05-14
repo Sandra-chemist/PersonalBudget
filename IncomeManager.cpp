@@ -1,6 +1,10 @@
 #include "IncomeManager.h"
 
-Income IncomeManager::addIncome()
+void IncomeManager::addIncome()
+{
+      //incomes.push_back(income);
+}
+Income IncomeManager::provideDataOfNewIncome()
 {
         Income income;
         string item;
@@ -13,6 +17,7 @@ Income IncomeManager::addIncome()
         cout << "Enter amount of income in xxx.xx format: ";
         amount = AuxiliaryMethods::loadFloat();
         income.setAmount(amount);
+
 
         return income;
 }
