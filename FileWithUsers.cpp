@@ -3,8 +3,7 @@
 
 void FileWithUsers::addUserToFile(User user) {
     CMarkup xml;
-    string fileNameWithUsers = XmlFile :: getFileName();
-    bool fileExists = xml.Load(fileNameWithUsers);
+    bool fileExists = xml.Load(getFileName());
     if (!fileExists) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
@@ -20,7 +19,7 @@ void FileWithUsers::addUserToFile(User user) {
     xml.AddElem( "Login", user.getLogin() );
     xml.AddElem( "Password", user.getPassword() );
 
-    xml.Save(fileNameWithUsers);
+    xml.Save(getFileName());
 
 }
 vector <User> FileWithUsers::loadUsersFromFile() {
