@@ -53,7 +53,7 @@ Income Income::addIncome()
         item = AuxiliaryMethods::loadLine();
         setItem(item);
 
-        cout << "Enter amount of income in xxxx,xx format: ";
+        cout << "Enter amount of income in xxx.xx format: ";
         amount = AuxiliaryMethods::loadFloat();
         setAmount(amount);
 

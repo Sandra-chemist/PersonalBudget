@@ -51,11 +51,8 @@ float AuxiliaryMethods::loadFloat() {
     while (true) {
         cin.clear();
         getline(cin, amountAsString);
+        amount = stof(amountAsString);
 
-        stringstream myStream(amountAsString);
-        if (myStream >> amount) {
-            cout << "This is not the amount" << endl;
-        }
     }
     return amount;
 }
