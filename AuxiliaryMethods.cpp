@@ -45,13 +45,12 @@ string AuxiliaryMethods::removeDashFromDate(string date) {
     return stringDateWithoutDash;
 }
 float AuxiliaryMethods::loadFloat() {
-    string amountAsString = "";
     float amount;
-
-    while (true) {
-        cin.clear();
-        getline(cin, amountAsString);
-        amount = stof(amountAsString);
-    }
+    cin >> amount;
     return amount;
+}
+string AuxiliaryMethods::convertFloatToString(float number) {
+    string str1 = to_string(number);
+    std::cout << "Float to String = " << str1 << std::endl;
+
 }

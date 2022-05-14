@@ -12,11 +12,11 @@ void FileWithUsers::addUserToFile(User user) {
     xml.IntoElem();
     xml.AddElem("User");
     xml.IntoElem();
-    xml.AddElem( "UserID", user.getId() );
-    xml.AddElem( "Name", user.getName() );
-    xml.AddElem( "Surname", user.getSurname() );
-    xml.AddElem( "Login", user.getLogin() );
-    xml.AddElem( "Password", user.getPassword() );
+    xml.AddElem("UserID", user.getId());
+    xml.AddElem("Name", user.getName());
+    xml.AddElem("Surname", user.getSurname());
+    xml.AddElem("Login", user.getLogin());
+    xml.AddElem("Password", user.getPassword());
 
     xml.Save(getFileName());
 }
@@ -33,19 +33,19 @@ vector <User> FileWithUsers::loadUsersFromFile() {
         while (xml.FindElem("User") == true) {
 
             xml.IntoElem();
-            xml.FindElem( "UserID");
+            xml.FindElem("UserID");
             int id = atoi(xml.GetData().c_str());
             user.setId(id);
-            xml.FindElem( "Name");
+            xml.FindElem("Name");
             string name = xml.GetData();
             user.setName(name);
-            xml.FindElem( "Surname");
+            xml.FindElem("Surname");
             string surname = xml.GetData();
             user.setSurname(surname);
-            xml.FindElem( "Login");
+            xml.FindElem("Login");
             string login = xml.GetData();
             user.setLogin(login);
-            xml.FindElem( "Surname");
+            xml.FindElem("Surname");
             string password = xml.GetData();
             user.setPassword(password);
             users.push_back(user);
