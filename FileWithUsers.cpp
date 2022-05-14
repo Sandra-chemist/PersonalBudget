@@ -20,15 +20,13 @@ void FileWithUsers::addUserToFile(User user) {
     xml.AddElem( "Password", user.getPassword() );
 
     xml.Save(getFileName());
-
 }
 vector <User> FileWithUsers::loadUsersFromFile() {
     User user;
     vector <User> users;
 
     CMarkup xml;
-    string fileNameWithUsers = XmlFile :: getFileName();
-    bool fileExists = xml.Load(fileNameWithUsers);
+    bool fileExists = xml.Load(getFileName());
 
     if (fileExists == true) {
         xml.FindElem();
@@ -56,7 +54,6 @@ vector <User> FileWithUsers::loadUsersFromFile() {
             xml.OutOfElem();
         }
     }
-
     return users;
 }
 void FileWithUsers::saveAllUsersToFile(vector <User> &users) {
