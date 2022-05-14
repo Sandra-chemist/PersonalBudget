@@ -52,7 +52,6 @@ float AuxiliaryMethods::loadFloat() {
         cin.clear();
         getline(cin, amountAsString);
         amount = stof(amountAsString);
-
     }
     return amount;
 }

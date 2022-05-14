@@ -46,8 +46,6 @@ float Income::getAmount()
 Income Income::addIncome()
 {
         Income income;
-        string item;
-        float amount;
 
         cout << "Enter item of income: ";
         item = AuxiliaryMethods::loadLine();
