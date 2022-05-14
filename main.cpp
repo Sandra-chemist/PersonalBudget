@@ -36,10 +36,10 @@ int main() {
 
         }
         switch (choice) {
-        /*case '1':
-            personalBudget.dodajAdresata();
+        case '1':
+            personalBudget.addIncome();
             break;
-        case '2':
+        /*case '2':
             personalBudget.wyszukajAdresatowPoImieniu();
             break;
         case '3':

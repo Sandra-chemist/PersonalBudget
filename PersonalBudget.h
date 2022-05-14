@@ -7,12 +7,14 @@
 #include "UserManager.h"
 #include "AuxiliaryMethods.h"
 #include "Date.h"
+#include "Income.h"
 
 using namespace std;
 
 class PersonalBudget {
     UserManager userManager;
     Date date;
+    Income income;
 
 
 public:
@@ -29,6 +31,8 @@ public:
     char selectOptionFromUserMenu();
     void getCurrentDate();
     void writeOtherDateThanCurrent();
+
+    void addIncome();
 
 };
 #endif
