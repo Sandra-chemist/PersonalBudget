@@ -28,9 +28,9 @@ public:
     int getCurrentYear();
     int getCurrentMonth();
     int getCurrentDay();
-    int getYear();
-    int getMonth();
-    int getDay();
+    string getYear();
+    string getMonth();
+    string getDay();
 
 };
 #endif

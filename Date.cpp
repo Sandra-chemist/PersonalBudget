@@ -16,26 +16,23 @@ int Date::getCurrentDate() {
     cout << nowLocal.tm_year+1900 << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_mday << endl;
 
     getCurrentYear();
-     getCurrentMonth();
-      getCurrentDay();
+    getCurrentMonth();
+    getCurrentDay();
 
     Sleep (2000);
     return currentDate;
 }
-int Date::getCurrentYear()
-{
+int Date::getCurrentYear() {
     year = nowLocal.tm_year+1900;
     cout << year << endl;
     return year;
 }
-int Date::getCurrentMonth()
-{
+int Date::getCurrentMonth() {
     month = nowLocal.tm_mon+1;
     cout << month << endl;
     return month;
 }
-int Date::getCurrentDay()
-{
+int Date::getCurrentDay() {
     day = nowLocal.tm_mday;
     cout << day << endl;
     return day;
@@ -51,14 +48,17 @@ string Date::writeOtherDateThanCurrent() {
     otherDate = AuxiliaryMethods::loadLine();
 
     cout << otherDate << endl;
-    Sleep(3000);
-    getYear();
+    Sleep(1000);
+
+    int yearAsInt;
+    yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
     cout << endl;
-    if (getYear() >= 2000) {
-        cout << "Rok jest wiekszy niz liczba 2000" << endl;
-    } else {
-        cout << "Rok jest mniejszy niz 2000" << endl;
-    }
+       if (yearAsInt > 2000) {
+           cout << "Rok jest wiekszy niz liczba 2000" << endl;
+       } else {
+           cout << "Rok jest mniejszy niz 2000" << endl;
+       }
+
     Sleep(1000);
     getMonth();
     cout << endl;
@@ -66,7 +66,6 @@ string Date::writeOtherDateThanCurrent() {
     getDay();
     cout << endl;
     Sleep(1000);
-    // }
 
     /* string otherDateWithoutDash;
      otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
@@ -74,28 +73,28 @@ string Date::writeOtherDateThanCurrent() {
      Sleep (2000);*/
     return otherDate;
 }
-int Date::getYear() {
+string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
+    string year;
     for (int i = 0; i < lengthOfOtherDate - 6; i ++) {
-        string year;
         year = otherDate[i];
         cout << year;
     }
     return year;
 }
-int Date::getMonth() {
+string Date::getMonth() {
     int lengthOfOtherDate = otherDate.length();
+    string month;
     for (int i = 5; i < lengthOfOtherDate - 3; i ++) {
-        string month;
         month = otherDate[i];
         cout << month;
     }
     return month;
 }
-int Date::getDay() {
+string Date::getDay() {
     int lengthOfOtherDate = otherDate.length();
+    string day;
     for (int i = 8; i < lengthOfOtherDate; i ++) {
-        string day;
         day = otherDate[i];
         cout << day;
     }

@@ -22,10 +22,9 @@ Income IncomeManager::provideDataOfNewIncome() {
     item = AuxiliaryMethods::loadLine();
     income.setItem(item);
 
-   /* cout << "Enter amount of income in xxx.xx format: ";
+    cout << "Enter amount of income: ";
     amount = AuxiliaryMethods::loadFloat();
-    AuxiliaryMethods::convertFloatToString(amount);
-    income.setAmount(amount);*/
+    income.setAmount(amount);
 
     return income;
 }
