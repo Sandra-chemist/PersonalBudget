@@ -20,5 +20,40 @@ void FileWithIncomes::addIncomeToFile(Income income) {
 
     xml.Save(getFileName());
 }
+vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId)
+{
+Income income;
+    vector <Income> incomes;
 
+    CMarkup xml;
+    bool fileExists = xml.Load(getFileName());
+
+    if (fileExists == true) {
+        xml.FindElem();
+        xml.IntoElem();
+        while (xml.FindElem("Income") == true) {
+
+            xml.IntoElem();
+            xml.FindElem("IncomeId");
+            int incomeId = atoi(xml.GetData().c_str());
+            income.setIncomeId(incomeId);
+            xml.FindElem("UserId");
+            int userId = atoi(xml.GetData().c_str());
+            income.setUserId(userId);
+            xml.FindElem("Date");
+            string date = xml.GetData();
+            income.setDate(date);
+            xml.FindElem("Item");
+            string item = xml.GetData();
+            income.setItem(item);
+            xml.FindElem("Amount");
+            float amount = atoi(xml.GetData().c_str());
+            income.setAmount(amount);
+            incomes.push_back(income);
+
+            xml.OutOfElem();
+        }
+    }
+    return incomes;
+}
 
