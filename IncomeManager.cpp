@@ -15,14 +15,22 @@ Income IncomeManager::provideDataOfNewIncome() {
     string item;
     float amount;
 
+    income.setIncomeId(getNewIncomeId());
+    income.setUserId(LOGGED_IN_USER_ID);
+
     cout << "Enter item of income: ";
     item = AuxiliaryMethods::loadLine();
     income.setItem(item);
 
-   /* cout << "Enter amount of income in xxx.xx format: ";
+    cout << "Enter amount of income: ";
     amount = AuxiliaryMethods::loadFloat();
-    AuxiliaryMethods::convertFloatToString(amount);
-    income.setAmount(amount);*/
+    income.setAmount(amount);
 
     return income;
+}
+int IncomeManager::getNewIncomeId() {
+    if (incomes.empty() == true)
+        return 1;
+    else
+        return incomes.back().getIncomeId() + 1;
 }

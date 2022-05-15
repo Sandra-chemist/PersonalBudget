@@ -17,7 +17,6 @@ class PersonalBudget {
     IncomeManager *incomeManager;
     const string FILE_NAME_WITH_INCOMES;
 
-
 public:
     PersonalBudget(string fileNameWithUsers, string fileNameWithIncomes)
         : userManager(fileNameWithUsers), FILE_NAME_WITH_INCOMES(fileNameWithIncomes) {

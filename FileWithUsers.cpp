@@ -56,7 +56,6 @@ vector <User> FileWithUsers::loadUsersFromFile() {
     return users;
 }
 void FileWithUsers::saveAllUsersToFile(vector <User> &users) {
-
     CMarkup xml;
     remove("Users.xml");
 
@@ -67,7 +66,6 @@ void FileWithUsers::saveAllUsersToFile(vector <User> &users) {
             xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
             xml.AddElem("Users");
         }
-
         xml.IntoElem();
         xml.AddElem("User");
         xml.IntoElem();

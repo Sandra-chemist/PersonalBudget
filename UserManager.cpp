@@ -102,4 +102,9 @@ void UserManager::logOutUser() {
     cout << "Zostales wylogowany." << endl;
     system("pause");
 }
+int UserManager::getLoggedInUserId()
+{
+    return loggedInUserId;
+}
+
 
