@@ -76,7 +76,7 @@ string Date::writeOtherDateThanCurrent() {
 string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
     string year;
-    for (int i = 0; i < lengthOfOtherDate - 6; i ++) {
+    for (int i = 0; i < lengthOfOtherDate - 6; i++) {
         year = otherDate[i];
         cout << year;
     }
@@ -85,7 +85,7 @@ string Date::getYear() {
 string Date::getMonth() {
     int lengthOfOtherDate = otherDate.length();
     string month;
-    for (int i = 5; i < lengthOfOtherDate - 3; i ++) {
+    for (int i = 5; i < lengthOfOtherDate - 3; i++) {
         month = otherDate[i];
         cout << month;
     }
@@ -94,7 +94,7 @@ string Date::getMonth() {
 string Date::getDay() {
     int lengthOfOtherDate = otherDate.length();
     string day;
-    for (int i = 8; i < lengthOfOtherDate; i ++) {
+    for (int i = 8; i < lengthOfOtherDate; i++) {
         day = otherDate[i];
         cout << day;
     }

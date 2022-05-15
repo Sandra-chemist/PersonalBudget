@@ -22,7 +22,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
 }
 vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId)
 {
-Income income;
+    Income income;
     vector <Income> incomes;
 
     CMarkup xml;
