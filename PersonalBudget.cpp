@@ -7,13 +7,13 @@ char PersonalBudget::selectOptionFromMainMenu() {
     char choice;
 
     system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "    >>> MAIN  MENU <<<" << endl;
     cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
+    cout << "1. Registration" << endl;
+    cout << "2. Login" << endl;
+    cout << "9. Exit" << endl;
     cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
+    cout << "Your choice: ";
     choice = AuxiliaryMethods::loadChar();
 
     return choice;
@@ -31,7 +31,7 @@ char PersonalBudget::selectOptionFromUserMenu() {
     char choice;
 
     system("cls");
-    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << " >>> USER MENU <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Add income" << endl;
     cout << "2. Add expense" << endl;
@@ -42,7 +42,7 @@ char PersonalBudget::selectOptionFromUserMenu() {
     cout << "6. Change password" << endl;
     cout << "7. Log out user" << endl;
     cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
+    cout << "Your choice: ";
     choice = AuxiliaryMethods::loadChar();
 
     return choice;

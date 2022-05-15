@@ -20,8 +20,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
 
     xml.Save(getFileName());
 }
-vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId)
-{
+vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
     Income income;
     vector <Income> incomes;
 

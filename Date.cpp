@@ -53,11 +53,11 @@ string Date::writeOtherDateThanCurrent() {
     int yearAsInt;
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
     cout << endl;
-       if (yearAsInt > 2000) {
-           cout << "Rok jest wiekszy niz liczba 2000" << endl;
-       } else {
-           cout << "Rok jest mniejszy niz 2000" << endl;
-       }
+    if (yearAsInt > 2000) {
+        cout << "Rok jest wiekszy niz liczba 2000" << endl;
+    } else {
+        cout << "Rok jest mniejszy niz 2000" << endl;
+    }
 
     Sleep(1000);
     getMonth();

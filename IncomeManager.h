@@ -19,8 +19,7 @@ class IncomeManager {
     vector <Income> incomes;
 public:
     IncomeManager(string fileNameWithIncomes, int loggedInUserId)
-    : fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID(loggedInUserId)
-    {
+        : fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID(loggedInUserId) {
         incomes = fileWithIncomes.loadIncomesFromFile(LOGGED_IN_USER_ID);
     };
 
