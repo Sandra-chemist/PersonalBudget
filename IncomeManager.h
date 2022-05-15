@@ -14,11 +14,17 @@ using namespace std;
 
 class IncomeManager {
 
+    const int LOGGED_IN_USER_ID;
     FileWithIncomes fileWithIncomes;
     vector <Income> incomes;
 public:
-    IncomeManager(string fileNameWithIncomes) : fileWithIncomes(fileNameWithIncomes){}
-        Income provideDataOfNewIncome();
+    IncomeManager(string fileNameWithIncomes, int loggedInUserId)
+    : fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID(loggedInUserId)
+    {
+        incomes = fileWithIncomes.loadIncomesFromFile(LOGGED_IN_USER_ID);
+    };
+
+    Income provideDataOfNewIncome();
     void addIncome();
     int getNewIncomeId();
 };

@@ -21,7 +21,7 @@ char PersonalBudget::selectOptionFromMainMenu() {
 void PersonalBudget::loginUser() {
     userManager.loginUser();
     if (userManager.isUserLoggedIn()) {
-        incomeManager = new IncomeManager (FILE_NAME_WITH_INCOMES);
+        incomeManager = new IncomeManager (FILE_NAME_WITH_INCOMES, userManager.getLoggedInUserId());
     }
 }
 bool PersonalBudget::isUserLoggedIn() {
