@@ -15,6 +15,9 @@ Income IncomeManager::provideDataOfNewIncome() {
     string item;
     float amount;
 
+
+   // income.setIncomeId(getNewUserId());
+
     cout << "Enter item of income: ";
     item = AuxiliaryMethods::loadLine();
     income.setItem(item);
@@ -25,4 +28,10 @@ Income IncomeManager::provideDataOfNewIncome() {
     income.setAmount(amount);*/
 
     return income;
+}
+int IncomeManager::getNewIncomeId() {
+    if (incomes.empty() == true)
+        return 1;
+    else
+        return incomes.back().getIncomeId() + 1;
 }

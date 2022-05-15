@@ -20,5 +20,6 @@ public:
     IncomeManager(string fileNameWithIncomes) : fileWithIncomes(fileNameWithIncomes){}
         Income provideDataOfNewIncome();
     void addIncome();
+    int getNewIncomeId();
 };
 #endif
