@@ -95,6 +95,24 @@ string Date::getYear() {
     }
     return year;
 }
+string Date::getMonth() {
+    int lengthOfOtherDate = otherDate.length();
+    string month;
+    for (int i = 5; i < lengthOfOtherDate - 3; i++) {
+        month += otherDate[i];
+        cout << month;
+    }
+    return month;
+}
+string Date::getDay() {
+    int lengthOfOtherDate = otherDate.length();
+    string day;
+    for (int i = 8; i < lengthOfOtherDate; i++) {
+        day += otherDate[i];
+        cout << day;
+    }
+    return day;
+}
 bool Date::isDateCorrect(string date) {
     if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
         return false;

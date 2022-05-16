@@ -33,6 +33,8 @@ public:
     bool isMonthCorrect(int month);
     bool isDayCorrect(int day, int month);
     string getYear();
+    string getMonth();
+    string getDay();
 
 
 };
