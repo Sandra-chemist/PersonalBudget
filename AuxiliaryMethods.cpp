@@ -26,7 +26,7 @@ string AuxiliaryMethods::loadLine() {
     getline(cin, entry);
     return entry;
 }
-int AuxiliaryMethods::convertStringToInt (string number) {
+int AuxiliaryMethods::convertStringToInt(string number) {
     int numberInt;
     istringstream iss(number);
     iss >> numberInt;
