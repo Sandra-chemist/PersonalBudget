@@ -115,7 +115,7 @@ bool Date::isDateRight(string date) {
     } else if (isMonthCorrect(month)) {
         return true;
     } else if (day >= 1 && day <= 31) {
-        if (isDayCorrect()) {
+        if (isDayCorrect(day)) {
             return true;
         } else {
             return false;
@@ -126,6 +126,23 @@ bool Date::isDateRight(string date) {
 
     return true;
 }
+bool Date::isDateCorrect(string date)
+{
+
+}
+bool Date::isYearCorrect(int date)
+{
+
+}
+bool Date::isMonthCorrect(int month)
+{
+
+}
+bool Date::isDayCorrect(int day)
+{
+
+}
+
 
 
 

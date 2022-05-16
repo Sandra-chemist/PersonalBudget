@@ -31,6 +31,11 @@ public:
     string getYear();
     string getMonth();
     string getDay();
+    bool isDateCorrect(string date);
+    bool isYearCorrect(int date);
+    bool isMonthCorrect(int month);
+    bool isDayCorrect(int day);
+
 
 };
 #endif
