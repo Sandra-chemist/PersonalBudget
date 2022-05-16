@@ -128,7 +128,10 @@ bool Date::isDateRight(string date) {
 }
 bool Date::isDateCorrect(string date)
 {
-
+if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
+        return false;
+    else
+        return true;
 }
 bool Date::isYearCorrect(int year)
 {
