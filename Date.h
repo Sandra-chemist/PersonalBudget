@@ -13,7 +13,7 @@ using namespace std;
 class Date {
 
     time_t now;
-    struct tm nowLocal;
+    struct tm *nowLocal;
     int day;
     int month;
     int year;
@@ -24,13 +24,18 @@ public:
     int getCurrentDate();
     string writeOtherDateThanCurrent();
     string convertCurrentDateFromIntToString(int currentDate);
-    //  bool isDateCorrect(string otherDate);
+    bool isDateRight(string date);
     int getCurrentYear();
     int getCurrentMonth();
     int getCurrentDay();
+    bool isDateCorrect(string date);
+    bool isYearCorrect(int date);
+    bool isMonthCorrect(int month);
+    bool isDayCorrect(int day, int month);
     string getYear();
     string getMonth();
     string getDay();
+
 
 };
 #endif

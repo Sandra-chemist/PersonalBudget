@@ -26,7 +26,7 @@ string AuxiliaryMethods::loadLine() {
     getline(cin, entry);
     return entry;
 }
-int AuxiliaryMethods::convertStringToInt (string number) {
+int AuxiliaryMethods::convertStringToInt(string number) {
     int numberInt;
     istringstream iss(number);
     iss >> numberInt;
@@ -56,6 +56,12 @@ string AuxiliaryMethods::convertFloatToString(float number) {
     floatToStr << number;
     floatToStr >> str;
     floatToStr.clear();
-    cout << str;
     return str;
+}
+string AuxiliaryMethods::addDashToDate(string date) {
+
+    string stringDateWithDash;
+    stringDateWithDash = date.insert (4,1,'-');
+    stringDateWithDash = stringDateWithDash.insert (7,1,'-');
+    return stringDateWithDash;
 }

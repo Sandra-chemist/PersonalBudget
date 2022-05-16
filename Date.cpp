@@ -1,40 +1,34 @@
 #include "Date.h"
 
 int Date::getCurrentDate() {
-    now = time(NULL);
-    nowLocal = *localtime (&now);
-
-    year = nowLocal.tm_year+1900;
-
+    year = getCurrentYear();
     currentDate = (year * 10000);
-    month = nowLocal.tm_mon+1;
+    month = getCurrentMonth();
     currentDate += (month * 100);
-    day = nowLocal.tm_mday;
+    day = getCurrentDay();
     currentDate += day;
 
-    cout << currentDate << endl;
-    cout << nowLocal.tm_year+1900 << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_mday << endl;
-
-    getCurrentYear();
-    getCurrentMonth();
-    getCurrentDay();
-
-    Sleep (2000);
     return currentDate;
 }
 int Date::getCurrentYear() {
-    year = nowLocal.tm_year+1900;
-    cout << year << endl;
+    time(&now);
+    nowLocal = localtime(&now);
+    year = nowLocal -> tm_year+1900;
+    //  cout << year << endl;
     return year;
 }
 int Date::getCurrentMonth() {
-    month = nowLocal.tm_mon+1;
-    cout << month << endl;
+    time(&now);
+    nowLocal = localtime(&now);
+    month = nowLocal -> tm_mon+1;
+    //  cout << month << endl;
     return month;
 }
 int Date::getCurrentDay() {
-    day = nowLocal.tm_mday;
-    cout << day << endl;
+    time(&now);
+    nowLocal = localtime(&now);
+    day = nowLocal -> tm_mday;
+    //  cout << day << endl;
     return day;
 }
 string Date::convertCurrentDateFromIntToString(int currentDate) {
@@ -48,37 +42,59 @@ string Date::writeOtherDateThanCurrent() {
     otherDate = AuxiliaryMethods::loadLine();
 
     cout << otherDate << endl;
-    Sleep(1000);
+    system("pause");
 
-    int yearAsInt;
-    yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
-    cout << endl;
-    if (yearAsInt > 2000) {
-        cout << "Rok jest wiekszy niz liczba 2000" << endl;
-    } else {
-        cout << "Rok jest mniejszy niz 2000" << endl;
-    }
-
-    Sleep(1000);
-    getMonth();
-    cout << endl;
-    Sleep(1000);
-    getDay();
-    cout << endl;
-    Sleep(1000);
-
+    isDateRight(otherDate);
+    system("pause");
     /* string otherDateWithoutDash;
      otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
      cout << otherDateWithoutDash << endl;
      Sleep (2000);*/
     return otherDate;
 }
+bool Date::isDateRight(string otherDate) {
+
+    cout << "getYear(): "<< getYear() << endl;
+    int yearAsInt;
+    yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
+    cout <<  yearAsInt << endl;
+
+    cout << "getMonth(): "<< getMonth() << endl;
+    int monthAsInt;
+    monthAsInt = AuxiliaryMethods::convertStringToInt(getMonth());
+    cout <<  monthAsInt << endl;
+
+    cout << "getDay(): "<< getDay() << endl;
+    int dayAsInt;
+    dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
+    cout <<  dayAsInt << endl;
+
+    if (isYearCorrect(yearAsInt)) {
+        {
+            return true;
+            if (isMonthCorrect(monthAsInt)) {
+                {
+                    return true;
+                    if (isDayCorrect(dayAsInt, monthAsInt)) {
+                        return true;
+                        system("pause");
+                    } else {
+                        cout << "Dzien jest niepoprawny." << endl;
+                    }
+                }
+            } else {
+                cout << "Miesiac jest niepoprawny." << endl;
+            }
+        }
+    } else {
+        cout << "Rok jest niepoprawny." << endl;
+    }
+}
 string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
     string year;
     for (int i = 0; i < lengthOfOtherDate - 6; i++) {
-        year = otherDate[i];
-        cout << year;
+        year += otherDate[i];
     }
     return year;
 }
@@ -86,8 +102,7 @@ string Date::getMonth() {
     int lengthOfOtherDate = otherDate.length();
     string month;
     for (int i = 5; i < lengthOfOtherDate - 3; i++) {
-        month = otherDate[i];
-        cout << month;
+        month += otherDate[i];
     }
     return month;
 }
@@ -95,10 +110,55 @@ string Date::getDay() {
     int lengthOfOtherDate = otherDate.length();
     string day;
     for (int i = 8; i < lengthOfOtherDate; i++) {
-        day = otherDate[i];
-        cout << day;
+        day += otherDate[i];
     }
     return day;
 }
+bool Date::isDateCorrect(string date) {
+    if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
+        return false;
+    else
+        return true;
+}
+bool Date::isYearCorrect(int year) {
+    int minValue = 2000;
+    if (year <= getCurrentYear() && year >= minValue) {
+        return true;
+    } else {
+        return false;
+    }
+}
+bool Date::isMonthCorrect(int month) {
+    if (month >= 1 && month <= 12) {
+        return true;
+    } else {
+        return false;
+    }
+}
+bool Date::isDayCorrect(int day, int month) {
+
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+        if (day >= 1 && day <= 31) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (day >= 1 && day <= 30) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 2) {
+        if (day >= 1 && day <= 28) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+
+
 
 
