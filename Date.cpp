@@ -130,9 +130,13 @@ bool Date::isDateCorrect(string date)
 {
 
 }
-bool Date::isYearCorrect(int date)
+bool Date::isYearCorrect(int year)
 {
-
+  int minValue = 2000;
+  if (year < getCurrentYear() || year > minValue) {
+        return true;
+    }
+    return false;
 }
 bool Date::isMonthCorrect(int month)
 {
