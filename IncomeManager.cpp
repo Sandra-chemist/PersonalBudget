@@ -22,6 +22,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     income.setUserId(LOGGED_IN_USER_ID);
 
     cout << "Do you want to add income with current date?" << endl;
+    cout << endl;
     cout << "If yes, enter '1',if you want to choose different date - enter '2'." << endl;
     choice = AuxiliaryMethods::loadChar();
 

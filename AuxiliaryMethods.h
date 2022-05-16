@@ -18,6 +18,7 @@ public:
     static string removeDashFromDate(string date);
     static float loadFloat();
     static string convertFloatToString(float number);
+    static string addDashToDate(string date);
 
 };
 #endif
