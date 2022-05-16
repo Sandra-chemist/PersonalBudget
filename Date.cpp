@@ -1,39 +1,33 @@
 #include "Date.h"
 
 int Date::getCurrentDate() {
-    now = time(NULL);
-    nowLocal = *localtime (&now);
-
-    year = nowLocal.tm_year+1900;
-
+    year = getCurrentYear();
     currentDate = (year * 10000);
-    month = nowLocal.tm_mon+1;
+    month = getCurrentMonth();
     currentDate += (month * 100);
-    day = nowLocal.tm_mday;
+    day = getCurrentDay();
     currentDate += day;
 
-    cout << currentDate << endl;
-    cout << nowLocal.tm_year+1900 << "-" << nowLocal.tm_mon+1 << "-" << nowLocal.tm_mday << endl;
-
-    getCurrentYear();
-    getCurrentMonth();
-    getCurrentDay();
-
-    Sleep (2000);
     return currentDate;
 }
 int Date::getCurrentYear() {
-    year = nowLocal.tm_year+1900;
+    time(&now);
+    nowLocal = localtime(&now);
+    year = nowLocal -> tm_year+1900;
     cout << year << endl;
     return year;
 }
 int Date::getCurrentMonth() {
-    month = nowLocal.tm_mon+1;
+    time(&now);
+    nowLocal = localtime(&now);
+    month = nowLocal -> tm_mon+1;
     cout << month << endl;
     return month;
 }
 int Date::getCurrentDay() {
-    day = nowLocal.tm_mday;
+    time(&now);
+    nowLocal = localtime(&now);
+    day = nowLocal -> tm_mday;
     cout << day << endl;
     return day;
 }
@@ -48,7 +42,7 @@ string Date::writeOtherDateThanCurrent() {
     otherDate = AuxiliaryMethods::loadLine();
 
     cout << otherDate << endl;
-    cout << "wprowadzony rok to: " << getYear() << endl;
+//    cout << "wprowadzony rok to: " << getYear() << endl;
     system("pause");
     // int yearAsInt;
 //   yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
@@ -60,13 +54,23 @@ string Date::writeOtherDateThanCurrent() {
          cout << "Rok jest mniejszy niz 2000" << endl;
      }*/
 
-    Sleep(1000);
+   /* Sleep(1000);
     getMonth();
     cout << endl;
     Sleep(1000);
     getDay();
     cout << endl;
-    Sleep(1000);
+    Sleep(1000);*/
+
+    if (isYearCorrect(year) == true)
+    {
+        cout << "Data jest poprawnie wpisana" << endl;
+
+    }
+    else cout << "Rok jest niepoprawny" << endl;
+
+          system("pause");
+
 
     /* string otherDateWithoutDash;
      otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
@@ -74,56 +78,25 @@ string Date::writeOtherDateThanCurrent() {
      Sleep (2000);*/
     return otherDate;
 }
-string Date::getYear() {
-    int lengthOfOtherDate = otherDate.length();
-    string year;
-    for (int i = 0; i < lengthOfOtherDate - 6; i++) {
-        year = otherDate[i];
-        cout << year;
-    }
-    return year;
-}
-string Date::getMonth() {
-    int lengthOfOtherDate = otherDate.length();
-    string month;
-    for (int i = 5; i < lengthOfOtherDate - 3; i++) {
-        month = otherDate[i];
-        cout << month;
-    }
-    return month;
-}
-string Date::getDay() {
-    int lengthOfOtherDate = otherDate.length();
-    string day;
-    for (int i = 8; i < lengthOfOtherDate; i++) {
-        day = otherDate[i];
-        cout << day;
-    }
-    return day;
-}
-
 bool Date::isDateRight(string date) {
 
     int year = (date[0]-'0')*1000 + (date[1]-'0')*100 + (date[2]-'0')*10 + (date[3]-'0');
     int month = (date[5]-'0')*10 + (date[6]-'0');
     int day = (date[8]-'0')*10 + (date[9]-'0');
 
-    if (isDateCorrect(date)) {
+    if (isDateCorrect(date) == true) {
         return true;
-    } else if (isYearCorrect(year)) {
+    } else if (isYearCorrect(year) == true) {
         return true;
-    } else if (isMonthCorrect(month)) {
+    } else if (isMonthCorrect(month) == true) {
         return true;
-    } else if (day >= 1 && day <= 31) {
-        if (isDayCorrect(day)) {
-            return true;
-        } else {
-            return false;
-        }
+    } else if (isDayCorrect(day, month) == true) {
+        return true;
     } else {
         return false;
     }
-    return true;
+
+return true;
 }
 bool Date::isDateCorrect(string date) {
     if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
@@ -144,7 +117,7 @@ bool Date::isMonthCorrect(int month) {
     }
     return false;
 }
-bool Date::isDayCorrect(int day) {
+bool Date::isDayCorrect(int day, int month) {
 
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         if (day >= 1 && day <= 31) {
