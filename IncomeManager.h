@@ -7,6 +7,7 @@
 #include <sstream>
 
 #include "Income.h"
+#include "Date.h"
 #include "FileWithIncomes.h"
 #include "AuxiliaryMethods.h"
 
@@ -17,6 +18,8 @@ class IncomeManager {
     const int LOGGED_IN_USER_ID;
     FileWithIncomes fileWithIncomes;
     vector <Income> incomes;
+    Date date;
+
 public:
     IncomeManager(string fileNameWithIncomes, int loggedInUserId)
         : fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID(loggedInUserId) {

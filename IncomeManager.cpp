@@ -14,9 +14,27 @@ Income IncomeManager::provideDataOfNewIncome() {
     Income income;
     string item;
     float amount;
+    int currentDate;
+    char choice;
+    string dateAsString;
 
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
+
+    cout << "Do you want to add income with current date?" << endl;
+    cout << "If yes, enter '1',if you want to choose different date - enter '2'." << endl;
+    choice = AuxiliaryMethods::loadChar();
+
+    if (choice == '1')
+    {
+        currentDate = date.getCurrentDate();
+        dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
+        income.setDate(dateAsString);
+    }
+    else if (choice == '2')
+    {
+        cout << "Bêdzie wporwadzona inna data" << endl;
+    }
 
     cout << "Enter item of income: ";
     item = AuxiliaryMethods::loadLine();
