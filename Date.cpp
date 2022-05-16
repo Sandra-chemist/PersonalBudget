@@ -62,7 +62,15 @@ bool Date::isDateRight(string otherDate) {
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
     cout <<  dayAsInt << endl;
 
-    if (isYearCorrect(yearAsInt)) {
+
+     if (isLeapYear(yearAsInt))
+    {
+        cout << yearAsInt << " :jest rokiem przestepnym" << endl;
+    }
+    else{
+        cout << yearAsInt << " :nie jest rokiem przestepnym" << endl;
+    }
+   /* if (isYearCorrect(yearAsInt)) {
         {
             return true;
             if (isMonthCorrect(monthAsInt)) {
@@ -81,7 +89,7 @@ bool Date::isDateRight(string otherDate) {
         }
     } else {
         cout << "Rok jest niepoprawny." << endl;
-    }
+    }*/
 }
 string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
