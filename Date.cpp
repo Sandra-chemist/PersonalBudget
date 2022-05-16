@@ -14,21 +14,18 @@ int Date::getCurrentYear() {
     time(&now);
     nowLocal = localtime(&now);
     year = nowLocal -> tm_year+1900;
-    //  cout << year << endl;
     return year;
 }
 int Date::getCurrentMonth() {
     time(&now);
     nowLocal = localtime(&now);
     month = nowLocal -> tm_mon+1;
-    //  cout << month << endl;
     return month;
 }
 int Date::getCurrentDay() {
     time(&now);
     nowLocal = localtime(&now);
     day = nowLocal -> tm_mday;
-    //  cout << day << endl;
     return day;
 }
 string Date::convertCurrentDateFromIntToString(int currentDate) {
@@ -46,10 +43,6 @@ string Date::writeOtherDateThanCurrent() {
 
     isDateRight(otherDate);
     system("pause");
-    /* string otherDateWithoutDash;
-     otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
-     cout << otherDateWithoutDash << endl;
-     Sleep (2000);*/
     return otherDate;
 }
 bool Date::isDateRight(string otherDate) {
@@ -155,6 +148,13 @@ bool Date::isDayCorrect(int day, int month) {
         } else {
             return false;
         }
+    }
+}
+bool Date::isLeapYear(int year) {
+    if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+        return true;
+    } else {
+        return false;
     }
 }
 
