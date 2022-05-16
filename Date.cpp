@@ -14,21 +14,21 @@ int Date::getCurrentYear() {
     time(&now);
     nowLocal = localtime(&now);
     year = nowLocal -> tm_year+1900;
-  //  cout << year << endl;
+    //  cout << year << endl;
     return year;
 }
 int Date::getCurrentMonth() {
     time(&now);
     nowLocal = localtime(&now);
     month = nowLocal -> tm_mon+1;
-  //  cout << month << endl;
+    //  cout << month << endl;
     return month;
 }
 int Date::getCurrentDay() {
     time(&now);
     nowLocal = localtime(&now);
     day = nowLocal -> tm_mday;
-  //  cout << day << endl;
+    //  cout << day << endl;
     return day;
 }
 string Date::convertCurrentDateFromIntToString(int currentDate) {
@@ -43,6 +43,16 @@ string Date::writeOtherDateThanCurrent() {
 
     cout << otherDate << endl;
     system("pause");
+
+    isDateRight(otherDate);
+    system("pause");
+    /* string otherDateWithoutDash;
+     otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
+     cout << otherDateWithoutDash << endl;
+     Sleep (2000);*/
+    return otherDate;
+}
+bool Date::isDateRight(string otherDate) {
 
     cout << "getYear(): "<< getYear() << endl;
     int yearAsInt;
@@ -59,45 +69,27 @@ string Date::writeOtherDateThanCurrent() {
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
     cout <<  dayAsInt << endl;
 
-
-    if (isYearCorrect(yearAsInt))
-    {
-        cout << "Rok jest poprawnie wpisany" << endl;
-    }
-    else
-    {
-        cout << "Rok jest niepoprawny" << endl;
-    }
-
-          system("pause");
-
-
-    /* string otherDateWithoutDash;
-     otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
-     cout << otherDateWithoutDash << endl;
-     Sleep (2000);*/
-    return otherDate;
-}
-/*bool Date::isDateRight(string otherDate) {
-
-    int year = (otherDate[0]-'0')*1000 + (otherDate[1]-'0')*100 + (otherDate[2]-'0')*10 + (otherDate[3]-'0');
-    int month = (otherDate[5]-'0')*10 + (otherDate[6]-'0');
-    int day = (otherDate[8]-'0')*10 + (otherDate[9]-'0');
-
-    if (isDateCorrect(otherDate) == true) {
-        return true;
-    } else if (isYearCorrect(year) == true) {
-        return true;
-    } else if (isMonthCorrect(month) == true) {
-        return true;
-    } else if (isDayCorrect(day, month) == true) {
-        return true;
+    if (isYearCorrect(yearAsInt)) {
+        {
+            return true;
+            if (isMonthCorrect(monthAsInt)) {
+                {
+                    return true;
+                    if (isDayCorrect(dayAsInt, monthAsInt)) {
+                        return true;
+                        system("pause");
+                    } else {
+                        cout << "Dzien jest niepoprawny." << endl;
+                    }
+                }
+            } else {
+                cout << "Miesiac jest niepoprawny." << endl;
+            }
+        }
     } else {
-        return false;
+        cout << "Rok jest niepoprawny." << endl;
     }
-
-return true;
-}*/
+}
 string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
     string year;
@@ -130,7 +122,7 @@ bool Date::isDateCorrect(string date) {
 }
 bool Date::isYearCorrect(int year) {
     int minValue = 2000;
-    if (year <= getCurrentYear() && year > minValue) {
+    if (year <= getCurrentYear() && year >= minValue) {
         return true;
     } else {
         return false;
@@ -139,10 +131,8 @@ bool Date::isYearCorrect(int year) {
 bool Date::isMonthCorrect(int month) {
     if (month >= 1 && month <= 12) {
         return true;
-    }
-    else
-    {
-          return false;
+    } else {
+        return false;
     }
 }
 bool Date::isDayCorrect(int day, int month) {
