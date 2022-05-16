@@ -50,15 +50,15 @@ string Date::writeOtherDateThanCurrent() {
     cout << otherDate << endl;
     cout << "wprowadzony rok to: " << getYear() << endl;
     system("pause");
-   // int yearAsInt;
- //   yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
+    // int yearAsInt;
+//   yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
 
-   /* cout << endl;
-    if (getYear() > 2000) {
-        cout << "Rok jest wiekszy niz liczba 2000" << endl;
-    } else {
-        cout << "Rok jest mniejszy niz 2000" << endl;
-    }*/
+    /* cout << endl;
+     if (getYear() > 2000) {
+         cout << "Rok jest wiekszy niz liczba 2000" << endl;
+     } else {
+         cout << "Rok jest mniejszy niz 2000" << endl;
+     }*/
 
     Sleep(1000);
     getMonth();
@@ -123,35 +123,50 @@ bool Date::isDateRight(string date) {
     } else {
         return false;
     }
-
     return true;
 }
-bool Date::isDateCorrect(string date)
-{
-if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
+bool Date::isDateCorrect(string date) {
+    if ((!date.size() == 10) || (!date[0] == 2) || (date[4] != '-') || (date[7] != '-'))
         return false;
     else
         return true;
 }
-bool Date::isYearCorrect(int year)
-{
-  int minValue = 2000;
-  if (year < getCurrentYear() && year > minValue) {
+bool Date::isYearCorrect(int year) {
+    int minValue = 2000;
+    if (year < getCurrentYear() && year > minValue) {
         return true;
     }
     return false;
 }
-bool Date::isMonthCorrect(int month)
-{
-   if (month >= 1 && month <= 12) {
+bool Date::isMonthCorrect(int month) {
+    if (month >= 1 && month <= 12) {
         return true;
     }
     return false;
 }
-bool Date::isDayCorrect(int day)
-{
+bool Date::isDayCorrect(int day) {
 
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+        if (day >= 1 && day <= 31) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (day >= 1 && day <= 30) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 2) {
+        if (day >= 1 && day <= 28) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
 
 
 
