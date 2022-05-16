@@ -49,6 +49,17 @@ string Date::writeOtherDateThanCurrent() {
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
     cout <<  yearAsInt << endl;
 
+    cout << "getMonth(): "<< getMonth() << endl;
+    int monthAsInt;
+    monthAsInt = AuxiliaryMethods::convertStringToInt(getMonth());
+    cout <<  monthAsInt << endl;
+
+    cout << "getDay(): "<< getDay() << endl;
+    int dayAsInt;
+    dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
+    cout <<  dayAsInt << endl;
+
+
     if (isYearCorrect(yearAsInt))
     {
         cout << "Rok jest poprawnie wpisany" << endl;
@@ -100,7 +111,6 @@ string Date::getMonth() {
     string month;
     for (int i = 5; i < lengthOfOtherDate - 3; i++) {
         month += otherDate[i];
-        cout << month;
     }
     return month;
 }
@@ -109,7 +119,6 @@ string Date::getDay() {
     string day;
     for (int i = 8; i < lengthOfOtherDate; i++) {
         day += otherDate[i];
-        cout << day;
     }
     return day;
 }
