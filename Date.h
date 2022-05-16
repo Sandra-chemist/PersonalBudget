@@ -31,10 +31,11 @@ public:
     bool isDateCorrect(string date);
     bool isYearCorrect(int date);
     bool isMonthCorrect(int month);
-    bool isDayCorrect(int day, int month);
+    bool isDayCorrect(int day, int month, int year);
     string getYear();
     string getMonth();
     string getDay();
+    bool isLeapYear(int year);
 
 
 };

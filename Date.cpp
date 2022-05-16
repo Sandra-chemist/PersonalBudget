@@ -14,21 +14,18 @@ int Date::getCurrentYear() {
     time(&now);
     nowLocal = localtime(&now);
     year = nowLocal -> tm_year+1900;
-    //  cout << year << endl;
     return year;
 }
 int Date::getCurrentMonth() {
     time(&now);
     nowLocal = localtime(&now);
     month = nowLocal -> tm_mon+1;
-    //  cout << month << endl;
     return month;
 }
 int Date::getCurrentDay() {
     time(&now);
     nowLocal = localtime(&now);
     day = nowLocal -> tm_mday;
-    //  cout << day << endl;
     return day;
 }
 string Date::convertCurrentDateFromIntToString(int currentDate) {
@@ -46,10 +43,6 @@ string Date::writeOtherDateThanCurrent() {
 
     isDateRight(otherDate);
     system("pause");
-    /* string otherDateWithoutDash;
-     otherDateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
-     cout << otherDateWithoutDash << endl;
-     Sleep (2000);*/
     return otherDate;
 }
 bool Date::isDateRight(string otherDate) {
@@ -69,13 +62,14 @@ bool Date::isDateRight(string otherDate) {
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
     cout <<  dayAsInt << endl;
 
+
     if (isYearCorrect(yearAsInt)) {
         {
             return true;
             if (isMonthCorrect(monthAsInt)) {
                 {
                     return true;
-                    if (isDayCorrect(dayAsInt, monthAsInt)) {
+                    if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
                         return true;
                         system("pause");
                     } else {
@@ -135,7 +129,7 @@ bool Date::isMonthCorrect(int month) {
         return false;
     }
 }
-bool Date::isDayCorrect(int day, int month) {
+bool Date::isDayCorrect(int day, int month, int year) {
 
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         if (day >= 1 && day <= 31) {
@@ -149,12 +143,18 @@ bool Date::isDayCorrect(int day, int month) {
         } else {
             return false;
         }
-    } else if (month == 2) {
-        if (day >= 1 && day <= 28) {
+    } else if (month == 2)
+        if (day >= 1 && day <= 29) {
             return true;
         } else {
             return false;
         }
+}
+bool Date::isLeapYear(int year) {
+    if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+        return true;
+    } else {
+        return false;
     }
 }
 
