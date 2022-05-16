@@ -16,7 +16,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     float amount;
     int currentDate;
     char choice;
-    string dateAsString, dateAsStringWithDash;
+    string dateAsString, dateAsStringWithDash, otherDate;
 
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
@@ -25,6 +25,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     cout << endl;
     cout << "If yes, enter '1',if you want to choose different date - enter '2'." << endl;
     choice = AuxiliaryMethods::loadChar();
+    cout << endl;
 
     if (choice == '1')
     {
@@ -35,7 +36,8 @@ Income IncomeManager::provideDataOfNewIncome() {
     }
     else if (choice == '2')
     {
-        cout << "Bêdzie wporwadzona inna data" << endl;
+        otherDate = date.writeOtherDateThanCurrent();
+        income.setDate(otherDate);
     }
 
     cout << "Enter item of income: ";
