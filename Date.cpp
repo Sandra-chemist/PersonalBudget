@@ -48,16 +48,17 @@ string Date::writeOtherDateThanCurrent() {
     otherDate = AuxiliaryMethods::loadLine();
 
     cout << otherDate << endl;
-    Sleep(1000);
+    cout << "wprowadzony rok to: " << getYear() << endl;
+    system("pause");
+   // int yearAsInt;
+ //   yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
 
-    int yearAsInt;
-    yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
-    cout << endl;
-    if (yearAsInt > 2000) {
+   /* cout << endl;
+    if (getYear() > 2000) {
         cout << "Rok jest wiekszy niz liczba 2000" << endl;
     } else {
         cout << "Rok jest mniejszy niz 2000" << endl;
-    }
+    }*/
 
     Sleep(1000);
     getMonth();
@@ -100,5 +101,31 @@ string Date::getDay() {
     }
     return day;
 }
+
+bool Date::isDateRight(string date) {
+
+    int year = (date[0]-'0')*1000 + (date[1]-'0')*100 + (date[2]-'0')*10 + (date[3]-'0');
+    int month = (date[5]-'0')*10 + (date[6]-'0');
+    int day = (date[8]-'0')*10 + (date[9]-'0');
+
+    if (isDateCorrect(date)) {
+        return true;
+    } else if (isYearCorrect(year)) {
+        return true;
+    } else if (isMonthCorrect(month)) {
+        return true;
+    } else if (day >= 1 && day <= 31) {
+        if (isDayCorrect()) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+
+    return true;
+}
+
 
 

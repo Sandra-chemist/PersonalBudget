@@ -2,7 +2,6 @@
 #include "Markup.h"
 
 void FileWithIncomes::addIncomeToFile(Income income) {
-    string amount = AuxiliaryMethods::convertFloatToString(income.getAmount());
     CMarkup xml;
     bool fileExists = xml.Load(getFileName());
     if (!fileExists) {
@@ -17,7 +16,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.AddElem("UserId", income.getUserId());
     xml.AddElem("Date", income.getDate());
     xml.AddElem("Item", income.getItem());
-    xml.AddElem("Amount", amount);
+    xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(income.getAmount()));
 
     xml.Save(getFileName());
 }
