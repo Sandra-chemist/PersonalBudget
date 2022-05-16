@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Incomes>
+<Income>
+<IncomeId>1</IncomeId>
+<UserId>1</UserId>
+<Date>2016-22-09</Date>
+<Item>sfgg</Item>
+<Amount>24.34</Amount>
+</Income>
+<Income>
+<IncomeId>2</IncomeId>
+<UserId>1</UserId>
+<Date>2016-03-22</Date>
+<Item/>
+<Amount>0</Amount>
+</Income>
+<Income>
+<IncomeId>3</IncomeId>
+<UserId>1</UserId>
+<Date>2016-02-22</Date>
+<Item>dfg</Item>
+<Amount>23.2</Amount>
+</Income>
+</Incomes>

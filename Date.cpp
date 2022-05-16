@@ -63,20 +63,13 @@ bool Date::isDateRight(string otherDate) {
     cout <<  dayAsInt << endl;
 
 
-     if (isLeapYear(yearAsInt))
-    {
-        cout << yearAsInt << " :jest rokiem przestepnym" << endl;
-    }
-    else{
-        cout << yearAsInt << " :nie jest rokiem przestepnym" << endl;
-    }
-   /* if (isYearCorrect(yearAsInt)) {
+    if (isYearCorrect(yearAsInt)) {
         {
             return true;
             if (isMonthCorrect(monthAsInt)) {
                 {
                     return true;
-                    if (isDayCorrect(dayAsInt, monthAsInt)) {
+                    if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
                         return true;
                         system("pause");
                     } else {
@@ -89,7 +82,7 @@ bool Date::isDateRight(string otherDate) {
         }
     } else {
         cout << "Rok jest niepoprawny." << endl;
-    }*/
+    }
 }
 string Date::getYear() {
     int lengthOfOtherDate = otherDate.length();
@@ -136,7 +129,7 @@ bool Date::isMonthCorrect(int month) {
         return false;
     }
 }
-bool Date::isDayCorrect(int day, int month) {
+bool Date::isDayCorrect(int day, int month, int year) {
 
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         if (day >= 1 && day <= 31) {
@@ -150,13 +143,12 @@ bool Date::isDayCorrect(int day, int month) {
         } else {
             return false;
         }
-    } else if (month == 2) {
-        if (day >= 1 && day <= 28) {
+    } else if (month == 2)
+        if (day >= 1 && day <= 29) {
             return true;
         } else {
             return false;
         }
-    }
 }
 bool Date::isLeapYear(int year) {
     if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
