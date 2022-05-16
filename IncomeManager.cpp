@@ -16,7 +16,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     float amount;
     int currentDate;
     char choice;
-    string dateAsString;
+    string dateAsString, dateAsStringWithDash;
 
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
@@ -30,7 +30,8 @@ Income IncomeManager::provideDataOfNewIncome() {
     {
         currentDate = date.getCurrentDate();
         dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
-        income.setDate(dateAsString);
+        dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+        income.setDate(dateAsStringWithDash);
     }
     else if (choice == '2')
     {
