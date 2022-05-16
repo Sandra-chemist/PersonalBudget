@@ -50,7 +50,12 @@ float AuxiliaryMethods::loadFloat() {
     return amount;
 }
 string AuxiliaryMethods::convertFloatToString(float number) {
-    string str1 = to_string(number);
-    std::cout << "Float to String = " << str1 << std::endl;
+    stringstream floatToStr;
+    string str;
 
+    floatToStr << number;
+    floatToStr >> str;
+    floatToStr.clear();
+    cout << str;
+    return str;
 }

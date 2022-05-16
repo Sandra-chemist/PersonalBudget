@@ -11,7 +11,7 @@ void UserManager::registerUser() {
 User UserManager::getNewUserData() {
     User user;
 
-    user.setId(getNewUserId());
+    user.setUserId(getNewUserId());
     string name, surname;
     cout << "Podaj imie: ";
     cin>> name;
@@ -37,7 +37,7 @@ int UserManager::getNewUserId() {
     if (users.empty() == true)
         return 1;
     else
-        return users.back().getId() + 1;
+        return users.back().getUserId() + 1;
 }
 bool UserManager::loginExists(string login) {
     for (int i = 0; i < users.size(); i++) {
@@ -62,7 +62,7 @@ void UserManager::loginUser() {
                 password = AuxiliaryMethods::loadLine();
 
                 if (itr -> getPassword() == password) {
-                    loggedInUserId = itr -> getId();
+                    loggedInUserId = itr -> getUserId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     return;
@@ -89,7 +89,7 @@ void UserManager::changePasswordLoggedInUser() {
     newPassword = AuxiliaryMethods::loadLine();
 
     for (int i = 0; i < users.size(); i++) {
-        if (users[i].getId() == loggedInUserId) {
+        if (users[i].getUserId() == loggedInUserId) {
             users[i].setPassword(newPassword);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
