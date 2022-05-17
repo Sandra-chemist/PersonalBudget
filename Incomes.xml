@@ -21,4 +21,25 @@
 <Item>dfg</Item>
 <Amount>23.2</Amount>
 </Income>
+<Income>
+<IncomeId>4</IncomeId>
+<UserId>1</UserId>
+<Date>2022-03-22</Date>
+<Item>sddf</Item>
+<Amount>234.45</Amount>
+</Income>
+<Income>
+<IncomeId>5</IncomeId>
+<UserId>1</UserId>
+<Date>2022-02-22</Date>
+<Item>sdfg</Item>
+<Amount>0</Amount>
+</Income>
+<Income>
+<IncomeId>6</IncomeId>
+<UserId>1</UserId>
+<Date>2022-04-22</Date>
+<Item>zwrot z podatku</Item>
+<Amount>243.45</Amount>
+</Income>
 </Incomes>
