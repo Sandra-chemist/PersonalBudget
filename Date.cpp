@@ -64,22 +64,18 @@ bool Date::isDateRight(string otherDate) {
 
 
     if (isYearCorrect(yearAsInt)) {
-        {
-            return true;
-            if (isMonthCorrect(monthAsInt)) {
-                {
-                    return true;
-                    if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
-                        return true;
-                        system("pause");
-                    } else {
-                        cout << "Dzien jest niepoprawny." << endl;
-                    }
-                }
+        cout << "Rok jest poprawny." << endl;
+        if (isMonthCorrect(monthAsInt)) {
+            cout << "Miesiac jest poprawny." << endl;
+            if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
+                cout << "Dzien jest poprawny." << endl;
             } else {
-                cout << "Miesiac jest niepoprawny." << endl;
+                cout << "Dzien jest niepoprawny." << endl;
             }
+        } else {
+            cout << "Miesiac jest niepoprawny." << endl;
         }
+
     } else {
         cout << "Rok jest niepoprawny." << endl;
     }
@@ -131,7 +127,15 @@ bool Date::isMonthCorrect(int month) {
 }
 bool Date::isDayCorrect(int day, int month, int year) {
 
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+    if (month == 2) {
+        if ((isLeapYear(year) == true) && (day == 29)) {
+            return true;
+        } else if (day >= 1 && day <= 28) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         if (day >= 1 && day <= 31) {
             return true;
         } else {
@@ -143,12 +147,7 @@ bool Date::isDayCorrect(int day, int month, int year) {
         } else {
             return false;
         }
-    } else if (month == 2)
-        if (day >= 1 && day <= 29) {
-            return true;
-        } else {
-            return false;
-        }
+    }
 }
 bool Date::isLeapYear(int year) {
     if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
