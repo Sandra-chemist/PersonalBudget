@@ -37,6 +37,5 @@ public:
     string getDay();
     bool isLeapYear(int year);
 
-
 };
 #endif

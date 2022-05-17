@@ -38,50 +38,46 @@ string Date::writeOtherDateThanCurrent() {
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
 
-    cout << otherDate << endl;
-    system("pause");
-
-    isDateRight(otherDate);
-    system("pause");
+  //  cout << otherDate << endl;
+  //  isDateRight(otherDate);
     return otherDate;
 }
 bool Date::isDateRight(string otherDate) {
 
-    cout << "getYear(): "<< getYear() << endl;
+  //  writeOtherDateThanCurrent();
+  //  cout << "getYear(): "<< getYear() << endl;
     int yearAsInt;
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
-    cout <<  yearAsInt << endl;
+  //  cout <<  yearAsInt << endl;
 
-    cout << "getMonth(): "<< getMonth() << endl;
+   // cout << "getMonth(): "<< getMonth() << endl;
     int monthAsInt;
     monthAsInt = AuxiliaryMethods::convertStringToInt(getMonth());
-    cout <<  monthAsInt << endl;
+   // cout <<  monthAsInt << endl;
 
-    cout << "getDay(): "<< getDay() << endl;
+    // cout << "getDay(): "<< getDay() << endl;
     int dayAsInt;
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
-    cout <<  dayAsInt << endl;
+   // cout <<  dayAsInt << endl;
 
 
     if (isYearCorrect(yearAsInt)) {
-        {
-            return true;
-            if (isMonthCorrect(monthAsInt)) {
-                {
-                    return true;
-                    if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
-                        return true;
-                        system("pause");
-                    } else {
-                        cout << "Dzien jest niepoprawny." << endl;
-                    }
-                }
+      //  cout << "Rok jest poprawny." << endl;
+        if (isMonthCorrect(monthAsInt)) {
+        //    cout << "Miesiac jest poprawny." << endl;
+            if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
+          //      cout << "Dzien jest poprawny." << endl;
+                return true;
             } else {
-                cout << "Miesiac jest niepoprawny." << endl;
+            //    cout << "Dzien jest niepoprawny." << endl;
+                return false;
             }
+        } else {
+          //  cout << "Miesiac jest niepoprawny." << endl;
         }
+
     } else {
-        cout << "Rok jest niepoprawny." << endl;
+       // cout << "Rok jest niepoprawny." << endl;
     }
 }
 string Date::getYear() {
@@ -131,7 +127,15 @@ bool Date::isMonthCorrect(int month) {
 }
 bool Date::isDayCorrect(int day, int month, int year) {
 
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+    if (month == 2) {
+        if ((isLeapYear(year) == true) && (day == 29)) {
+            return true;
+        } else if (day >= 1 && day <= 28) {
+            return true;
+        } else {
+            return false;
+        }
+    } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         if (day >= 1 && day <= 31) {
             return true;
         } else {
@@ -143,12 +147,7 @@ bool Date::isDayCorrect(int day, int month, int year) {
         } else {
             return false;
         }
-    } else if (month == 2)
-        if (day >= 1 && day <= 29) {
-            return true;
-        } else {
-            return false;
-        }
+    }
 }
 bool Date::isLeapYear(int year) {
     if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {

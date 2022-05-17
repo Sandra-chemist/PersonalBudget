@@ -21,25 +21,23 @@ Income IncomeManager::provideDataOfNewIncome() {
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
 
-    cout << "Do you want to add income with current date?" << endl;
-    cout << endl;
+    cout << "Do you want to add income with current date?" << endl << endl;
     cout << "If yes, enter '1',if you want to choose different date - enter '2'." << endl;
     choice = AuxiliaryMethods::loadChar();
-    cout << endl;
 
-    if (choice == '1')
-    {
+    system("cls");
+    cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
+    if (choice == '1') {
         currentDate = date.getCurrentDate();
         dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
         dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
         income.setDate(dateAsStringWithDash);
-    }
-    else if (choice == '2')
-    {
-        otherDate = date.writeOtherDateThanCurrent();
+    } else if (choice == '2') {
+        do {
+            otherDate = date.writeOtherDateThanCurrent();
+        } while (date.isDateRight(otherDate) == false);
         income.setDate(otherDate);
     }
-
     cout << "Enter item of income: ";
     item = AuxiliaryMethods::loadLine();
     income.setItem(item);
@@ -47,7 +45,6 @@ Income IncomeManager::provideDataOfNewIncome() {
     cout << "Enter amount of income: ";
     amount = AuxiliaryMethods::loadFloat();
     income.setAmount(amount);
-
     return income;
 }
 int IncomeManager::getNewIncomeId() {
