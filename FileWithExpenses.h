@@ -22,5 +22,6 @@ public:
 
     void addExpenseToFile(Expense expense);
     vector <Expense> loadExpensesFromFile(int loggedInUserId);
+    void displayExpense(Expense expense);
 };
 #endif
