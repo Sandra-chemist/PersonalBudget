@@ -53,3 +53,6 @@ int IncomeManager::getNewIncomeId() {
     else
         return incomes.back().getIncomeId() + 1;
 }
+void IncomeManshowAlIncomes() {
+
+}

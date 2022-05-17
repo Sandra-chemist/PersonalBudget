@@ -53,3 +53,4 @@ int ExpenseManager::getNewExpenseId() {
     else
         return expenses.back().getExpenseId() + 1;
 }
+
