@@ -21,12 +21,12 @@ Income IncomeManager::provideDataOfNewIncome() {
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
 
-    cout << "Do you want to add income with current date?" << endl;
-    cout << endl;
+    cout << "Do you want to add income with current date?" << endl << endl;
     cout << "If yes, enter '1',if you want to choose different date - enter '2'." << endl;
     choice = AuxiliaryMethods::loadChar();
-    cout << endl;
 
+    system("cls");
+    cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
     if (choice == '1') {
         currentDate = date.getCurrentDate();
         dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
