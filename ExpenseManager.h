@@ -20,9 +20,10 @@ class ExpenseManager {
     vector <Expense> expenses;
     Date date;
 
-    public:
+public:
+    void addExpense();
     Expense provideDataOfNewExpense();
-      int getNewExpenseId();
+    int getNewExpenseId();
 
 };
 #endif

@@ -1,5 +1,16 @@
 #include "ExpenseManager.h"
 
+
+void ExpenseManager::addExpense() {
+    Expense expense;
+    system("cls");
+    cout << " >>> ADDING NEW EXPENSE <<<" << endl << endl;
+    expense = provideDataOfNewExpense();
+    expenses.push_back(expense);
+
+    fileWithExpenses.addExpenseToFile(expense);
+    cout << "New expense has been added" << endl;
+}
 Expense ExpenseManager::provideDataOfNewExpense() {
     Expense expense;
     string item;
