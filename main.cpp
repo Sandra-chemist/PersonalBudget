@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     char choice;
-    PersonalBudget personalBudget("Users.xml", "Incomes.xml");
+    PersonalBudget personalBudget("Users.xml", "Incomes.xml", "Expenses.xml");
 
     while (true) {
         if (!personalBudget.isUserLoggedIn()) {
@@ -31,25 +31,25 @@ int main() {
             if (personalBudget.isUserLoggedIn())
 
                 // personalBudget.getCurrentDate();
-               //  personalBudget.writeOtherDateThanCurrent();
+                //  personalBudget.writeOtherDateThanCurrent();
                 choice = personalBudget.selectOptionFromUserMenu();
         }
         switch (choice) {
         case '1':
             personalBudget.addIncome();
             break;
-        /*case '2':
-            personalBudget.wyszukajAdresatowPoImieniu();
+        case '2':
+           // personalBudget.addExpense();
             break;
-        case '3':
-            personalBudget.wyszukajAdresatowPoNazwisku();
-            break;
-        case '4':
-            personalBudget.wyswietlWszystkichAdresatow();
-            break;
-        case '5':
-           personalBudget.usunAdresata();
-            break;*/
+        /* case '3':
+             personalBudget.wyszukajAdresatowPoNazwisku();
+             break;
+         case '4':
+             personalBudget.wyswietlWszystkichAdresatow();
+             break;
+         case '5':
+            personalBudget.usunAdresata();
+             break;*/
         case '6':
             personalBudget.changePasswordLoggedInUser();
             break;

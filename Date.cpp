@@ -38,46 +38,46 @@ string Date::writeOtherDateThanCurrent() {
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
 
-  //  cout << otherDate << endl;
-  //  isDateRight(otherDate);
+    //  cout << otherDate << endl;
+    //  isDateRight(otherDate);
     return otherDate;
 }
 bool Date::isDateRight(string otherDate) {
 
-  //  writeOtherDateThanCurrent();
-  //  cout << "getYear(): "<< getYear() << endl;
+    //  writeOtherDateThanCurrent();
+    //  cout << "getYear(): "<< getYear() << endl;
     int yearAsInt;
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
-  //  cout <<  yearAsInt << endl;
+    //  cout <<  yearAsInt << endl;
 
-   // cout << "getMonth(): "<< getMonth() << endl;
+    // cout << "getMonth(): "<< getMonth() << endl;
     int monthAsInt;
     monthAsInt = AuxiliaryMethods::convertStringToInt(getMonth());
-   // cout <<  monthAsInt << endl;
+    // cout <<  monthAsInt << endl;
 
     // cout << "getDay(): "<< getDay() << endl;
     int dayAsInt;
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
-   // cout <<  dayAsInt << endl;
+    // cout <<  dayAsInt << endl;
 
 
     if (isYearCorrect(yearAsInt)) {
-      //  cout << "Rok jest poprawny." << endl;
+        //  cout << "Rok jest poprawny." << endl;
         if (isMonthCorrect(monthAsInt)) {
-        //    cout << "Miesiac jest poprawny." << endl;
+            //    cout << "Miesiac jest poprawny." << endl;
             if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
-          //      cout << "Dzien jest poprawny." << endl;
+                //      cout << "Dzien jest poprawny." << endl;
                 return true;
             } else {
-            //    cout << "Dzien jest niepoprawny." << endl;
+                //    cout << "Dzien jest niepoprawny." << endl;
                 return false;
             }
         } else {
-          //  cout << "Miesiac jest niepoprawny." << endl;
+            //  cout << "Miesiac jest niepoprawny." << endl;
         }
 
     } else {
-       // cout << "Rok jest niepoprawny." << endl;
+        // cout << "Rok jest niepoprawny." << endl;
     }
 }
 string Date::getYear() {
