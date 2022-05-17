@@ -22,7 +22,7 @@ void PersonalBudget::loginUser() {
     userManager.loginUser();
     if (userManager.isUserLoggedIn()) {
         incomeManager = new IncomeManager (FILE_NAME_WITH_INCOMES, userManager.getLoggedInUserId());
-         expenseManager = new ExpenseManager (FILE_NAME_WITH_EXPENSES, userManager.getLoggedInUserId());
+        expenseManager = new ExpenseManager (FILE_NAME_WITH_EXPENSES, userManager.getLoggedInUserId());
     }
 }
 bool PersonalBudget::isUserLoggedIn() {

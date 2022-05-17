@@ -31,7 +31,7 @@ int main() {
             if (personalBudget.isUserLoggedIn())
 
                 // personalBudget.getCurrentDate();
-               //  personalBudget.writeOtherDateThanCurrent();
+                //  personalBudget.writeOtherDateThanCurrent();
                 choice = personalBudget.selectOptionFromUserMenu();
         }
         switch (choice) {
@@ -39,17 +39,17 @@ int main() {
             personalBudget.addIncome();
             break;
         case '2':
-            personalBudget.addExpense();
+           // personalBudget.addExpense();
             break;
-       /* case '3':
-            personalBudget.wyszukajAdresatowPoNazwisku();
-            break;
-        case '4':
-            personalBudget.wyswietlWszystkichAdresatow();
-            break;
-        case '5':
-           personalBudget.usunAdresata();
-            break;*/
+        /* case '3':
+             personalBudget.wyszukajAdresatowPoNazwisku();
+             break;
+         case '4':
+             personalBudget.wyswietlWszystkichAdresatow();
+             break;
+         case '5':
+            personalBudget.usunAdresata();
+             break;*/
         case '6':
             personalBudget.changePasswordLoggedInUser();
             break;
