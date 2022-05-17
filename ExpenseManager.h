@@ -22,6 +22,7 @@ class ExpenseManager {
 
     public:
     Expense provideDataOfNewExpense();
+      int getNewExpenseId();
 
 };
 #endif

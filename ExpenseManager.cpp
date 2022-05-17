@@ -37,3 +37,9 @@ Expense ExpenseManager::provideDataOfNewExpense() {
     expense.setAmount(amount);
     return expense;
 }
+int ExpenseManager::getNewExpenseId() {
+    if (expenses.empty() == true)
+        return 1;
+    else
+        return expenses.back().getExpenseId() + 1;
+}
