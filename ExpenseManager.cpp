@@ -1,6 +1,5 @@
 #include "ExpenseManager.h"
 
-
 void ExpenseManager::addExpense() {
     Expense expense;
     system("cls");

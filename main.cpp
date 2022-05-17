@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     char choice;
-    PersonalBudget personalBudget("Users.xml", "Incomes.xml");
+    PersonalBudget personalBudget("Users.xml", "Incomes.xml", "Expenses.xml");
 
     while (true) {
         if (!personalBudget.isUserLoggedIn()) {
