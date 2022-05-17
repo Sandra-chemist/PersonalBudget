@@ -36,6 +36,7 @@ public:
     void writeOtherDateThanCurrent();
 
     void addIncome();
+    void addExpense();
 
 };
 #endif

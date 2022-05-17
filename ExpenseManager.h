@@ -21,6 +21,10 @@ class ExpenseManager {
     Date date;
 
 public:
+    ExpenseManager(string fileNameWithExpenses, int loggedInUserId)
+        : fileWithExpenses(fileNameWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
+        expenses = fileWithExpenses.loadExpensesFromFile(LOGGED_IN_USER_ID);
+    };
     void addExpense();
     Expense provideDataOfNewExpense();
     int getNewExpenseId();
