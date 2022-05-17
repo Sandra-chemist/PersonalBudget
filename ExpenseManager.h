@@ -15,6 +15,13 @@ using namespace std;
 
 class ExpenseManager {
 
+    const int LOGGED_IN_USER_ID;
+    FileWithExpenses fileWithExpenses;
+    vector <Expense> expenses;
+    Date date;
+
+    public:
+    Expense provideDataOfNewExpense();
 
 };
 #endif
