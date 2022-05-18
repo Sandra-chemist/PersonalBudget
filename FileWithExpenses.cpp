@@ -14,7 +14,9 @@ void FileWithExpenses::addExpenseToFile(Expense expense) {
     xml.IntoElem();
     xml.AddElem("ExpenseId", expense.getExpenseId());
     xml.AddElem("UserId", expense.getUserId());
-    xml.AddElem("Date", expense.getDate());
+    string dateAsString = AuxiliaryMethods::convertIntToString(expense.getDate());
+    string dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+    xml.AddElem("Date", dateAsStringWithDash);
     xml.AddElem("Item", expense.getItem());
     xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(expense.getAmount()));
 

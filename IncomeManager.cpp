@@ -16,7 +16,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     float amount;
     int currentDate;
     char choice;
-    string otherDate;
+    int otherDate;
 
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
@@ -34,8 +34,8 @@ Income IncomeManager::provideDataOfNewIncome() {
         do {
             otherDate = date.writeOtherDateThanCurrent();
         } while (date.isDateRight(otherDate) == false);
-        int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
-        income.setDate(otherDateAsInt);
+      //  int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
+        income.setDate(otherDate);
     }
     cout << "Enter item of income: ";
     item = AuxiliaryMethods::loadLine();

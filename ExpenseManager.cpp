@@ -16,7 +16,7 @@ Expense ExpenseManager::provideDataOfNewExpense() {
     float amount;
     int currentDate;
     char choice;
-    string otherDate;
+    int otherDate;
 
     expense.setExpenseId(getNewExpenseId());
     expense.setUserId(LOGGED_IN_USER_ID);
@@ -34,8 +34,8 @@ Expense ExpenseManager::provideDataOfNewExpense() {
         do {
             otherDate = date.writeOtherDateThanCurrent();
         } while (date.isDateRight(otherDate) == false);
-        int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
-        expense.setDate(otherDateAsInt);
+        //int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
+        expense.setDate(otherDate);
     }
     cout << "Enter item of expense: ";
     item = AuxiliaryMethods::loadLine();

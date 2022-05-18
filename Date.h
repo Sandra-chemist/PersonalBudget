@@ -23,9 +23,9 @@ class Date {
 
 public:
     int getCurrentDate();
-    string writeOtherDateThanCurrent();
+    int writeOtherDateThanCurrent();
     string convertCurrentDateFromIntToString(int currentDate);
-    bool isDateRight(string date);
+    bool isDateRight(int date);
     int getCurrentYear();
     int getCurrentMonth();
     int getCurrentDay();
