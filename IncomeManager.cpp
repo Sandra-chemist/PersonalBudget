@@ -67,6 +67,7 @@ void IncomeManager::showAllIncomesForCurrentMonth() {
 
           if (currentDate >= minDate && currentDate <= maxDate) {
                 fileWithIncomes.displayIncome(itr);
+                countTotalIncome(itr);
            }
         }
         system("pause");
@@ -75,6 +76,6 @@ void IncomeManager::showAllIncomesForCurrentMonth() {
 void IncomeManager::countTotalIncome(vector <Income>::iterator itr)
 {
     totalIncome += itr -> getAmount();
-    cout << totalIncome << endl;
+   cout << "TotalIncome: " << totalIncome << endl;
 }
 
