@@ -53,25 +53,20 @@ int IncomeManager::getNewIncomeId() {
     else
         return incomes.back().getIncomeId() + 1;
 }
-void IncomeManager::showAllIncomesForCurrentMonth()
-{
-    int minDate = (date.getCurrentDate()/100)*100 + 1;
+void IncomeManager::showAllIncomesForCurrentMonth() {
+    Income income;
+  /*  int minDate = (date.getCurrentDate()/100)*100 + 1;
     cout << "MinDate: " << minDate << endl;
     int maxDate = (date.getCurrentDate()/100 + 1) * 100;
     cout << "MaxDate: " << maxDate << endl;
-    system ("pause");
+    system ("pause");*/
 
     system("cls");
-    if (!incomes.empty())
-    {
+    if (!incomes.empty()) {
         cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
-
-             for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++)
-        {
-          /*  if (itr -> date.getCurrentDate())
-            {
-             fileWithIncomes.displayIncome()
-            }
-*/        }
+        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
+            fileWithIncomes.displayIncome(itr);
+        }
+        system("pause");
     }
 }
