@@ -28,4 +28,24 @@
 <Item>za burgery</Item>
 <Amount>321.1</Amount>
 </Income>
+<Income>
+<IncomeId>5</IncomeId>
+<UserId>1</UserId>
+<Item>20220518</Item>
+<Amount>5432.98</Amount>
+</Income>
+<Income>
+<IncomeId>6</IncomeId>
+<UserId>1</UserId>
+<Date>20220518</Date>
+<Item>za dodatkowe korepetycje</Item>
+<Amount>34.21</Amount>
+</Income>
+<Income>
+<IncomeId>7</IncomeId>
+<UserId>1</UserId>
+<Date>2022-05-18</Date>
+<Item>cos tam cos tam</Item>
+<Amount>43.21</Amount>
+</Income>
 </Incomes>

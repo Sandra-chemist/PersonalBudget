@@ -14,7 +14,9 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.IntoElem();
     xml.AddElem("IncomeId", income.getIncomeId());
     xml.AddElem("UserId", income.getUserId());
-    xml.AddElem("Date", income.getDate());
+    string dateAsString = AuxiliaryMethods::convertIntToString(income.getDate());
+    string dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+    xml.AddElem("Date", dateAsStringWithDash);
     xml.AddElem("Item", income.getItem());
     xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(income.getAmount()));
 

@@ -10,20 +10,20 @@ class Expense {
 
     int expenseId;
     int userId;
-    string date;
+    int date;
     string item;
     float amount;
 
 public:
     void setExpenseId(int newExpenseId);
     void setUserId(int newUserId);
-    void setDate(string newDate);
+    void setDate(int newDate);
     void setItem(string newItem);
     void setAmount(float newAmount);
 
     int getExpenseId();
     int getUserId();
-    string getDate();
+    int getDate();
     string getItem();
     float getAmount();
 

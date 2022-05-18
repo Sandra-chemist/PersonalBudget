@@ -40,7 +40,7 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
             int userId = atoi(xml.GetData().c_str());
             expense.setUserId(userId);
             xml.FindElem("Date");
-            string date = xml.GetData();
+            int date = atoi(xml.GetData().c_str());
             expense.setDate(date);
             xml.FindElem("Item");
             string item = xml.GetData();
