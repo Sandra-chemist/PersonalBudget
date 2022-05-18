@@ -29,6 +29,6 @@ public:
     Income provideDataOfNewIncome();
     void addIncome();
     int getNewIncomeId();
-    void showAllIncomes();
+    void showAllIncomesForCurrentMonth();
 };
 #endif

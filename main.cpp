@@ -32,7 +32,9 @@ int main() {
 
                 // personalBudget.getCurrentDate();
                 //  personalBudget.writeOtherDateThanCurrent();
+                 personalBudget.showAllIncomesForCurrentMonth();
                 choice = personalBudget.selectOptionFromUserMenu();
+
         }
         switch (choice) {
         case '1':
