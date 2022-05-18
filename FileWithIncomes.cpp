@@ -40,7 +40,7 @@ vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
             int userId = atoi(xml.GetData().c_str());
             income.setUserId(userId);
             xml.FindElem("Date");
-            string date = xml.GetData();
+            int date = atoi(xml.GetData().c_str());
             income.setDate(date);
             xml.FindElem("Item");
             string item = xml.GetData();

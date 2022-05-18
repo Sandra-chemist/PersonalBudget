@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Incomes>
+<Income>
+<IncomeId>1</IncomeId>
+<UserId>1</UserId>
+<Date>2022-05-18</Date>
+<Item>zwrot za paliwo</Item>
+<Amount>34.21</Amount>
+</Income>
+<Income>
+<IncomeId>2</IncomeId>
+<UserId>1</UserId>
+<Date>2022-05-18</Date>
+<Item>xcosd</Item>
+<Amount>54.21</Amount>
+</Income>
+<Income>
+<IncomeId>3</IncomeId>
+<UserId>1</UserId>
+<Date>2021-02-22</Date>
+<Item>fghjkl</Item>
+<Amount>43.12</Amount>
+</Income>
+<Income>
+<IncomeId>4</IncomeId>
+<UserId>1</UserId>
+<Date>20220518</Date>
+<Item>za burgery</Item>
+<Amount>321.1</Amount>
+</Income>
+</Incomes>

@@ -3,14 +3,15 @@
 
 #include <iostream>
 #include "AuxiliaryMethods.h"
+#include "Date.h"
 
 using namespace std;
 
-class Income {
+class Income{
 
     int incomeId;
     int userId;
-    string date;
+    int date;
     string item;
     float amount;
 
@@ -18,14 +19,14 @@ class Income {
 public:
     void setIncomeId(int newIncomeId);
     void setUserId(int newUserId);
-    void setDate(string newDate);
+    void setDate(int newDate);
     void setItem(string newItem);
     void setAmount(float newAmount);
 
 
     int getIncomeId();
     int getUserId();
-    string getDate();
+    int getDate();
     string getItem();
     float getAmount();
 
