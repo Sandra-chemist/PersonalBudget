@@ -72,3 +72,9 @@ void IncomeManager::showAllIncomesForCurrentMonth() {
         system("pause");
     }
 }
+void IncomeManager::countTotalIncome(vector <Income>::iterator itr)
+{
+    totalIncome += itr -> getAmount();
+    cout << totalIncome << endl;
+}
+

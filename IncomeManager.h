@@ -19,6 +19,7 @@ class IncomeManager {
     FileWithIncomes fileWithIncomes;
     vector <Income> incomes;
     Date date;
+    float totalIncome;
 
 public:
     IncomeManager(string fileNameWithIncomes, int loggedInUserId)
@@ -30,5 +31,7 @@ public:
     void addIncome();
     int getNewIncomeId();
     void showAllIncomesForCurrentMonth();
+    void countTotalIncome(vector <Income>::iterator itr);
+
 };
 #endif
