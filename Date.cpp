@@ -39,8 +39,6 @@ int Date::writeOtherDateThanCurrent() {
     otherDate = AuxiliaryMethods::loadLine();
     string dateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
     int dateAsInt = AuxiliaryMethods::convertStringToInt(dateWithoutDash);
-    //  cout << otherDate << endl;
-    //  isDateRight(otherDate);
     return dateAsInt;
 }
 bool Date::isDateRight(int dateAsInt) {

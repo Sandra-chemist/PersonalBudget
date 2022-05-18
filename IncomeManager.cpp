@@ -34,7 +34,6 @@ Income IncomeManager::provideDataOfNewIncome() {
         do {
             otherDate = date.writeOtherDateThanCurrent();
         } while (date.isDateRight(otherDate) == false);
-      //  int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
         income.setDate(otherDate);
     }
     cout << "Enter item of income: ";

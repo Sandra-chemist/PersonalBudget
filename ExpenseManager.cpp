@@ -34,7 +34,6 @@ Expense ExpenseManager::provideDataOfNewExpense() {
         do {
             otherDate = date.writeOtherDateThanCurrent();
         } while (date.isDateRight(otherDate) == false);
-        //int otherDateAsInt = AuxiliaryMethods::convertStringToInt(otherDate);
         expense.setDate(otherDate);
     }
     cout << "Enter item of expense: ";
