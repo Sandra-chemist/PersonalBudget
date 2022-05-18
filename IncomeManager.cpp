@@ -16,7 +16,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     float amount;
     int currentDate;
     char choice;
-    string dateAsString, dateAsStringWithDash, otherDate;
+    int otherDate;
 
     income.setIncomeId(getNewIncomeId());
     income.setUserId(LOGGED_IN_USER_ID);
@@ -29,9 +29,7 @@ Income IncomeManager::provideDataOfNewIncome() {
     cout << " >>> ADDING NEW INCOME <<<" << endl << endl;
     if (choice == '1') {
         currentDate = date.getCurrentDate();
-        dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
-        dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
-        income.setDate(dateAsStringWithDash);
+        income.setDate(currentDate);
     } else if (choice == '2') {
         do {
             otherDate = date.writeOtherDateThanCurrent();
@@ -53,6 +51,31 @@ int IncomeManager::getNewIncomeId() {
     else
         return incomes.back().getIncomeId() + 1;
 }
-void IncomeManshowAlIncomes() {
+void IncomeManager::showAllIncomesForCurrentMonth() {
+    Income income;
+    int minDate = (date.getCurrentDate()/100)*100 + 1;
+    cout << "MinDate: " << minDate << endl;
+    int maxDate = (date.getCurrentDate()/100 + 1) * 100;
+    cout << "MaxDate: " << maxDate << endl;
+    system ("pause");
 
+    system("cls");
+    if (!incomes.empty()) {
+        cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
+        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
+             int currentDate = itr -> getDate();
+
+          if (currentDate >= minDate && currentDate <= maxDate) {
+                fileWithIncomes.displayIncome(itr);
+                countTotalIncome(itr);
+           }
+        }
+        system("pause");
+    }
 }
+void IncomeManager::countTotalIncome(vector <Income>::iterator itr)
+{
+    totalIncome += itr -> getAmount();
+   cout << "TotalIncome: " << totalIncome << endl;
+}
+

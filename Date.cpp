@@ -33,16 +33,15 @@ string Date::convertCurrentDateFromIntToString(int currentDate) {
     dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
     return dateAsString;
 }
-string Date::writeOtherDateThanCurrent() {
+int Date::writeOtherDateThanCurrent() {
 
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
-
-    //  cout << otherDate << endl;
-    //  isDateRight(otherDate);
-    return otherDate;
+    string dateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
+    int dateAsInt = AuxiliaryMethods::convertStringToInt(dateWithoutDash);
+    return dateAsInt;
 }
-bool Date::isDateRight(string otherDate) {
+bool Date::isDateRight(int dateAsInt) {
 
     //  writeOtherDateThanCurrent();
     //  cout << "getYear(): "<< getYear() << endl;

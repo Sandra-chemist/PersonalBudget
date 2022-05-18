@@ -22,7 +22,7 @@ public:
 
     void addIncomeToFile(Income income);
     vector <Income> loadIncomesFromFile(int loggedInUserId);
-    void displayIncome(Income income);
+    void displayIncome(vector <Income>::iterator itr);
 
 };
 #endif

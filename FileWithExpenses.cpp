@@ -14,7 +14,9 @@ void FileWithExpenses::addExpenseToFile(Expense expense) {
     xml.IntoElem();
     xml.AddElem("ExpenseId", expense.getExpenseId());
     xml.AddElem("UserId", expense.getUserId());
-    xml.AddElem("Date", expense.getDate());
+    string dateAsString = AuxiliaryMethods::convertIntToString(expense.getDate());
+    string dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+    xml.AddElem("Date", dateAsStringWithDash);
     xml.AddElem("Item", expense.getItem());
     xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(expense.getAmount()));
 
@@ -40,7 +42,7 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
             int userId = atoi(xml.GetData().c_str());
             expense.setUserId(userId);
             xml.FindElem("Date");
-            string date = xml.GetData();
+            int date = atoi(xml.GetData().c_str());
             expense.setDate(date);
             xml.FindElem("Item");
             string item = xml.GetData();
@@ -55,11 +57,12 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
     }
     return expenses;
 }
-void FileWithExpenses::displayExpense(Expense expense) {
-    cout << "ExpenseId:          " << expense.getExpenseId() << endl;
-    cout << "UserId:             " << expense.getUserId() << endl;
-    cout << "Date:               " << expense.getDate() << endl;
-    cout << "Item:               " << expense.getItem() << endl;
-    cout << "Amount:             " << expense.getAmount() << endl;
+void FileWithExpenses::displayExpense(vector <Expense>::iterator itr) {
+    cout << "ExpenseId:           " << itr -> getExpenseId() << endl;
+    cout << "UserId:             " << itr -> getUserId() << endl;
+    cout << "Date:               " << itr -> getDate() << endl;
+    cout << "Item:               " << itr -> getItem() << endl;
+    cout << "Amount:             " << itr -> getAmount() << endl;
     cout << endl;
 }
+
