@@ -68,5 +68,10 @@ void PersonalBudget::displayBalanceForCurrentMonth() {
         financeManager -> displayBalanceForCurrentMonth();
     }
 }
+void PersonalBudget::displayBalanceForPreviousMonth() {
+    if (userManager.isUserLoggedIn()) {
+        financeManager -> displayBalanceForPreviousMonth();
+    }
+}
 
 

@@ -38,7 +38,8 @@ public:
 
     void addIncome();
     void addExpense();
-   void displayBalanceForCurrentMonth();
+    void displayBalanceForCurrentMonth();
+    void displayBalanceForPreviousMonth();
 
 };
 #endif

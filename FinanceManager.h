@@ -46,5 +46,10 @@ public:
     void sortIncomes();
     void sortExpenses();
 
+    void showAllIncomesForPreviousMonth();
+    void showAllExpensesForPreviousMonth();
+    void displayBalanceForPreviousMonth();
+
+
 };
 #endif

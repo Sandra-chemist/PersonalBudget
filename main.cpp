@@ -41,10 +41,10 @@ int main() {
         case '3':
             personalBudget.displayBalanceForCurrentMonth();
             break;
-        /*  case '4':
-              personalBudget.displayBalanceForPreviousMonth();
+            case '4':
+            personalBudget.displayBalanceForPreviousMonth();
               break;
-          case '5':
+        /*  case '5':
              personalBudget.displayBalanceForSelectedMonth()
               break;*/
         case '6':
