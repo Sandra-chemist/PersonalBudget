@@ -218,5 +218,54 @@ void FinanceManager::displayBalanceForPreviousMonth() {
     cout << "Month Balance: " << totalIncome - totalExpense << endl;
     system("pause");
 }
+void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
+    Income income;
+    Expense expense;
+    int minDate;
+    int maxDate;
+
+    cout << "Enter the date from you want to see Incomes in format YYYYMMDD (without dash): " << endl;
+    cin >> minDate;
+
+    cout << "Enter the date by which you want to see Incomes in format YYYYMMDD (without dash): "<< endl;
+    cin >> maxDate;
+    system("pause");
+
+    system("cls");
+    if (!incomes.empty()) {
+        cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
+        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
+            int date = itr -> getDate();
+            if (date >= minDate && date <= maxDate) {
+                fileWithIncomes.displayIncome(*itr);
+                sortIncomes();
+                countTotalIncome(itr);
+            }
+        }
+        system("pause");
+         system("cls");
+    if (!expenses.empty()) {
+        cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
+        for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
+            int date = itr -> getDate();
+            if (date >= minDate && date <= maxDate) {
+                fileWithExpenses.displayExpense(*itr);
+                sortExpenses();
+                countTotalExpense(itr);
+            }
+        }
+        system("pause");
+    }
+    }
+}
+void FinanceManager::displayBalanceForSelectedMonth() {
+    showAllIncomesAndExpensesForSelectedMonth();
+    cout << endl;
+    cout << "Total income: " << totalIncome << endl;
+    cout << "Total expense: " << totalExpense << endl;
+    cout << "Month Balance: " << totalIncome - totalExpense << endl;
+    system("pause");
+
+}
 
 

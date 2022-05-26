@@ -50,6 +50,8 @@ public:
     void showAllExpensesForPreviousMonth();
     void displayBalanceForPreviousMonth();
 
+    void showAllIncomesAndExpensesForSelectedMonth();
+    void displayBalanceForSelectedMonth();
 
 };
 #endif

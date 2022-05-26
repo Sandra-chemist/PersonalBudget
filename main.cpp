@@ -44,9 +44,9 @@ int main() {
             case '4':
             personalBudget.displayBalanceForPreviousMonth();
               break;
-        /*  case '5':
-             personalBudget.displayBalanceForSelectedMonth()
-              break;*/
+            case '5':
+             personalBudget.displayBalanceForSelectedMonth();
+              break;
         case '6':
             personalBudget.changePasswordLoggedInUser();
             break;
