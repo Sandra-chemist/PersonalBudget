@@ -57,7 +57,6 @@ void FinanceManager::showAllIncomesForCurrentMonth() {
   //  cout << "MinDate: " << minDate << endl;
     int maxDate = (date.getCurrentDate()/100 + 1) * 100;
   //  cout << "MaxDate: " << maxDate << endl;
-    system ("pause");
 
     system("cls");
     if (!incomes.empty()) {
@@ -67,7 +66,7 @@ void FinanceManager::showAllIncomesForCurrentMonth() {
 
           if (currentDate >= minDate && currentDate <= maxDate) {
                 fileWithIncomes.displayIncome(*itr);
-               // countTotalIncome(itr);
+                countTotalIncome(itr);
            }
         }
         system("pause");
@@ -76,7 +75,6 @@ void FinanceManager::showAllIncomesForCurrentMonth() {
 void FinanceManager::countTotalIncome(vector <Income>::iterator itr)
 {
     totalIncome += itr -> getAmount();
-   cout << "TotalIncome: " << totalIncome << endl;
 }
 void FinanceManager::addExpense() {
     Expense expense;
@@ -135,7 +133,6 @@ void FinanceManager::showAllExpensesForCurrentMonth() {
    // cout << "MinDate: " << minDate << endl;
     int maxDate = (date.getCurrentDate()/100 + 1) * 100;
    // cout << "MaxDate: " << maxDate << endl;
-    system ("pause");
 
     system("cls");
     if (!expenses.empty()) {
@@ -145,7 +142,7 @@ void FinanceManager::showAllExpensesForCurrentMonth() {
 
           if (currentDate >= minDate && currentDate <= maxDate) {
                 fileWithExpenses.displayExpense(*itr);
-              //  countTotalExpense(itr);
+                countTotalExpense(itr);
            }
         }
         system("pause");
@@ -154,9 +151,13 @@ void FinanceManager::showAllExpensesForCurrentMonth() {
 void FinanceManager::countTotalExpense(vector <Expense>::iterator itr)
 {
     totalExpense += itr -> getAmount();
-   cout << "TotalIncome: " << totalExpense << endl;
 }
-void FinanceManager::displayBalanceForCurrentMonth(){
-   showAllIncomesForCurrentMonth();
-   showAllExpensesForCurrentMonth();
+void FinanceManager::displayBalanceForCurrentMonth() {
+    showAllIncomesForCurrentMonth();
+    showAllExpensesForCurrentMonth();
+    cout << endl;
+    cout << "Total income: " << totalIncome << endl;
+    cout << "Total expense: " << totalExpense << endl;
+    cout << "Month Balance: " << totalIncome - totalExpense << endl;
+    system("pause");
 }

@@ -65,7 +65,7 @@ void PersonalBudget::addExpense() {
 }
 void PersonalBudget::displayBalanceForCurrentMonth() {
     if (userManager.isUserLoggedIn()) {
-        financeManager -> showAllIncomesForCurrentMonth();
+        financeManager -> displayBalanceForCurrentMonth();
     }
 }
 
