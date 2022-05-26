@@ -7,7 +7,6 @@
 #include <sstream>
 
 
-//#include "IncomeManager.h"
 #include "ExpenseManager.h"
 #include "FileWithIncomes.h"
 #include "FileWithExpenses.h"
@@ -16,24 +15,20 @@ using namespace std;
 
 class FinanceManager {
     const int LOGGED_IN_USER_ID;
-  //  IncomeManager incomeManager;
-  //  ExpenseManager expenseManager;
     FileWithIncomes fileWithIncomes;
-     FileWithExpenses fileWithExpenses;
-   Date date;
+    FileWithExpenses fileWithExpenses;
+    Date date;
     float totalIncome;
-        float totalExpense;
+    float totalExpense;
     vector <Income> incomes;
-   vector <Expense> expenses;
+    vector <Expense> expenses;
 
 public:
-    FinanceManager(int loggedInUserId, string fileNameWithIncomes, string fileNameWithExpenses)
-        : LOGGED_IN_USER_ID(loggedInUserId), fileWithIncomes(fileNameWithIncomes), fileWithExpenses(fileNameWithExpenses) {
+    FinanceManager(string fileNameWithIncomes, string fileNameWithExpenses, int loggedInUserId)
+        : fileWithIncomes(fileNameWithIncomes), fileWithExpenses(fileNameWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
         incomes = fileWithIncomes.loadIncomesFromFile(LOGGED_IN_USER_ID);
         expenses = fileWithExpenses.loadExpensesFromFile(LOGGED_IN_USER_ID);
     };
-
-    void displayBalanceForCurrentMonth();
 
     Income provideDataOfNewIncome();
     void addIncome();
@@ -46,6 +41,8 @@ public:
     int getNewExpenseId();
     void showAllExpensesForCurrentMonth();
     void countTotalExpense(vector <Expense>::iterator itr);
+
+    void displayBalanceForCurrentMonth();
 
 };
 #endif
