@@ -75,4 +75,9 @@ void PersonalBudget::showAllIncomesForCurrentMonth() {
         incomeManager -> showAllIncomesForCurrentMonth();
     }
 }
+void PersonalBudget::showAllExpensesForCurrentMonth() {
+    if (userManager.isUserLoggedIn()) {
+        expenseManager -> showAllExpensesForCurrentMonth();
+    }
+}
 

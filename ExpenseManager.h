@@ -19,6 +19,7 @@ class ExpenseManager {
     FileWithExpenses fileWithExpenses;
     vector <Expense> expenses;
     Date date;
+    float totalExpense;
 
 public:
     ExpenseManager(string fileNameWithExpenses, int loggedInUserId)
@@ -28,6 +29,9 @@ public:
     void addExpense();
     Expense provideDataOfNewExpense();
     int getNewExpenseId();
+    void showAllExpensesForCurrentMonth();
+    void countTotalExpense(vector <Expense>::iterator itr);
+
 
 };
 #endif

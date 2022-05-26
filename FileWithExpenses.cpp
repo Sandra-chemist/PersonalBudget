@@ -58,7 +58,7 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
     return expenses;
 }
 void FileWithExpenses::displayExpense(vector <Expense>::iterator itr) {
-    cout << "ExpenseId:           " << itr -> getExpenseId() << endl;
+    cout << "ExpenseId:          " << itr -> getExpenseId() << endl;
     cout << "UserId:             " << itr -> getUserId() << endl;
     cout << "Date:               " << itr -> getDate() << endl;
     cout << "Item:               " << itr -> getItem() << endl;

@@ -41,7 +41,7 @@ int main() {
             personalBudget.addIncome();
             break;
         case '2':
-         // personalBudget.addExpense();
+          personalBudget.addExpense();
             break;
         /* case '3':
              personalBudget.wyszukajAdresatowPoNazwisku();

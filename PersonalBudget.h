@@ -38,6 +38,7 @@ public:
     void addIncome();
     void addExpense();
     void showAllIncomesForCurrentMonth();
+    void showAllExpensesForCurrentMonth();
 
 };
 #endif

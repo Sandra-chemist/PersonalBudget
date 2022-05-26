@@ -51,4 +51,32 @@ int ExpenseManager::getNewExpenseId() {
     else
         return expenses.back().getExpenseId() + 1;
 }
+void ExpenseManager::showAllExpensesForCurrentMonth() {
+    Expense expense;
+    int minDate = (date.getCurrentDate()/100)*100 + 1;
+    cout << "MinDate: " << minDate << endl;
+    int maxDate = (date.getCurrentDate()/100 + 1) * 100;
+    cout << "MaxDate: " << maxDate << endl;
+    system ("pause");
+
+    system("cls");
+    if (!expenses.empty()) {
+        cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
+        for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
+             int currentDate = itr -> getDate();
+
+          if (currentDate >= minDate && currentDate <= maxDate) {
+                fileWithExpenses.displayExpense(itr);
+                countTotalExpense(itr);
+           }
+        }
+        system("pause");
+    }
+}
+void ExpenseManager::countTotalExpense(vector <Expense>::iterator itr)
+{
+    totalExpense += itr -> getAmount();
+   cout << "TotalIncome: " << totalExpense << endl;
+}
+
 
