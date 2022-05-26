@@ -43,6 +43,8 @@ public:
     void countTotalExpense(vector <Expense>::iterator itr);
 
     void displayBalanceForCurrentMonth();
+    void sortIncomes();
+    void sortExpenses();
 
 };
 #endif

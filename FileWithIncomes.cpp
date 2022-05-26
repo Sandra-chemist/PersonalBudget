@@ -67,3 +67,4 @@ void FileWithIncomes::displayIncome(Income income) {
     cout << endl;
 }
 
+
