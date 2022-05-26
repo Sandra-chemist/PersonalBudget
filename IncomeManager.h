@@ -1,4 +1,4 @@
-#ifndef INCOMEMANAGER_H
+/*#ifndef INCOMEMANAGER_H
 #define INCOMEMANAGER_H
 
 #include <iostream>
@@ -35,3 +35,4 @@ public:
 
 };
 #endif
+*/

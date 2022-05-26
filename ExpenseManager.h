@@ -1,4 +1,4 @@
-#ifndef EXPENSEMANAGER_H
+/*#ifndef EXPENSEMANAGER_H
 #define EXPENSEMANAGER_H
 
 #include <iostream>
@@ -35,3 +35,4 @@ public:
 
 };
 #endif
+*/

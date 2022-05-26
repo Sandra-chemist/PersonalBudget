@@ -43,40 +43,26 @@ int Date::writeOtherDateThanCurrent() {
 }
 bool Date::isDateRight(int dateAsInt) {
 
-    //  writeOtherDateThanCurrent();
-    //  cout << "getYear(): "<< getYear() << endl;
     int yearAsInt;
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
-    //  cout <<  yearAsInt << endl;
 
-    // cout << "getMonth(): "<< getMonth() << endl;
     int monthAsInt;
     monthAsInt = AuxiliaryMethods::convertStringToInt(getMonth());
-    // cout <<  monthAsInt << endl;
 
-    // cout << "getDay(): "<< getDay() << endl;
     int dayAsInt;
     dayAsInt = AuxiliaryMethods::convertStringToInt(getDay());
-    // cout <<  dayAsInt << endl;
-
 
     if (isYearCorrect(yearAsInt)) {
-        //  cout << "Rok jest poprawny." << endl;
         if (isMonthCorrect(monthAsInt)) {
-            //    cout << "Miesiac jest poprawny." << endl;
             if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
-                //      cout << "Dzien jest poprawny." << endl;
                 return true;
             } else {
-                //    cout << "Dzien jest niepoprawny." << endl;
                 return false;
             }
         } else {
-            //  cout << "Miesiac jest niepoprawny." << endl;
         }
 
     } else {
-        // cout << "Rok jest niepoprawny." << endl;
     }
 }
 string Date::getYear() {

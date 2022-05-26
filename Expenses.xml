@@ -4,28 +4,14 @@
 <ExpenseId>1</ExpenseId>
 <UserId>1</UserId>
 <Date>2022-05-26</Date>
-<Item>za paliwo</Item>
-<Amount>54.2</Amount>
+<Item>dfg</Item>
+<Amount>23</Amount>
 </Expense>
 <Expense>
 <ExpenseId>2</ExpenseId>
 <UserId>1</UserId>
-<Date>2022-05-26</Date>
-<Item>zakupy</Item>
-<Amount>90</Amount>
-</Expense>
-<Expense>
-<ExpenseId>3</ExpenseId>
-<UserId>1</UserId>
-<Date>2022-05-26</Date>
-<Item>za cos</Item>
-<Amount>345.2</Amount>
-</Expense>
-<Expense>
-<ExpenseId>4</ExpenseId>
-<UserId>1</UserId>
-<Date>2022-05-26</Date>
-<Item>dfgfhgh</Item>
-<Amount>54.2</Amount>
+<Date>2018-02-12</Date>
+<Item>wdfghn</Item>
+<Amount>34</Amount>
 </Expense>
 </Expenses>

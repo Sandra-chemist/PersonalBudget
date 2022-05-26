@@ -19,6 +19,7 @@ public:
     static float loadFloat();
     static string convertFloatToString(float number);
     static string addDashToDate(string date);
+    float static convertStringToFloat(string amount);
 
 };
 #endif

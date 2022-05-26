@@ -21,8 +21,7 @@ char PersonalBudget::selectOptionFromMainMenu() {
 void PersonalBudget::loginUser() {
     userManager.loginUser();
     if (userManager.isUserLoggedIn()) {
-        incomeManager = new IncomeManager (FILE_NAME_WITH_INCOMES, userManager.getLoggedInUserId());
-        expenseManager = new ExpenseManager (FILE_NAME_WITH_EXPENSES, userManager.getLoggedInUserId());
+        financeManager = new FinanceManager(FILE_NAME_WITH_INCOMES, FILE_NAME_WITH_EXPENSES, userManager.getLoggedInUserId());
     }
 }
 bool PersonalBudget::isUserLoggedIn() {
@@ -54,30 +53,30 @@ void PersonalBudget::changePasswordLoggedInUser() {
 void PersonalBudget::logOutUser() {
     userManager.logOutUser();
 }
-void PersonalBudget::getCurrentDate() {
-    date.getCurrentDate();
-}
-void PersonalBudget::writeOtherDateThanCurrent() {
-    date.writeOtherDateThanCurrent();
-}
 void PersonalBudget::addIncome() {
     if (userManager.isUserLoggedIn()) {
-        incomeManager -> addIncome();
+        financeManager -> addIncome();
     }
 }
 void PersonalBudget::addExpense() {
     if (userManager.isUserLoggedIn()) {
-        expenseManager -> addExpense();
+        financeManager -> addExpense();
     }
 }
-void PersonalBudget::showAllIncomesForCurrentMonth() {
+void PersonalBudget::displayBalanceForCurrentMonth() {
     if (userManager.isUserLoggedIn()) {
-        incomeManager -> showAllIncomesForCurrentMonth();
+        financeManager -> displayBalanceForCurrentMonth();
     }
 }
-void PersonalBudget::showAllExpensesForCurrentMonth() {
+void PersonalBudget::displayBalanceForPreviousMonth() {
     if (userManager.isUserLoggedIn()) {
-        expenseManager -> showAllExpensesForCurrentMonth();
+        financeManager -> displayBalanceForPreviousMonth();
     }
 }
+void PersonalBudget::displayBalanceForSelectedMonth() {
+    if (userManager.isUserLoggedIn()) {
+        financeManager -> displayBalanceForSelectedMonth();
+    }
+}
+
 

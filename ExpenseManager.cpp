@@ -1,4 +1,4 @@
-#include "ExpenseManager.h"
+/*#include "ExpenseManager.h"
 
 void ExpenseManager::addExpense() {
     Expense expense;
@@ -79,4 +79,4 @@ void ExpenseManager::countTotalExpense(vector <Expense>::iterator itr)
    cout << "TotalIncome: " << totalExpense << endl;
 }
 
-
+*/
