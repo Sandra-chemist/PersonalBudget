@@ -22,6 +22,6 @@ public:
 
     void addExpenseToFile(Expense expense);
     vector <Expense> loadExpensesFromFile(int loggedInUserId);
-    void displayExpense(vector <Expense>::iterator itr);
+    void displayExpense(Expense expense);
 };
 #endif

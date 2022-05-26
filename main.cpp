@@ -36,17 +36,17 @@ int main() {
             personalBudget.addIncome();
             break;
         case '2':
-         //   personalBudget.addExpense();
+            //   personalBudget.addExpense();
             break;
-         case '3':
-             personalBudget.displayBalanceForCurrentMonth();
-             break;
-       /*  case '4':
-             personalBudget.displayBalanceForPreviousMonth();
-             break;
-         case '5':
-            personalBudget.displayBalanceForSelectedMonth()
-             break;*/
+        case '3':
+            personalBudget.displayBalanceForCurrentMonth();
+            break;
+        /*  case '4':
+              personalBudget.displayBalanceForPreviousMonth();
+              break;
+          case '5':
+             personalBudget.displayBalanceForSelectedMonth()
+              break;*/
         case '6':
             personalBudget.changePasswordLoggedInUser();
             break;

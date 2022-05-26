@@ -58,6 +58,11 @@ string AuxiliaryMethods::convertFloatToString(float number) {
     floatToStr.clear();
     return str;
 }
+float AuxiliaryMethods::convertStringToFloat(string str) {
+
+    float num_float = stof(str);
+    return num_float;
+}
 string AuxiliaryMethods::addDashToDate(string date) {
 
     string stringDateWithDash;

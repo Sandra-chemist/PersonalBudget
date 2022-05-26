@@ -66,7 +66,7 @@ void FinanceManager::showAllIncomesForCurrentMonth() {
              int currentDate = itr -> getDate();
 
           if (currentDate >= minDate && currentDate <= maxDate) {
-                fileWithIncomes.displayIncome(itr);
+                fileWithIncomes.displayIncome(*itr);
                // countTotalIncome(itr);
            }
         }
@@ -144,7 +144,7 @@ void FinanceManager::showAllExpensesForCurrentMonth() {
              int currentDate = itr -> getDate();
 
           if (currentDate >= minDate && currentDate <= maxDate) {
-                fileWithExpenses.displayExpense(itr);
+                fileWithExpenses.displayExpense(*itr);
               //  countTotalExpense(itr);
            }
         }
