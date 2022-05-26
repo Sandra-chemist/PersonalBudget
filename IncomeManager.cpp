@@ -54,9 +54,9 @@ int IncomeManager::getNewIncomeId() {
 void IncomeManager::showAllIncomesForCurrentMonth() {
     Income income;
     int minDate = (date.getCurrentDate()/100)*100 + 1;
-    cout << "MinDate: " << minDate << endl;
+  //  cout << "MinDate: " << minDate << endl;
     int maxDate = (date.getCurrentDate()/100 + 1) * 100;
-    cout << "MaxDate: " << maxDate << endl;
+  //  cout << "MaxDate: " << maxDate << endl;
     system ("pause");
 
     system("cls");
