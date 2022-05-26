@@ -9,6 +9,7 @@
 #include "Date.h"
 #include "IncomeManager.h"
 #include "ExpenseManager.h"
+#include "FinanceManager.h"
 
 using namespace std;
 
