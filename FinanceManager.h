@@ -7,7 +7,7 @@
 #include <sstream>
 
 
-#include "IncomeManager.h"
+//#include "IncomeManager.h"
 #include "ExpenseManager.h"
 #include "FileWithIncomes.h"
 #include "FileWithExpenses.h"
@@ -15,23 +15,37 @@
 using namespace std;
 
 class FinanceManager {
-    const int ID_LOGGED_USER;
-    IncomeManager incomeManager;
-    ExpenseManager expenseManager;
+    const int LOGGED_IN_USER_ID;
+  //  IncomeManager incomeManager;
+  //  ExpenseManager expenseManager;
+    FileWithIncomes fileWithIncomes;
+     FileWithExpenses fileWithExpenses;
+   Date date;
+    float totalIncome;
+        float totalExpense;
     vector <Income> incomes;
-    vector <Expense> expenses;
+   vector <Expense> expenses;
 
 public:
     FinanceManager(int loggedInUserId, string fileNameWithIncomes, string fileNameWithExpenses)
-        : ID_LOGGED_USER(loggedInUserId), fileWithIncomes(fileNameWithIncomes), fileNameWithExpenses(fileNameWithExpenses) {
-        incomes = fileWithIncomes.loadIncomesFromFile(ID_LOGGED_USER);
-        expenses = fileWithExpenses.loadExpensesFromFile(ID_LOGGED_USER);
+        : LOGGED_IN_USER_ID(loggedInUserId), fileWithIncomes(fileNameWithIncomes), fileWithExpenses(fileNameWithExpenses) {
+        incomes = fileWithIncomes.loadIncomesFromFile(LOGGED_IN_USER_ID);
+        expenses = fileWithExpenses.loadExpensesFromFile(LOGGED_IN_USER_ID);
     };
 
-
-    void showAllIncomesForCurrentMonth();
-    void showAllExpensesForCurrentMonth();
     void displayBalanceForCurrentMonth();
+
+    Income provideDataOfNewIncome();
+    void addIncome();
+    int getNewIncomeId();
+    void showAllIncomesForCurrentMonth();
+    void countTotalIncome(vector <Income>::iterator itr);
+
+    void addExpense();
+    Expense provideDataOfNewExpense();
+    int getNewExpenseId();
+    void showAllExpensesForCurrentMonth();
+    void countTotalExpense(vector <Expense>::iterator itr);
 
 };
 #endif

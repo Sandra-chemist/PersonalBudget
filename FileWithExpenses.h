@@ -1,4 +1,4 @@
-#ifndef FILEWITEXPENSES_H
+#ifndef FILEWITHEXPENSES_H
 #define FILEWITHEXPENSES_H
 
 #include <iostream>
@@ -15,7 +15,7 @@ class FileWithExpenses : public XmlFile {
 
     string fileNameWithExpenses;
     vector <Expense> expenses;
-    int loggedInUserId;
+   int loggedInUserId;
 
 public:
     FileWithExpenses(string fileNameWithExpenses) : XmlFile(fileNameWithExpenses) {};

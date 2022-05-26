@@ -1,4 +1,4 @@
-#include "IncomeManager.h"
+/*#include "IncomeManager.h"
 
 void IncomeManager::addIncome() {
     Income income;
@@ -79,3 +79,4 @@ void IncomeManager::countTotalIncome(vector <Income>::iterator itr)
    cout << "TotalIncome: " << totalIncome << endl;
 }
 
+*/

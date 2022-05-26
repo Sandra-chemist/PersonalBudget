@@ -10,20 +10,29 @@
 #include "IncomeManager.h"
 #include "ExpenseManager.h"
 #include "FinanceManager.h"
+#include "FinanceManager.h"
 
 using namespace std;
 
 class PersonalBudget {
     UserManager userManager;
     Date date;
-    IncomeManager *incomeManager;
-    ExpenseManager *expenseManager;
+    FinanceManager *financeManager;
+//    IncomeManager *incomeManager;
+//    ExpenseManager *expenseManager;
     const string FILE_NAME_WITH_INCOMES;
     const string FILE_NAME_WITH_EXPENSES;
 
 public:
     PersonalBudget(string fileNameWithUsers, string fileNameWithIncomes, string fileNameWithExpenses)
-        : userManager(fileNameWithUsers), FILE_NAME_WITH_INCOMES(fileNameWithIncomes), FILE_NAME_WITH_EXPENSES(fileNameWithExpenses) {
+        : userManager(fileNameWithUsers), FILE_NAME_WITH_INCOMES(fileNameWithIncomes), FILE_NAME_WITH_EXPENSES(fileNameWithExpenses)
+        {
+           financeManager = NULL;
+    };
+    ~PersonalBudget()
+    {
+        delete financeManager;
+        financeManager = NULL;
     };
     void registerUser();
     void loginUser();
