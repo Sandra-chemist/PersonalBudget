@@ -27,7 +27,6 @@ class FinanceManager {
     void showAllExpensesForCurrentMonth();
     void showAllIncomesForPreviousMonth();
     void showAllExpensesForPreviousMonth();
-    void showAllIncomesAndExpensesForSelectedMonth();
 
     void sortIncomes();
     void sortExpenses();

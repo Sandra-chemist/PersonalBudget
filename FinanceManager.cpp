@@ -212,7 +212,7 @@ void FinanceManager::displayBalanceForPreviousMonth() {
     cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
     system("pause");
 }
-void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
+void FinanceManager::displayBalanceForSelectedMonth() {
     string startDate;
     string endDate;
 
@@ -232,20 +232,20 @@ void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
     int endDateAsInt = AuxiliaryMethods::convertStringToInt(endDateWithoutDash);
 
     system("cls");
-    if (!incomes.empty()) {
-        cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
-        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
-            int date = itr -> getDate();
-            if (date >= startDateAsInt && date <= endDateAsInt) {
-                fileWithIncomes.displayIncome(*itr);
-                sortIncomes();
-                countTotalIncome(itr);
+    if (startDateAsInt < endDateAsInt) {
+        if (!incomes.empty()) {
+            cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
+
+            for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
+                int date = itr -> getDate();
+                if (date >= startDateAsInt && date <= endDateAsInt) {
+                    fileWithIncomes.displayIncome(*itr);
+                    sortIncomes();
+                    countTotalIncome(itr);
+                }
             }
         }
-        system("pause");
-        system("cls");
         if (!expenses.empty()) {
-            cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
             for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
                 int date = itr -> getDate();
                 if (date >= startDateAsInt && date <= endDateAsInt) {
@@ -254,18 +254,16 @@ void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
                     countTotalExpense(itr);
                 }
             }
-            system("pause");
         }
+        cout << "Total income: " << totalIncome << endl;
+        cout << "Total expense: " << totalExpense << endl;
+        cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
+        system("pause");
+    } else if (startDateAsInt > endDateAsInt) {
+        cout << "Start date is later than end date" << endl << endl;
+             system("pause");
     }
 }
-void FinanceManager::displayBalanceForSelectedMonth() {
-    showAllIncomesAndExpensesForSelectedMonth();
-    system("cls");
-    cout << "Total income: " << totalIncome << endl;
-    cout << "Total expense: " << totalExpense << endl;
-    cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
-    system("pause");
 
-}
 
 
