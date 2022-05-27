@@ -15,7 +15,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.AddElem("IncomeId", income.getIncomeId());
     xml.AddElem("UserId", income.getUserId());
     string dateAsString = AuxiliaryMethods::convertIntToString(income.getDate());
-    string dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+    string dateAsStringWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
     xml.AddElem("Date", dateAsStringWithDash);
     xml.AddElem("Item", income.getItem());
     xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(income.getAmount()));
@@ -43,7 +43,7 @@ vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
             income.setUserId(userId);
             xml.FindElem("Date");
             string date = xml.GetData();
-            string dateWithoutDash = AuxiliaryMethods::removeDashFromDate(date);
+            string dateWithoutDash = AdditionalMethodsOnDate::removeDashFromDate(date);
             income.setDate(AuxiliaryMethods::convertStringToInt(dateWithoutDash));
             xml.FindElem("Item");
             string item = xml.GetData();

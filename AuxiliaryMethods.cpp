@@ -33,16 +33,6 @@ int AuxiliaryMethods::convertStringToInt(string number) {
 
     return numberInt;
 }
-string AuxiliaryMethods::removeDashFromDate(string date) {
-    string stringDateWithoutDash;
-
-    for (int i = 0 ; i <= date.length(); i++) {
-        if (date[i] != '-') {
-            stringDateWithoutDash += date[i];
-        }
-    }
-    return stringDateWithoutDash;
-}
 float AuxiliaryMethods::loadFloat() {
     float amount;
     cin >> amount;
@@ -61,10 +51,4 @@ float AuxiliaryMethods::convertStringToFloat(string str) {
     float num_float = stof(str);
     return num_float;
 }
-string AuxiliaryMethods::addDashToDate(string date) {
 
-    string stringDateWithDash;
-    stringDateWithDash = date.insert (4,1,'-');
-    stringDateWithDash = stringDateWithDash.insert (7,1,'-');
-    return stringDateWithDash;
-}

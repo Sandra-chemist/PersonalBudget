@@ -15,7 +15,7 @@ void FileWithExpenses::addExpenseToFile(Expense expense) {
     xml.AddElem("ExpenseId", expense.getExpenseId());
     xml.AddElem("UserId", expense.getUserId());
     string dateAsString = AuxiliaryMethods::convertIntToString(expense.getDate());
-    string dateAsStringWithDash = AuxiliaryMethods::addDashToDate(dateAsString);
+    string dateAsStringWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
     xml.AddElem("Date", dateAsStringWithDash);
     xml.AddElem("Item", expense.getItem());
     xml.AddElem("Amount", AuxiliaryMethods::convertFloatToString(expense.getAmount()));
@@ -43,7 +43,7 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
             expense.setUserId(userId);
             xml.FindElem("Date");
             string date = xml.GetData();
-            string dateWithoutDash = AuxiliaryMethods::removeDashFromDate(date);
+            string dateWithoutDash = AdditionalMethodsOnDate::removeDashFromDate(date);
             expense.setDate(AuxiliaryMethods::convertStringToInt(dateWithoutDash));
             xml.FindElem("Item");
             string item = xml.GetData();

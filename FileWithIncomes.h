@@ -8,6 +8,7 @@
 #include "Markup.h"
 #include "XmlFile.h"
 #include "AuxiliaryMethods.h"
+#include "AdditionalMethodsOnDate.h"
 
 using namespace std;
 

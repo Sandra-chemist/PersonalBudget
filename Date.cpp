@@ -28,21 +28,14 @@ int Date::getCurrentDay() {
     day = nowLocal -> tm_mday;
     return day;
 }
-string Date::convertCurrentDateFromIntToString(int currentDate) {
-    string dateAsString;
-    dateAsString = AuxiliaryMethods::convertIntToString(currentDate);
-    return dateAsString;
-}
 int Date::writeOtherDateThanCurrent() {
-
     cout << "Provide date in format YYYY-MM-DD: ";
     otherDate = AuxiliaryMethods::loadLine();
-    string dateWithoutDash = AuxiliaryMethods::removeDashFromDate(otherDate);
+    string dateWithoutDash = AdditionalMethodsOnDate::removeDashFromDate(otherDate);
     int dateAsInt = AuxiliaryMethods::convertStringToInt(dateWithoutDash);
     return dateAsInt;
 }
 bool Date::isDateRight(int dateAsInt) {
-
     int yearAsInt;
     yearAsInt = AuxiliaryMethods::convertStringToInt(getYear());
 

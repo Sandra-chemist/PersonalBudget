@@ -7,6 +7,7 @@
 #include <windows.h>
 
 #include "AuxiliaryMethods.h"
+#include "AdditionalMethodsOnDate.h"
 
 using namespace std;
 
@@ -33,7 +34,6 @@ class Date {
 public:
     int getCurrentDate();
     int writeOtherDateThanCurrent();
-    string convertCurrentDateFromIntToString(int currentDate);
     bool isDateRight(int date);
     bool isLeapYear(int year);
 };
