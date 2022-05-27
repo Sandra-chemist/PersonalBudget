@@ -30,7 +30,7 @@ int main() {
         } else {
             if (personalBudget.isUserLoggedIn())
                 choice = personalBudget.selectOptionFromUserMenu();
-        }
+
         switch (choice) {
         case '1':
             personalBudget.addIncome();
@@ -55,6 +55,6 @@ int main() {
             break;
         }
     }
-
+    }
     return 0;
 }
