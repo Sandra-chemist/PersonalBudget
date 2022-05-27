@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include "AuxiliaryMethods.h"
-#include "Date.h"
 
 using namespace std;
 
@@ -15,7 +14,6 @@ class Income{
     string item;
     float amount;
 
-
 public:
     void setIncomeId(int newIncomeId);
     void setUserId(int newUserId);
@@ -23,13 +21,10 @@ public:
     void setItem(string newItem);
     void setAmount(float newAmount);
 
-
     int getIncomeId();
     int getUserId();
     int getDate();
     string getItem();
     float getAmount();
-
-
 };
 #endif

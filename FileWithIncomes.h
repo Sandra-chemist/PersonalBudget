@@ -9,7 +9,6 @@
 #include "XmlFile.h"
 #include "AuxiliaryMethods.h"
 
-
 using namespace std;
 
 class FileWithIncomes : public XmlFile {
@@ -20,11 +19,8 @@ class FileWithIncomes : public XmlFile {
 
 public:
     FileWithIncomes(string fileNameWithIncomes) : XmlFile(fileNameWithIncomes) {};
-
     void addIncomeToFile(Income income);
     vector <Income> loadIncomesFromFile(int loggedInUserId);
     void displayIncome(Income income);
-
-
 };
 #endif

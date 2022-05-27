@@ -23,38 +23,39 @@ int main() {
                 exit(0);
                 break;
             default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                cout << endl << "There is no option in main menu" << endl << endl;
                 system("pause");
                 break;
             }
         } else {
-            if (personalBudget.isUserLoggedIn())
+            if (personalBudget.isUserLoggedIn()) {
                 choice = personalBudget.selectOptionFromUserMenu();
 
-        switch (choice) {
-        case '1':
-            personalBudget.addIncome();
-            break;
-        case '2':
-         //   personalBudget.addExpense();
-            break;
-        case '3':
-            personalBudget.displayBalanceForCurrentMonth();
-            break;
-            case '4':
-            personalBudget.displayBalanceForPreviousMonth();
-              break;
-            case '5':
-             personalBudget.displayBalanceForSelectedMonth();
-              break;
-        case '6':
-            personalBudget.changePasswordLoggedInUser();
-            break;
-        case '7':
-            personalBudget.logOutUser();
-            break;
+                switch (choice) {
+                case '1':
+                    personalBudget.addIncome();
+                    break;
+                case '2':
+                    personalBudget.addExpense();
+                    break;
+                case '3':
+                    personalBudget.displayBalanceForCurrentMonth();
+                    break;
+                case '4':
+                    personalBudget.displayBalanceForPreviousMonth();
+                    break;
+                case '5':
+                    personalBudget.displayBalanceForSelectedMonth();
+                    break;
+                case '6':
+                    personalBudget.changePasswordLoggedInUser();
+                    break;
+                case '7':
+                    personalBudget.logOutUser();
+                    break;
+                }
+            }
         }
-    }
     }
     return 0;
 }

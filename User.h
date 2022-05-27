@@ -24,6 +24,5 @@ public:
     string getSurname();
     string getLogin();
     string getPassword();
-
 };
 #endif

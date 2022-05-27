@@ -6,10 +6,10 @@
 #include <windows.h>
 #include <sstream>
 
-
 #include "ExpenseManager.h"
 #include "FileWithIncomes.h"
 #include "FileWithExpenses.h"
+#include "Date.h"
 
 using namespace std;
 
@@ -23,35 +23,35 @@ class FinanceManager {
     vector <Income> incomes;
     vector <Expense> expenses;
 
+    void showAllIncomesForCurrentMonth();
+    void showAllExpensesForCurrentMonth();
+    void showAllIncomesForPreviousMonth();
+    void showAllExpensesForPreviousMonth();
+    void showAllIncomesAndExpensesForSelectedMonth();
+
+    void sortIncomes();
+    void sortExpenses();
+
 public:
     FinanceManager(string fileNameWithIncomes, string fileNameWithExpenses, int loggedInUserId)
         : fileWithIncomes(fileNameWithIncomes), fileWithExpenses(fileNameWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {
         incomes = fileWithIncomes.loadIncomesFromFile(LOGGED_IN_USER_ID);
         expenses = fileWithExpenses.loadExpensesFromFile(LOGGED_IN_USER_ID);
     };
+    void addIncome();
+    void addExpense();
 
     Income provideDataOfNewIncome();
-    void addIncome();
-    int getNewIncomeId();
-    void showAllIncomesForCurrentMonth();
-    void countTotalIncome(vector <Income>::iterator itr);
-
-    void addExpense();
     Expense provideDataOfNewExpense();
+
+    int getNewIncomeId();
     int getNewExpenseId();
-    void showAllExpensesForCurrentMonth();
+
+    void countTotalIncome(vector <Income>::iterator itr);
     void countTotalExpense(vector <Expense>::iterator itr);
 
     void displayBalanceForCurrentMonth();
-    void sortIncomes();
-    void sortExpenses();
-
-    void showAllIncomesForPreviousMonth();
-    void showAllExpensesForPreviousMonth();
     void displayBalanceForPreviousMonth();
-
-    void showAllIncomesAndExpensesForSelectedMonth();
     void displayBalanceForSelectedMonth();
-
 };
 #endif
