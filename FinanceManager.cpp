@@ -50,24 +50,6 @@ int FinanceManager::getNewIncomeId() {
     else
         return incomes.back().getIncomeId() + 1;
 }
-void FinanceManager::showAllIncomesForCurrentMonth() {
-    int startDate = (date.getCurrentDate()/100)*100 + 1;
-    int endDate = (date.getCurrentDate()/100 + 1) * 100;
-
-    system("cls");
-    if (!incomes.empty()) {
-        cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
-        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
-            int currentDate = itr -> getDate();
-            if (currentDate >= startDate && currentDate <= endDate) {
-                fileWithIncomes.displayIncome(*itr);
-                sortIncomes();
-                countTotalIncome(itr);
-            }
-        }
-        system("pause");
-    }
-}
 void FinanceManager::countTotalIncome(vector <Income>::iterator itr) {
     totalIncome += itr -> getAmount();
 }
@@ -121,13 +103,25 @@ int FinanceManager::getNewExpenseId() {
     else
         return expenses.back().getExpenseId() + 1;
 }
-void FinanceManager::showAllExpensesForCurrentMonth() {
+void FinanceManager::displayBalanceForCurrentMonth() {
+    totalIncome = 0;
+    totalExpense = 0;
     int startDate = (date.getCurrentDate()/100)*100 + 1;
     int endDate = (date.getCurrentDate()/100 + 1) * 100;
 
     system("cls");
-    if (!expenses.empty()) {
+    if (!incomes.empty()) {
         cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
+        for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
+            int currentDate = itr -> getDate();
+            if (currentDate >= startDate && currentDate <= endDate) {
+                fileWithIncomes.displayIncome(*itr);
+                sortIncomes();
+                countTotalIncome(itr);
+            }
+        }
+    }
+    if (!expenses.empty()) {
         for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
             int currentDate = itr -> getDate();
             if (currentDate >= startDate && currentDate <= endDate) {
@@ -136,20 +130,11 @@ void FinanceManager::showAllExpensesForCurrentMonth() {
                 countTotalExpense(itr);
             }
         }
-        system("pause");
     }
+    balanceOfIncomesAndExpenses();
 }
 void FinanceManager::countTotalExpense(vector <Expense>::iterator itr) {
     totalExpense += itr -> getAmount();
-}
-void FinanceManager::displayBalanceForCurrentMonth() {
-    showAllIncomesForCurrentMonth();
-    showAllExpensesForCurrentMonth();
-    system("cls");
-    cout << "Total income: " << totalIncome << endl;
-    cout << "Total expense: " << totalExpense << endl;
-    cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
-    system("pause");
 }
 struct sortIncomesByDate {
     inline bool operator() (Income& firstDate, Income& secondDate) {
@@ -167,7 +152,9 @@ struct sortExpensesByDate {
 void FinanceManager::sortExpenses() {
     sort(expenses.begin(), expenses.end(), sortExpensesByDate());
 }
-void FinanceManager::showAllIncomesForPreviousMonth() {
+void FinanceManager::displayBalanceForPreviousMonth() {
+    totalIncome = 0;
+    totalExpense = 0;
     int startDate = (date.getCurrentDate()/100-1)*100 + 1;
     int endDate = (date.getCurrentDate()/100) * 100;
 
@@ -182,16 +169,8 @@ void FinanceManager::showAllIncomesForPreviousMonth() {
                 countTotalIncome(itr);
             }
         }
-        system("pause");
     }
-}
-void FinanceManager::showAllExpensesForPreviousMonth() {
-    int startDate = (date.getCurrentDate()/100-1)*100 + 1;
-    int endDate = (date.getCurrentDate()/100) * 100;
-
-    system("cls");
     if (!expenses.empty()) {
-        cout << ">>> DISPLAY BALANCE FOR PREVIOUS MONTH <<<" << endl << endl;
         for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
             int currentDate = itr -> getDate();
             if (currentDate >= startDate && currentDate <= endDate) {
@@ -200,19 +179,18 @@ void FinanceManager::showAllExpensesForPreviousMonth() {
                 countTotalExpense(itr);
             }
         }
-        system("pause");
     }
+    balanceOfIncomesAndExpenses();
 }
-void FinanceManager::displayBalanceForPreviousMonth() {
-    showAllIncomesForPreviousMonth();
-    showAllExpensesForPreviousMonth();
-    system("cls");
+void FinanceManager::balanceOfIncomesAndExpenses() {
     cout << "Total income: " << totalIncome << endl;
     cout << "Total expense: " << totalExpense << endl;
     cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
     system("pause");
 }
 void FinanceManager::displayBalanceForSelectedMonth() {
+    totalIncome = 0;
+    totalExpense = 0;
     string startDate;
     string endDate;
 
@@ -255,13 +233,10 @@ void FinanceManager::displayBalanceForSelectedMonth() {
                 }
             }
         }
-        cout << "Total income: " << totalIncome << endl;
-        cout << "Total expense: " << totalExpense << endl;
-        cout << "Month Balance: " << totalIncome - totalExpense << endl << endl;
-        system("pause");
+        balanceOfIncomesAndExpenses();
     } else if (startDateAsInt > endDateAsInt) {
         cout << "Start date is later than end date" << endl << endl;
-             system("pause");
+        system("pause");
     }
 }
 

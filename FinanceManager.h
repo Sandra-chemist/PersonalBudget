@@ -23,10 +23,7 @@ class FinanceManager {
     vector <Income> incomes;
     vector <Expense> expenses;
 
-    void showAllIncomesForCurrentMonth();
-    void showAllExpensesForCurrentMonth();
-    void showAllIncomesForPreviousMonth();
-    void showAllExpensesForPreviousMonth();
+    void balanceOfIncomesAndExpenses();
 
     void sortIncomes();
     void sortExpenses();
