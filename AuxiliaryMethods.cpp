@@ -17,7 +17,7 @@ char AuxiliaryMethods::loadChar() {
             mark = entry[0];
             break;
         }
-        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
+        cout << "It is not a single character. Enter again" << endl;
     }
     return mark;
 }
@@ -34,7 +34,6 @@ int AuxiliaryMethods::convertStringToInt(string number) {
     return numberInt;
 }
 string AuxiliaryMethods::removeDashFromDate(string date) {
-
     string stringDateWithoutDash;
 
     for (int i = 0 ; i <= date.length(); i++) {
@@ -59,7 +58,6 @@ string AuxiliaryMethods::convertFloatToString(float number) {
     return str;
 }
 float AuxiliaryMethods::convertStringToFloat(string str) {
-
     float num_float = stof(str);
     return num_float;
 }

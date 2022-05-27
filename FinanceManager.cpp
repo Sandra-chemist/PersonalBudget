@@ -216,12 +216,14 @@ void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
     int startDate;
     int endDate;
 
-    cout << "Enter the date from you want to see Incomes in format YYYYMMDD (without dash): " << endl;
+    cout << endl;
+    cout << "Enter the starting date in format YYYYMMDD (without dash): " << endl;
     cin >> startDate;
+    cout << endl;
 
-    cout << "Enter the date by which you want to see Incomes in format YYYYMMDD (without dash): "<< endl;
+    cout << "Enter the ending date in format YYYYMMDD (without dash): " << endl;
     cin >> endDate;
-    system("pause");
+    cout << endl;
 
     system("cls");
     if (!incomes.empty()) {

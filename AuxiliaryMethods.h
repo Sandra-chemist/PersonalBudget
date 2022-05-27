@@ -9,8 +9,8 @@
 using namespace std;
 
 class AuxiliaryMethods {
-public:
 
+public:
     static string convertIntToString(int number);
     static char loadChar();
     static string loadLine();
@@ -20,6 +20,5 @@ public:
     static string convertFloatToString(float number);
     static string addDashToDate(string date);
     float static convertStringToFloat(string amount);
-
 };
 #endif

@@ -11,7 +11,6 @@
 using namespace std;
 
 class Date {
-
     time_t now;
     struct tm *nowLocal;
     int day, month, year;
