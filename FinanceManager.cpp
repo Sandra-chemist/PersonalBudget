@@ -213,24 +213,30 @@ void FinanceManager::displayBalanceForPreviousMonth() {
     system("pause");
 }
 void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
-    int startDate;
-    int endDate;
+    string startDate;
+    string endDate;
 
     cout << endl;
-    cout << "Enter the starting date in format YYYYMMDD (without dash): " << endl;
+    cout << "Enter the starting date in format YYYY-MM-DD: " << endl;
     cin >> startDate;
     cout << endl;
 
-    cout << "Enter the ending date in format YYYYMMDD (without dash): " << endl;
+    cout << "Enter the ending date in format YYYY-MM-DD: " << endl;
     cin >> endDate;
     cout << endl;
+
+    string startDateWithoutDash = AdditionalMethodsOnDate::removeDashFromDate(startDate);
+    string endDateWithoutDash = AdditionalMethodsOnDate::removeDashFromDate(endDate);
+
+    int startDateAsInt = AuxiliaryMethods::convertStringToInt(startDateWithoutDash);
+    int endDateAsInt = AuxiliaryMethods::convertStringToInt(endDateWithoutDash);
 
     system("cls");
     if (!incomes.empty()) {
         cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
         for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr++) {
             int date = itr -> getDate();
-            if (date >= startDate && date <= endDate) {
+            if (date >= startDateAsInt && date <= endDateAsInt) {
                 fileWithIncomes.displayIncome(*itr);
                 sortIncomes();
                 countTotalIncome(itr);
@@ -242,7 +248,7 @@ void FinanceManager::showAllIncomesAndExpensesForSelectedMonth() {
             cout << ">>> DISPLAY BALANCE FOR SELECTED MONTH <<<" << endl << endl;
             for (vector <Expense>::iterator  itr = expenses.begin(); itr != expenses.end(); itr++) {
                 int date = itr -> getDate();
-                if (date >= startDate && date <= endDate) {
+                if (date >= startDateAsInt && date <= endDateAsInt) {
                     fileWithExpenses.displayExpense(*itr);
                     sortExpenses();
                     countTotalExpense(itr);
