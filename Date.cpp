@@ -57,12 +57,14 @@ bool Date::isDateRight(int dateAsInt) {
             if (isDayCorrect(dayAsInt, monthAsInt, yearAsInt)) {
                 return true;
             } else {
+                cout << "The date is incorrect. Enter again." << endl << endl;
                 return false;
             }
         } else {
+            cout << "The date is incorrect. Enter again." << endl << endl;
         }
-
     } else {
+        cout << "The date is incorrect. Enter again." << endl << endl;
     }
 }
 string Date::getYear() {
