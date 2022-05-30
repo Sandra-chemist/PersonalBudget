@@ -5,6 +5,8 @@
 #include <sstream>
 #include <algorithm>
 #include <string>
+#include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -19,5 +21,6 @@ public:
     static string convertFloatToString(float number);
     static float convertStringToFloat(string amount);
     static string convertCommaToDot(string input);
+    static float writeDownTwoDecimalPlaces(float number);
 };
 #endif
