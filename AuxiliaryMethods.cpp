@@ -51,4 +51,11 @@ float AuxiliaryMethods::convertStringToFloat(string str) {
     float num_float = stof(str);
     return num_float;
 }
-
+string AuxiliaryMethods::convertCommaToDot(string input){
+    size_t foundComma = input.find(",");
+    if(foundComma != string::npos)
+    {
+        input.replace(foundComma, 1, ".");
+    }
+    return input;
+}

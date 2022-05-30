@@ -17,6 +17,7 @@ public:
     static int convertStringToInt(string number);
     static float loadFloat();
     static string convertFloatToString(float number);
-    float static convertStringToFloat(string amount);
+    static float convertStringToFloat(string amount);
+    static string convertCommaToDot(string input);
 };
 #endif
