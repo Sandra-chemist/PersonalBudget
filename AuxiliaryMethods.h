@@ -21,6 +21,5 @@ public:
     static string convertFloatToString(float number);
     static float convertStringToFloat(string amount);
     static string convertCommaToDot(string input);
-    static float writeDownTwoDecimalPlaces(float number);
 };
 #endif

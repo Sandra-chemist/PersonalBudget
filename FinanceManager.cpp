@@ -14,7 +14,7 @@ Income FinanceManager::provideDataOfNewIncome() {
     Income income;
     string item;
     string amountAsString;
-    float amount, amountAsFloat;
+    float amount;
     int currentDate, otherDate;
     char choice;
 
@@ -43,8 +43,7 @@ Income FinanceManager::provideDataOfNewIncome() {
     cout << "Enter amount of income: ";
     amountAsString = AuxiliaryMethods::loadLine();
     string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    amountAsFloat = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-    amount = AuxiliaryMethods::writeDownTwoDecimalPlaces(amountAsFloat);
+    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
     income.setAmount(amount);
     return income;
 }

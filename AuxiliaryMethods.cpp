@@ -58,8 +58,3 @@ string AuxiliaryMethods::convertCommaToDot(string input) {
     }
     return input;
 }
-float AuxiliaryMethods::writeDownTwoDecimalPlaces(float number) {
-    number = round(number*100 )/100;
-    system("pause");
-    return number;
-}
