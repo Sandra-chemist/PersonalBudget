@@ -13,6 +13,7 @@ void FinanceManager::addIncome() {
 Income FinanceManager::provideDataOfNewIncome() {
     Income income;
     string item;
+    string amountAsString;
     float amount;
     int currentDate, otherDate;
     char choice;
@@ -40,7 +41,9 @@ Income FinanceManager::provideDataOfNewIncome() {
     income.setItem(item);
 
     cout << "Enter amount of income: ";
-    amount = AuxiliaryMethods::loadFloat();
+    amountAsString = AuxiliaryMethods::loadLine();
+    string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
     income.setAmount(amount);
     return income;
 }
@@ -66,6 +69,7 @@ void FinanceManager::addExpense() {
 Expense FinanceManager::provideDataOfNewExpense() {
     Expense expense;
     string item;
+    string amountAsString;
     float amount;
     int currentDate, otherDate;
     char choice;
@@ -93,7 +97,9 @@ Expense FinanceManager::provideDataOfNewExpense() {
     expense.setItem(item);
 
     cout << "Enter amount of expense: ";
-    amount = AuxiliaryMethods::loadFloat();
+    amountAsString = AuxiliaryMethods::loadLine();
+    string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
     expense.setAmount(amount);
     return expense;
 }
