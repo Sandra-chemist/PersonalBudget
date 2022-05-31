@@ -37,7 +37,7 @@ char PersonalBudget::selectOptionFromUserMenu() {
     cout << "2. Add expense" << endl;
     cout << "3. Display balance for current month" << endl;
     cout << "4. Display balance for previous month" << endl;
-    cout << "5. Display balance for selected month" << endl;
+    cout << "5. Display balance for selected period" << endl;
     cout << "---------------------------" << endl;
     cout << "6. Change password" << endl;
     cout << "7. Log out user" << endl;
@@ -75,7 +75,7 @@ void PersonalBudget::displayBalanceForPreviousMonth() {
 }
 void PersonalBudget::displayBalanceForSelectedMonth() {
     if (userManager.isUserLoggedIn()) {
-        financeManager -> displayBalanceForSelectedMonth();
+        financeManager -> displayBalanceForSelectedPeriod();
     }
 }
 

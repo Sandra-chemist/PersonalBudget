@@ -48,6 +48,6 @@ public:
 
     void displayBalanceForCurrentMonth();
     void displayBalanceForPreviousMonth();
-    void displayBalanceForSelectedMonth();
+    void displayBalanceForSelectedPeriod();
 };
 #endif
