@@ -58,6 +58,21 @@ vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
     }
     return incomes;
 }
+int FileWithIncomes::getNewIncomeId() {
+    CMarkup xml;
+    vector <Income> incomes;
+    bool fileExists = xml.Load(getFileName());
+    if (fileExists == true) {
+        xml.FindElem();
+        xml.IntoElem();
+        while (xml.FindElem("Income")) {
+            xml.FindChildElem("IncomeId");
+        }
+        lastIncomeId = AuxiliaryMethods::convertStringToInt(xml.GetChildData());;
+        return lastIncomeId;
+    } else
+        return 0;
+}
 void FileWithIncomes::displayIncome(Income income) {
     cout << "IncomeId:           " << income.getIncomeId() << endl;
     cout << "UserId:             " << income.getUserId() << endl;

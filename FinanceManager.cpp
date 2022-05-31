@@ -18,7 +18,7 @@ Income FinanceManager::provideDataOfNewIncome() {
     int currentDate, otherDate;
     char choice;
 
-    income.setIncomeId(getNewIncomeId());
+    income.setIncomeId(fileWithIncomes.getNewIncomeId() + 1);
     income.setUserId(LOGGED_IN_USER_ID);
 
     cout << "Do you want to add income with current date?" << endl << endl;
@@ -47,12 +47,6 @@ Income FinanceManager::provideDataOfNewIncome() {
     income.setAmount(amount);
     return income;
 }
-int FinanceManager::getNewIncomeId() {
-    if (incomes.empty() == true)
-        return 1;
-    else
-        return incomes.back().getIncomeId() + 1;
-}
 void FinanceManager::countTotalIncome(vector <Income>::iterator itr) {
     totalIncome += itr -> getAmount();
 }
@@ -74,7 +68,7 @@ Expense FinanceManager::provideDataOfNewExpense() {
     int currentDate, otherDate;
     char choice;
 
-    expense.setExpenseId(getNewExpenseId());
+    expense.setExpenseId(fileWithExpenses.getNewExpenseId() + 1);
     expense.setUserId(LOGGED_IN_USER_ID);
 
     cout << "Do you want to add expense with current date?" << endl << endl;
@@ -102,12 +96,6 @@ Expense FinanceManager::provideDataOfNewExpense() {
     amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
     expense.setAmount(amount);
     return expense;
-}
-int FinanceManager::getNewExpenseId() {
-    if (expenses.empty() == true)
-        return 1;
-    else
-        return expenses.back().getExpenseId() + 1;
 }
 void FinanceManager::displayBalanceForCurrentMonth() {
     totalIncome = 0;

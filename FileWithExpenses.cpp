@@ -58,6 +58,21 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
     }
     return expenses;
 }
+int FileWithExpenses::getNewExpenseId() {
+    CMarkup xml;
+    vector <Expense> expenses;
+    bool fileExists = xml.Load(getFileName());
+    if (fileExists == true) {
+        xml.FindElem();
+        xml.IntoElem();
+        while (xml.FindElem("Expense")) {
+            xml.FindChildElem("ExpenseId");
+        }
+        lastExpenseId = AuxiliaryMethods::convertStringToInt(xml.GetChildData());;
+        return lastExpenseId;
+    } else
+        return 0;
+}
 void FileWithExpenses::displayExpense(Expense expense) {
     cout << "ExpenseId:          " << expense.getExpenseId() << endl;
     cout << "UserId:             " << expense.getUserId() << endl;

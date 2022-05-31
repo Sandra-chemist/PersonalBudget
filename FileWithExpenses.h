@@ -17,11 +17,13 @@ class FileWithExpenses : public XmlFile {
     string fileNameWithExpenses;
     vector <Expense> expenses;
     int loggedInUserId;
+    int lastExpenseId;
 
 public:
     FileWithExpenses(string fileNameWithExpenses) : XmlFile(fileNameWithExpenses) {};
     void addExpenseToFile(Expense expense);
     vector <Expense> loadExpensesFromFile(int loggedInUserId);
+    int getNewExpenseId();
     void displayExpense(Expense expense);
 };
 #endif

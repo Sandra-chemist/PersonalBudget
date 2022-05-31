@@ -17,11 +17,14 @@ class FileWithIncomes : public XmlFile {
     string fileNameWithIncomes;
     vector <Income> incomes;
     int loggedInUserId;
+    int lastIncomeId;
 
 public:
     FileWithIncomes(string fileNameWithIncomes) : XmlFile(fileNameWithIncomes) {};
     void addIncomeToFile(Income income);
     vector <Income> loadIncomesFromFile(int loggedInUserId);
+    int getLastIncomeId();
+    int getNewIncomeId();
     void displayIncome(Income income);
 };
 #endif

@@ -40,9 +40,6 @@ public:
     Income provideDataOfNewIncome();
     Expense provideDataOfNewExpense();
 
-    int getNewIncomeId();
-    int getNewExpenseId();
-
     void countTotalIncome(vector <Income>::iterator itr);
     void countTotalExpense(vector <Expense>::iterator itr);
 
