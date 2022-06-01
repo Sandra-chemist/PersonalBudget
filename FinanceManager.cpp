@@ -14,6 +14,7 @@ Income FinanceManager::provideDataOfNewIncome() {
     Income income;
     string item;
     string amountAsString;
+    string amountWithDot;
     float amount;
     int currentDate, otherDate;
     char choice;
@@ -42,20 +43,31 @@ Income FinanceManager::provideDataOfNewIncome() {
 
     cout << "Enter amount of income: ";
     amountAsString = AuxiliaryMethods::loadLine();
-    string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == false) {
+    amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
+        amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+        income.setAmount(amount);
+    } else {
         cout << "Enter amount of income: ";
         amountAsString = AuxiliaryMethods::loadLine();
-        string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+        amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
         {
-            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
+            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != true) {
+                cout << "Enter amount of income: ";
+                amountAsString = AuxiliaryMethods::loadLine();
+                amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+                amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+                income.setAmount(amount);
+                if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
+                    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+                    income.setAmount(amount);
+                }
+            }
+            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
                 amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
                 income.setAmount(amount);
             }
         }
-    } else if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
-        float amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-        income.setAmount(amount);
     }
     return income;
 }
@@ -105,19 +117,30 @@ Expense FinanceManager::provideDataOfNewExpense() {
     cout << "Enter amount of expense: ";
     amountAsString = AuxiliaryMethods::loadLine();
     string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == false) {
-        cout << "Enter amount of income: ";
+    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
+        amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+        expense.setAmount(amount);
+    } else {
+        cout << "Enter amount of expense: ";
         amountAsString = AuxiliaryMethods::loadLine();
-        string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+        amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
         {
-            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
+            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != true) {
+                cout << "Enter amount of expense: ";
+                amountAsString = AuxiliaryMethods::loadLine();
+                amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+                amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+                expense.setAmount(amount);
+                if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
+                    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+                    expense.setAmount(amount);
+                }
+            }
+            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
                 amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
                 expense.setAmount(amount);
             }
         }
-    } else if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
-        float amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-        expense.setAmount(amount);
     }
     return expense;
 }
