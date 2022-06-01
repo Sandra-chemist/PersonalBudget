@@ -74,11 +74,12 @@ int FileWithIncomes::getNewIncomeId() {
         return 0;
 }
 void FileWithIncomes::displayIncome(Income income) {
-    //cout << "IncomeId:           " << income.getIncomeId() << endl;
-   // cout << "UserId:             " << income.getUserId() << endl;
-    cout << "IncomeDate: " << income.getDate() << endl;
+    int date = income.getDate();
+    string dateAsString = AuxiliaryMethods::convertIntToString(date);
+    string dateWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
+    cout << "IncomeDate: " << dateWithDash << endl;
     cout << "Item:       " << income.getItem() << endl;
-    cout << "Amount:     " << income.getAmount() << endl;
+    cout << "Amount:     " << fixed << setprecision(2) << income.getAmount() << endl;
     cout << endl;
 }
 

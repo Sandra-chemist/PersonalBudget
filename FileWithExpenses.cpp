@@ -74,11 +74,12 @@ int FileWithExpenses::getNewExpenseId() {
         return 0;
 }
 void FileWithExpenses::displayExpense(Expense expense) {
-  //  cout << "ExpenseId:          " << expense.getExpenseId() << endl;
-  //  cout << "UserId:             " << expense.getUserId() << endl;
-    cout << "ExpenseDate: " << expense.getDate() << endl;
+    int date = expense.getDate();
+    string dateAsString = AuxiliaryMethods::convertIntToString(date);
+    string dateWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
+    cout << "ExpenseDate: " << dateWithDash << endl;
     cout << "Item:        " << expense.getItem() << endl;
-    cout << "Amount:      " << expense.getAmount() << endl;
+    cout << "Amount:      " << fixed << setprecision(2) << expense.getAmount() << endl;
     cout << endl;
 }
 

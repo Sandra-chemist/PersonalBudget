@@ -54,13 +54,7 @@ Income FinanceManager::provideDataOfNewIncome() {
             }
         }
     } else if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
-        float amountAsFloat = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-        string amountWithZero = AuxiliaryMethods::addZeroAfterComma(amountAsFloat);
-        cout << "amountWithZero: " << amountWithZero << endl;
-        system("pause");
-        amount = AuxiliaryMethods::convertStringToFloat(amountWithZero);
-        cout << "amount: " << amount << endl;
-        system("pause");
+        float amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
         income.setAmount(amount);
     }
     return income;
@@ -111,8 +105,20 @@ Expense FinanceManager::provideDataOfNewExpense() {
     cout << "Enter amount of expense: ";
     amountAsString = AuxiliaryMethods::loadLine();
     string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-    expense.setAmount(amount);
+    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == false) {
+        cout << "Enter amount of income: ";
+        amountAsString = AuxiliaryMethods::loadLine();
+        string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+        {
+            if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
+                amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+                expense.setAmount(amount);
+            }
+        }
+    } else if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
+        float amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+        expense.setAmount(amount);
+    }
     return expense;
 }
 struct sortIncomesByDate {
@@ -158,6 +164,7 @@ void FinanceManager::displayBalanceForCurrentMonth() {
         }
     }
     balanceOfIncomesAndExpenses();
+
 }
 void FinanceManager::countTotalExpense(vector <Expense>::iterator itr) {
     totalExpense += itr -> getAmount();

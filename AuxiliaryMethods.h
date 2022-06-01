@@ -23,6 +23,5 @@ public:
     static float convertStringToFloat(string amount);
     static string convertCommaToDot(string input);
     static bool calculatePlaceAfterComma(string amount);
-    static string addZeroAfterComma(float amount);
 };
 #endif

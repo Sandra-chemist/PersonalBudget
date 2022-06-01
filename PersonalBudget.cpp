@@ -52,6 +52,8 @@ void PersonalBudget::changePasswordLoggedInUser() {
 }
 void PersonalBudget::logOutUser() {
     userManager.logOutUser();
+    delete financeManager;
+    financeManager = NULL;
 }
 void PersonalBudget::addIncome() {
     if (userManager.isUserLoggedIn()) {
