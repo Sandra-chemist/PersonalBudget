@@ -74,11 +74,11 @@ bool AuxiliaryMethods::calculatePlaceAfterComma(string amount){
         return false;
     }
 }
-float AuxiliaryMethods::addZeroAfterComma(float amount){
+string AuxiliaryMethods::addZeroAfterComma(float amount){
  stringstream ss;
     ss.setf(ios_base::fixed);
     ss.precision(2);
     ss<<amount;
     string s = ss.str();
-    cout<<s;
+    return s;
 }

@@ -7,6 +7,7 @@
 #include <string>
 #include <iomanip>
 #include <cmath>
+#include <sstream>
 
 using namespace std;
 
@@ -22,6 +23,6 @@ public:
     static float convertStringToFloat(string amount);
     static string convertCommaToDot(string input);
     static bool calculatePlaceAfterComma(string amount);
-    static float addZeroAfterComma(float amount);
+    static string addZeroAfterComma(float amount);
 };
 #endif
