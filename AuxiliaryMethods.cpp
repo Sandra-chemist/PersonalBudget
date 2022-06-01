@@ -58,27 +58,24 @@ string AuxiliaryMethods::convertCommaToDot(string input) {
     }
     return input;
 }
-bool AuxiliaryMethods::calculatePlaceAfterComma(string amount){
+bool AuxiliaryMethods::calculatePlaceAfterComma(string amount) {
 
     int lengthAmount = amount.length();
     size_t foundComma = amount.find(".");
     int decimalAmount =  lengthAmount - (foundComma+1);
-    if (decimalAmount <= 2)
-    {
-       return true;
-    }
-    else
-    {
+    if (decimalAmount <= 2) {
+        return true;
+    } else {
         cout << endl;
         cout << "The amount cannot have more than two decimal places." << endl;
         return false;
     }
 }
-string AuxiliaryMethods::addZeroAfterComma(float amount){
- stringstream ss;
+string AuxiliaryMethods::addZeroAfterComma(float amount) {
+    stringstream ss;
     ss.setf(ios_base::fixed);
     ss.precision(2);
-    ss<<amount;
+    ss << amount;
     string s = ss.str();
     return s;
 }

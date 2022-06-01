@@ -56,10 +56,10 @@ Income FinanceManager::provideDataOfNewIncome() {
     } else if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) != false) {
         float amountAsFloat = AuxiliaryMethods::convertStringToFloat(amountWithDot);
         string amountWithZero = AuxiliaryMethods::addZeroAfterComma(amountAsFloat);
-        cout << "amountWithZero" << amountWithZero << endl;
+        cout << "amountWithZero: " << amountWithZero << endl;
         system("pause");
         amount = AuxiliaryMethods::convertStringToFloat(amountWithZero);
-        cout << "amount" << amount << endl;
+        cout << "amount: " << amount << endl;
         system("pause");
         income.setAmount(amount);
     }
@@ -129,7 +129,7 @@ void FinanceManager::displayBalanceForCurrentMonth() {
                 int currentDate = itr -> getDate();
                 if (currentDate >= startDate && currentDate <= endDate) {
                     fileWithIncomes.displayIncome(*itr);
-                    // sortIncomes();
+                    sortIncomes();
                     countTotalIncome(itr);
                 }
             }
@@ -141,7 +141,7 @@ void FinanceManager::displayBalanceForCurrentMonth() {
                 int currentDate = itr -> getDate();
                 if (currentDate >= startDate && currentDate <= endDate) {
                     fileWithExpenses.displayExpense(*itr);
-                    // sortExpenses();
+                    //sortExpenses();
                     countTotalExpense(itr);
                 }
             }
@@ -182,7 +182,7 @@ void FinanceManager::displayBalanceForPreviousMonth() {
                 int currentDate = itr -> getDate();
                 if (currentDate >= startDate && currentDate <= endDate) {
                     fileWithIncomes.displayIncome(*itr);
-                    //  sortIncomes();
+                    sortIncomes();
                     countTotalIncome(itr);
                 }
             }
@@ -194,7 +194,7 @@ void FinanceManager::displayBalanceForPreviousMonth() {
                 int currentDate = itr -> getDate();
                 if (currentDate >= startDate && currentDate <= endDate) {
                     fileWithExpenses.displayExpense(*itr);
-                    // sortExpenses();
+                    //sortExpenses();
                     countTotalExpense(itr);
                 }
             }
@@ -237,7 +237,7 @@ void FinanceManager::displayBalanceForSelectedPeriod() {
                     int date = itr -> getDate();
                     if (date >= startDate && date <= endDate) {
                         fileWithIncomes.displayIncome(*itr);
-                        //sortIncomes();
+                        sortIncomes();
                         countTotalIncome(itr);
                     }
                 }
@@ -249,7 +249,7 @@ void FinanceManager::displayBalanceForSelectedPeriod() {
                     int date = itr -> getDate();
                     if (date >= startDate && date <= endDate) {
                         fileWithExpenses.displayExpense(*itr);
-                        //sortExpenses();
+                      //  sortExpenses();
                         countTotalExpense(itr);
                     }
                 }
