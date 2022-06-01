@@ -58,7 +58,7 @@ string AuxiliaryMethods::convertCommaToDot(string input) {
     }
     return input;
 }
-bool AuxiliaryMethods::countNumberDeciamlPlace(string amount){
+bool AuxiliaryMethods::calculatePlaceAfterComma(string amount){
 
     int lengthAmount = amount.length();
     size_t foundComma = amount.find(".");

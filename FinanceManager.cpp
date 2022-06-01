@@ -43,12 +43,12 @@ Income FinanceManager::provideDataOfNewIncome() {
     cout << "Enter amount of income: ";
     amountAsString = AuxiliaryMethods::loadLine();
     string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    if (AuxiliaryMethods::countNumberDeciamlPlace(amountWithDot) == false) {
+    if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == false) {
         cout << "Enter amount of income: ";
         amountAsString = AuxiliaryMethods::loadLine();
         string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
 
-             if (AuxiliaryMethods::countNumberDeciamlPlace(amountWithDot) == true) {
+             if (AuxiliaryMethods::calculatePlaceAfterComma(amountWithDot) == true) {
             amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
             income.setAmount(amount);
 
