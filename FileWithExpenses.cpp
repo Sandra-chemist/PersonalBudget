@@ -74,11 +74,11 @@ int FileWithExpenses::getNewExpenseId() {
         return 0;
 }
 void FileWithExpenses::displayExpense(Expense expense) {
-    cout << "ExpenseId:          " << expense.getExpenseId() << endl;
-    cout << "UserId:             " << expense.getUserId() << endl;
-    cout << "ExpenseDate: "    << expense.getDate() << endl;
-    cout << "Item: "    << expense.getItem() << endl;
-    cout << "Amount: "  << expense.getAmount() << endl;
+  //  cout << "ExpenseId:          " << expense.getExpenseId() << endl;
+  //  cout << "UserId:             " << expense.getUserId() << endl;
+    cout << "ExpenseDate: " << expense.getDate() << endl;
+    cout << "Item:        " << expense.getItem() << endl;
+    cout << "Amount:      " << expense.getAmount() << endl;
     cout << endl;
 }
 

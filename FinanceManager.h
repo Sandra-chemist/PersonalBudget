@@ -27,9 +27,6 @@ class FinanceManager {
 
     void balanceOfIncomesAndExpenses();
 
-    void sortIncomes();
-    void sortExpenses();
-
 public:
     FinanceManager(string fileNameWithIncomes, string fileNameWithExpenses, int loggedInUserId)
         : fileWithIncomes(fileNameWithIncomes), fileWithExpenses(fileNameWithExpenses), LOGGED_IN_USER_ID(loggedInUserId) {

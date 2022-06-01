@@ -76,9 +76,9 @@ int FileWithIncomes::getNewIncomeId() {
 void FileWithIncomes::displayIncome(Income income) {
     //cout << "IncomeId:           " << income.getIncomeId() << endl;
    // cout << "UserId:             " << income.getUserId() << endl;
-    cout << "IncomeDate: "    << income.getDate() << endl;
-    cout << "Item: "    << income.getItem() << endl;
-    cout << "Amount: "  << income.getAmount() << endl;
+    cout << "IncomeDate: " << income.getDate() << endl;
+    cout << "Item:       " << income.getItem() << endl;
+    cout << "Amount:     " << income.getAmount() << endl;
     cout << endl;
 }
 
