@@ -5,6 +5,8 @@
 #include <vector>
 #include <windows.h>
 #include <sstream>
+#include <algorithm>
+#include <cstdio>
 
 #include "ExpenseManager.h"
 #include "FileWithIncomes.h"
@@ -46,5 +48,6 @@ public:
     void displayBalanceForCurrentMonth();
     void displayBalanceForPreviousMonth();
     void displayBalanceForSelectedPeriod();
+
 };
 #endif

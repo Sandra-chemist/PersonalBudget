@@ -58,3 +58,27 @@ string AuxiliaryMethods::convertCommaToDot(string input) {
     }
     return input;
 }
+bool AuxiliaryMethods::countNumberDeciamlPlace(string amount){
+
+    int lengthAmount = amount.length();
+    size_t foundComma = amount.find(".");
+    int decimalAmount =  lengthAmount - (foundComma+1);
+    if (decimalAmount <= 2)
+    {
+       return true;
+    }
+    else
+    {
+        cout << endl;
+        cout << "The amount cannot have more than two decimal places." << endl;
+        return false;
+    }
+}
+float AuxiliaryMethods::addZeroAfterComma(float amount){
+ stringstream ss;
+    ss.setf(ios_base::fixed);
+    ss.precision(2);
+    ss<<amount;
+    string s = ss.str();
+    cout<<s;
+}

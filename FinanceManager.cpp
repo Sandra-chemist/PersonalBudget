@@ -43,8 +43,18 @@ Income FinanceManager::provideDataOfNewIncome() {
     cout << "Enter amount of income: ";
     amountAsString = AuxiliaryMethods::loadLine();
     string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
-    amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
-    income.setAmount(amount);
+    if (AuxiliaryMethods::countNumberDeciamlPlace(amountWithDot) == false) {
+        cout << "Enter amount of income: ";
+        amountAsString = AuxiliaryMethods::loadLine();
+        string amountWithDot = AuxiliaryMethods::convertCommaToDot(amountAsString);
+
+             if (AuxiliaryMethods::countNumberDeciamlPlace(amountWithDot) == true) {
+            amount = AuxiliaryMethods::convertStringToFloat(amountWithDot);
+            income.setAmount(amount);
+
+
+        }
+    }
     return income;
 }
 void FinanceManager::countTotalIncome(vector <Income>::iterator itr) {
@@ -135,16 +145,16 @@ void FinanceManager::countTotalExpense(vector <Expense>::iterator itr) {
     totalExpense += itr -> getAmount();
 }
 struct sortIncomesByDate {
-    inline bool operator() (Income& firstDate, Income& secondDate) {
-        return (firstDate.getDate() > secondDate.getDate());
+    bool operator() (Income firstIncome, Income secondIncome) {
+        return (firstIncome.getDate() > secondIncome.getDate());
     }
 };
 void FinanceManager::sortIncomes() {
     sort(incomes.begin(), incomes.end(), sortIncomesByDate());
 }
 struct sortExpensesByDate {
-    inline bool operator() (Expense& firstDate, Expense& secondDate) {
-        return (firstDate.getDate() > secondDate.getDate());
+    bool operator() (Expense firstExpense, Expense secondExpense) {
+        return (firstExpense.getDate() > secondExpense.getDate());
     }
 };
 void FinanceManager::sortExpenses() {
