@@ -13,7 +13,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.AddElem("Income");
     xml.IntoElem();
     xml.AddElem("IncomeId", income.getIncomeId());
-    xml.AddElem("UserId", income.getUserId());
+    xml.AddElem("UserID", income.getUserId());
     string dateAsString = AuxiliaryMethods::convertIntToString(income.getDate());
     string dateAsStringWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
     xml.AddElem("Date", dateAsStringWithDash);
@@ -23,7 +23,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.Save(getFileName());
 }
 vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
-    Income income;
+     Income income;
     vector <Income> incomes;
 
     CMarkup xml;
@@ -38,7 +38,7 @@ vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
             xml.FindElem("IncomeId");
             int incomeId = atoi(xml.GetData().c_str());
             income.setIncomeId(incomeId);
-            xml.FindElem("UserId");
+            xml.FindElem("UserID");
             int userId = atoi(xml.GetData().c_str());
             income.setUserId(userId);
             xml.FindElem("Date");

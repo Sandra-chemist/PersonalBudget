@@ -13,7 +13,7 @@ void FileWithExpenses::addExpenseToFile(Expense expense) {
     xml.AddElem("Expense");
     xml.IntoElem();
     xml.AddElem("ExpenseId", expense.getExpenseId());
-    xml.AddElem("UserId", expense.getUserId());
+    xml.AddElem("UserID", expense.getUserId());
     string dateAsString = AuxiliaryMethods::convertIntToString(expense.getDate());
     string dateAsStringWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
     xml.AddElem("Date", dateAsStringWithDash);
@@ -38,7 +38,7 @@ vector <Expense> FileWithExpenses::loadExpensesFromFile(int loggedInUserId) {
             xml.FindElem("ExpenseId");
             int expenseId = atoi(xml.GetData().c_str());
             expense.setExpenseId(expenseId);
-            xml.FindElem("UserId");
+            xml.FindElem("UserID");
             int userId = atoi(xml.GetData().c_str());
             expense.setUserId(userId);
             xml.FindElem("Date");
