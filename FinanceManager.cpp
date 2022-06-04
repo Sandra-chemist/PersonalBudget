@@ -160,8 +160,8 @@ void FinanceManager::displayBalanceForCurrentMonth() {
     int startDate = (date.getCurrentDate()/100)*100 + 1;
     int endDate = (date.getCurrentDate()/100 + 1) * 100;
 
-    system("cls");
     if (!incomes.empty()) {
+        system("cls");
         cout << ">>> DISPLAY BALANCE FOR CURRENT MONTH <<<" << endl << endl;
         for (vector <Income>::iterator  itr = incomes.begin(); itr != incomes.end(); itr ++) {
             if (itr -> getUserId() == LOGGED_IN_USER_ID) {
@@ -187,7 +187,6 @@ void FinanceManager::displayBalanceForCurrentMonth() {
         }
     }
     balanceOfIncomesAndExpenses();
-
 }
 void FinanceManager::countTotalExpense(vector <Expense>::iterator itr) {
     totalExpense += itr -> getAmount();
