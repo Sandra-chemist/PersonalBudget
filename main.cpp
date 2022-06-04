@@ -10,6 +10,7 @@ int main() {
 
     while (true) {
         if (!personalBudget.isUserLoggedIn()) {
+            cin.sync();
             choice = personalBudget.selectOptionFromMainMenu();
 
             switch (choice) {
@@ -28,32 +29,31 @@ int main() {
                 break;
             }
         } else {
-            if (personalBudget.isUserLoggedIn()) {
-                choice = personalBudget.selectOptionFromUserMenu();
+            cin.sync();
+            choice = personalBudget.selectOptionFromUserMenu();
 
-                switch (choice) {
-                case '1':
-                    personalBudget.addIncome();
-                    break;
-                case '2':
-                    personalBudget.addExpense();
-                    break;
-                case '3':
-                    personalBudget.displayBalanceForCurrentMonth();
-                    break;
-                case '4':
-                    personalBudget.displayBalanceForPreviousMonth();
-                    break;
-                case '5':
-                    personalBudget.displayBalanceForSelectedMonth();
-                    break;
-                case '6':
-                    personalBudget.changePasswordLoggedInUser();
-                    break;
-                case '7':
-                    personalBudget.logOutUser();
-                    break;
-                }
+            switch (choice) {
+            case '1':
+                personalBudget.addIncome();
+                break;
+            case '2':
+                personalBudget.addExpense();
+                break;
+            case '3':
+                personalBudget.displayBalanceForCurrentMonth();
+                break;
+            case '4':
+                personalBudget.displayBalanceForPreviousMonth();
+                break;
+            case '5':
+                personalBudget.displayBalanceForSelectedMonth();
+                break;
+            case '6':
+                personalBudget.changePasswordLoggedInUser();
+                break;
+            case '7':
+                personalBudget.logOutUser();
+                break;
             }
         }
     }
