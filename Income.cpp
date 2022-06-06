@@ -32,4 +32,3 @@ string Income::getItem() {
 float Income::getAmount() {
     return amount;
 }
-

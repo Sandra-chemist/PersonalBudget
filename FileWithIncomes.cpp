@@ -13,7 +13,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
     xml.AddElem("Income");
     xml.IntoElem();
     xml.AddElem("IncomeId", income.getIncomeId());
-    xml.AddElem("UserID", income.getUserId());
+    xml.AddElem("UserId", income.getUserId());
     string dateAsString = AuxiliaryMethods::convertIntToString(income.getDate());
     string dateAsStringWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
     xml.AddElem("Date", dateAsStringWithDash);
@@ -22,7 +22,7 @@ void FileWithIncomes::addIncomeToFile(Income income) {
 
     xml.Save(getFileName());
 }
-vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
+vector <Income> FileWithIncomes::loadIncomesFromFile(int LOGGED_IN_USER_ID) {
     Income income;
     vector <Income> incomes;
 
@@ -38,7 +38,7 @@ vector <Income> FileWithIncomes::loadIncomesFromFile(int loggedInUserId) {
             xml.FindElem("IncomeId");
             int incomeId = atoi(xml.GetData().c_str());
             income.setIncomeId(incomeId);
-            xml.FindElem("UserID");
+            xml.FindElem("UserId");
             int userId = atoi(xml.GetData().c_str());
             income.setUserId(userId);
             xml.FindElem("Date");
@@ -77,9 +77,9 @@ void FileWithIncomes::displayIncome(Income income) {
     int date = income.getDate();
     string dateAsString = AuxiliaryMethods::convertIntToString(date);
     string dateWithDash = AdditionalMethodsOnDate::addDashToDate(dateAsString);
-    cout << "IncomeDate: " << dateWithDash << endl;
-    cout << "Item:       " << income.getItem() << endl;
-    cout << "Amount:     " << fixed << setprecision(2) << income.getAmount() << endl;
+    cout << "IncomeDate:  " << dateWithDash << endl;
+    cout << "Item:        " << income.getItem() << endl;
+    cout << "Amount:      " << fixed << setprecision(2) << income.getAmount() << endl;
     cout << endl;
 }
 
